@@ -137,6 +137,17 @@ def _build_estimator(family: str, params: Mapping[str, float], dim: int, seed: i
     raise ValueError(f"unsupported learner family {family!r}")
 
 
+def _candidate_label(family: str, params: Mapping[str, float]) -> str:
+    if family == "logistic":
+        return f"logistic(C={float(params['C']):g})"
+    if family == "svm_rbf":
+        return (
+            f"svm_rbf(C={float(params['C']):g},"
+            f"gamma_scale={float(params['gamma_scale']):g})"
+        )
+    raise ValueError(f"unsupported learner family {family!r}")
+
+
 def _candidate_rows(dim: int) -> list[tuple[str, dict[str, float], str]]:
     rows: list[tuple[str, dict[str, float], str]] = []
     for c in LEARNER_GRIDS["logistic"]["C"]:
@@ -153,6 +164,14 @@ def _candidate_rows(dim: int) -> list[tuple[str, dict[str, float], str]]:
     return rows
 
 
+def _frozen_candidate_rows(
+    frozen_candidate: Mapping[str, Any]
+) -> list[tuple[str, dict[str, float], str]]:
+    family = str(frozen_candidate["learner_family"])
+    params = {str(key): float(value) for key, value in dict(frozen_candidate["params"]).items()}
+    return [(family, params, _candidate_label(family, params))]
+
+
 def fit_select_predict(
     X_train,
     y_train,
@@ -161,12 +180,17 @@ def fit_select_predict(
     X_test=None,
     feature_costs: Mapping[str, float] | None = None,
     seed: int = 20260907,
+    frozen_candidate: Mapping[str, Any] | None = None,
 ) -> dict:
     """Fit the frozen learner grid, select on validation, predict.
 
     All candidates are fitted on the training split only with preprocessing
     fitted on the training split only. Selection is :func:`select_validation_winner`
-    over the 16 ``(learner, hyperparameter)`` candidates. The returned
+    over the 16 ``(learner, hyperparameter)`` candidates. When
+    ``frozen_candidate`` is supplied (a mapping with ``learner_family`` and
+    ``params`` from a prior frozen selection), only that single candidate is
+    fitted and selected, which makes the confirmatory stage independent of
+    platform timing in the tie-break. The returned
     ``predictions`` are the test predictions when ``X_test`` is supplied,
     otherwise the validation predictions; ``val_predictions`` and
     ``test_predictions`` expose both. ``prediction_seconds`` is the measured
@@ -195,7 +219,10 @@ def fit_select_predict(
     Xtr = preprocess_apply(pre, Xtr_raw)
     Xva = preprocess_apply(pre, Xva_raw)
     postprocessed_dim = int(Xtr.shape[1])
-    candidates = _candidate_rows(postprocessed_dim)
+    if frozen_candidate:
+        candidates = _frozen_candidate_rows(frozen_candidate)
+    else:
+        candidates = _candidate_rows(postprocessed_dim)
     grid: list[dict[str, Any]] = []
     fitted: dict[str, Any] = {}
     for family, params, label in candidates:

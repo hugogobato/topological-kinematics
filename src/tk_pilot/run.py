@@ -968,6 +968,7 @@ def _fit_cell_task(job: Mapping[str, Any]) -> dict:
         matrix["test"],
         feature_costs=None,
         seed=int(job["seed"]),
+        frozen_candidate=job.get("frozen_candidate"),
     )
     per_trajectory = {
         "validation": (
@@ -1282,6 +1283,7 @@ def _run_degree_pass(
     run_id: str,
     probe_first: bool,
     moment_scalings: Mapping[str, Any] | None = None,
+    frozen_models: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     families = [str(family) for family in cfg["families"]]
     sigmas = [float(sigma) for sigma in cfg["sigmas"]]
@@ -1437,6 +1439,10 @@ def _run_degree_pass(
                     "run_id": run_id,
                     "metric": metric,
                     "stage": stage,
+                    "frozen_candidate": (frozen_models or {}).get(
+                        f"{cell[0]}|{float(cell[1]):g}|{int(cell[2])}|{int(cell[3])}"
+                        f"|{representation}"
+                    ),
                 }
             )
     fit_results = _parallel_map(_fit_cell_task, fit_jobs, workers)
@@ -2973,6 +2979,18 @@ def _run_confirmatory(
             int(cfg["seed_namespaces"]["train"][1]) + 1,
         )
     )
+    frozen_models_path = cfg.get("frozen_models_file")
+    if frozen_models_path:
+        resolved_frozen = _resolve_path(frozen_models_path, REPO_ROOT)
+        if not resolved_frozen.is_file():
+            raise SystemExit(
+                f"frozen_models_file is configured but missing: {resolved_frozen}; "
+                "freeze the per-cell learner selections from the exploratory stage "
+                "before opening confirmatory seeds"
+            )
+        frozen_models = _read_json(resolved_frozen)
+    else:
+        frozen_models = {}
     floors, moment_scalings, calibration_metadata = _run_calibration(
         cfg, train_seeds, families, degrees, cfg["strides"], cache_dir, workers
     )
@@ -2988,6 +3006,7 @@ def _run_confirmatory(
         run_id,
         probe_first=False,
         moment_scalings=moment_scalings,
+        frozen_models=frozen_models,
     )
     frame = _rows_frame(pass_result["rows"])
     table_path, table_format = _write_table(frame, outdir, "metrics")
