@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-09-21T00:19:55.867570+00:00",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cpu_count": 8,
+  "packages": {
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.8",
+    "gudhi": "3.12.0",
+    "persim": "0.3.8",
+    "pytest": "9.0.3",
+    "yaml": "6.0.1",
+    "ripser": null
+  },
+  "input_sha256": {
+    "research_review/Topological_Kinematics_Research_Plan.md": "8fd06530e2c26e81eb6d6e257dd9522b12a3c92300dbc86177327bf59ff38a2a",
+    "research_review/Pilot_Experiment_Specification.md": "491c91e074219ded7a84a1dc3fae957d61805ad291cd8b0822b000fc94c9c202",
+    "research_review/assumption_ledger.yaml": "ea46fab5960c0e8648bcd61bf187e86446a1a4cc7eeaae0ac1259ce8a1220844",
+    "research_review/metric_interface.md": "7a8a25137ad82050c23d0388f46b5f46f4fc3e86d0b754cce166132687700c33",
+    "research_review/preregistration_draft.md": "669bd3db1b434b2693bbd688d942907d0cb97acfa27eac446921dfea7e93e770",
+    "research_review/witness_note.md": "6e30f4af98a0af0c65a56bf2c6194e3d2715ba83b609824e3de530231c63b7ad",
+    "research_review/results/phase0/G0_decision.md": "44571b588492bbf01507b1ee191cb238828bcf3ca41444561c24a8c7688a31cb",
+    "research_review/topological_kinematics_witness.py": "c70e1c486465f91b8d91a663a081db779ce7438e0330b860732e0062557479d9",
+    "src/tk_pilot/diagram_metrics.py": "4d22315d5ea871d8d6afa321c70e7a593a7b149cc1d8654b93047b053b288044",
+    "src/tk_pilot/path_diagnostics.py": "a67eb36041d0724ac8d859ec715928542b90a1af7614bbf2fcef9ca752c5b37f",
+    "src/tk_pilot/witnesses.py": "3c992fd087f67bb4dc7554b05598e720fad953e4ce1b58cc1efaf37fd1e1b544",
+    "src/tk_pilot/witness_figures.py": "a5129ab3715398134498232c1917027ec8db2173cae8170b2684f2847e23d2a3",
+    "scripts/run_witness_suite.py": "d1bd234d733d54a7ba3d13492362d44a513eff392ae29e5363308dfde088dde3",
+    "tests/test_diagram_metrics.py": "48e2d5a4ef33f2cd84fc17d11c7b03afa9a4a7026b661d90ec23b608fc98f3dc",
+    "tests/test_path_diagnostics.py": "09f755f9e91b3f0d48a87626cb976e1284a2748f703a374b30d1284a3c06279b",
+    "tests/test_witnesses.py": "cb73c5185380f5ad73f99c92f6e4cbcd6ef56a288cab9370d76362e9e0ec0785"
+  },
+  "wall_seconds": 5.272471395001048,
+  "seed": 20260920
+}

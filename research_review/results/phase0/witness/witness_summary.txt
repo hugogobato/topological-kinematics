@@ -1,0 +1,5 @@
+Phase 0 witness suite summary
+seed: 20260920
+cases passed: 15/15
+all passed: True
+verdict: operational correctness only

@@ -1,0 +1,15 @@
+Command: rtk python3 research_review/topological_kinematics_witness.py
+Date: 2026-09-07
+
+singleton PD points are (birth, death)=(s,s+M), M 10.0
+same consecutive bottleneck distances [1.0, 1.0, 1.0, 1.0] [1.0, 1.0, 1.0, 1.0]
+same L and R 4.0 0.0 4.0 0.0
+comparison angles for paths A/B [3.141592653589793, 0.0, 3.141592653589793] [0.0, 3.141592653589793, 0.0]
+straight comparison angle 3.141592653589793 pi 3.141592653589793
+angle before 3.141592653589793 angle after 0.00010536712132597716
+endpoint perturbation 1.9999999989472883e-08 angle jump 3.1414872864684673
+zero-increment angle None
+finite speed errors [0.01200000000000001, 0.010000000000000675, 0.006000000000000227, 0.01200000000000001]
+finite speed bounds [0.012, 0.01, 0.006, 0.012]
+finite length error/bound 0.0019999999999997797 0.01
+finite displacement error/bound 0.001 0.003

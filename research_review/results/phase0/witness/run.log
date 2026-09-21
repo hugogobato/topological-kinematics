@@ -1,0 +1,122 @@
+Phase 0 witness suite (seed 20260920)
+started 2026-09-21T00:19:50.740493+00:00
+[PASS] W-01 singleton analytic bottleneck
+    - ok: gudhi matches analytic min(|ds|, M/2) {'kind': 'max_abs_deviation', 'deviation': 7.216449660063518e-16, 'tolerance': 1e-09}
+    - ok: persim matches analytic min(|ds|, M/2) {'kind': 'max_abs_deviation', 'deviation': 7.216449660063518e-16, 'tolerance': 1e-09}
+    - ok: bruteforce matches analytic min(|ds|, M/2) {'kind': 'max_abs_deviation', 'deviation': 7.216449660063518e-16, 'tolerance': 1e-09}
+    - ok: bruteforce matches gudhi {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+[PASS] W-02 empty and diagonal diagrams
+    - ok: gudhi matches expected empty/diagonal values {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+    - ok: persim matches expected empty/diagonal values {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+    - ok: bruteforce matches expected empty/diagonal values {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+[PASS] W-03 brute-force and backend agreement
+    - ok: gudhi agrees with brute force {'kind': 'boolean', 'detail': {'max_deviation': 2.220446049250313e-16, 'tolerance': 1e-09}}
+    - ok: persim agrees with brute force {'kind': 'boolean', 'detail': {'max_deviation': 0.0, 'tolerance': 1e-09}}
+    - ok: distance is symmetric {'kind': 'boolean', 'detail': {'max_deviation': 2.220446049250313e-16, 'tolerance': 1e-09}}
+    - ok: cardinality mismatch case equals 5 (large bar to diagonal) {'kind': 'max_abs_deviation', 'deviation': 8.881784197001252e-16, 'tolerance': 1e-09}
+    - ok: canonicalized public distance matches the exact reference on the order-sensitive pair {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: persim cross-check on the order-sensitive pair {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: public distance is invariant to input row order {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-15}
+[PASS] W-04 bottleneck metric axioms
+    - ok: d(D, D) = 0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+    - ok: d(X, Y) = d(Y, X) {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+    - ok: d(X, Z) <= d(X, Y) + d(Y, Z) {'kind': 'boolean', 'detail': {'max_triangle_violation': 0.0, 'tolerance': 1e-09}}
+[PASS] W-05 bottleneck bounded by W2
+    - ok: d_bottleneck <= d_W2 for all pairs {'kind': 'boolean', 'detail': {'max_violation': 0.0, 'tolerance': 1e-09}}
+[PASS] W-06 equal speed, different order
+    - ok: equal consecutive distances {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: equal path length L = 4 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: equal path length for path B {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: equal endpoint displacement R = 0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: constant speed 4 on the uniform grid {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: zero speed-change rates on both paths {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: path A comparison angles (pi, 0, pi) {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: path B comparison angles (0, 0, 0) {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: path A turns (0, pi, 0) {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: angle sequences differ {'kind': 'boolean'}
+    - ok: library consecutive distances match the exact reference {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: library angles stay within the arccos conditioning tolerance {'kind': 'boolean', 'detail': {'max_angle_deviation': 2.9802322387695312e-08, 'tolerance': 1e-06, 'note': 'arccos is ill-conditioned near 0 and pi; an O(1e-16) distance perturbation can move the angle by O(1e-8)'}}
+[PASS] W-07 straight, reversal, angle convention
+    - ok: straight continuation gives theta = pi {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: straight continuation gives tau = 0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: exact reversal gives theta = 0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: exact reversal gives tau = pi {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: right angle gives theta = pi/2 {'kind': 'max_abs_deviation', 'deviation': 2.220446049250313e-16, 'tolerance': 1e-12}
+    - ok: 3-4-5 triangle gives theta = pi/2 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: unit triangle gives theta = pi/3 {'kind': 'max_abs_deviation', 'deviation': 2.220446049250313e-16, 'tolerance': 1e-12}
+    - ok: all reported angles lie in [0, pi] {'kind': 'boolean'}
+    - ok: library straight angle stays within the arccos conditioning tolerance {'kind': 'boolean', 'detail': {'library_deviation_from_pi': 2.9802322387695312e-08, 'tolerance': 1e-06}}
+[PASS] W-08 zero step undefined
+    - ok: b = 0 gives undefined angle {'kind': 'boolean'}
+    - ok: b = 0 gives undefined turn {'kind': 'boolean'}
+    - ok: a = 0 gives undefined angle {'kind': 'boolean'}
+    - ok: triangle excess is still defined when a + b > 0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: constant path has L = 0 {'kind': 'boolean', 'detail': {'length': 0.0}}
+    - ok: constant path has undefined efficiency {'kind': 'boolean'}
+    - ok: constant path has undefined excess {'kind': 'boolean'}
+    - ok: constant path has zero valid angles {'kind': 'boolean', 'detail': {'angle_valid_fraction': 0.0}}
+[PASS] W-09 near-zero angle instability
+    - ok: angle jump exceeds 3.14 at eps = 1e-8 {'kind': 'boolean', 'detail': {'angle_jump': 3.1414499586176032}}
+    - ok: configuration perturbation is below 1e-7 at eps = 1e-8 {'kind': 'boolean', 'detail': {'perturbation': 2e-08}}
+    - ok: diagram-space plus side is pi within arccos conditioning {'kind': 'boolean', 'detail': {'theta_plus': 3.141592653589793, 'deviation': 0.0, 'note': 'cancellation in a^2 + b^2 - c^2 at 1e-16 mixed with arccos conditioning near pi gives O(sqrt(eps)) angle error'}}
+    - ok: diagram-space minus side is 0 within arccos conditioning {'kind': 'boolean', 'detail': {'theta_minus': 3.2445518884509834e-05, 'deviation': 3.2445518884509834e-05}}
+    - ok: monotone sweep: jump is still pi at eps = 1e-10 {'kind': 'boolean', 'detail': {'final_jump': 3.141592653589793}}
+    - ok: roundoff anomaly near pi is flagged, not hidden {'kind': 'boolean', 'detail': {'raw_cosine': -1.000000082740371, 'anomaly': True}}
+[PASS] W-10 cosine clipping and anomaly
+    - ok: right angle raw cosine is 0 without anomaly {'kind': 'max_abs_deviation', 'deviation': 2.220446049250313e-16, 'tolerance': 1e-12}
+    - ok: right angle has no anomaly {'kind': 'boolean'}
+    - ok: straight raw cosine is exactly -1 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-15}
+    - ok: straight has no anomaly {'kind': 'boolean'}
+    - ok: roundoff case is clipped to theta = pi {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: roundoff case within 1e-12 does not raise an anomaly {'kind': 'boolean', 'detail': {'raw_cosine': -1.0000000000003997}}
+    - ok: non-metric triple raises the anomaly flag {'kind': 'boolean', 'detail': {'raw_cosine': -3.5}}
+    - ok: non-metric triple is clipped to theta = pi {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+[PASS] W-11 R <= L and efficiency
+    - ok: Euclidean paths satisfy R <= L {'kind': 'boolean', 'detail': {'max_R_minus_L': -0.9483112075850586, 'tolerance': 1e-09}}
+    - ok: all Euclidean efficiencies lie in [0, 1] {'kind': 'boolean', 'detail': {'min_eta': 0.0003942896065988577, 'max_eta': 0.6736980325128753}}
+    - ok: no zero-length Euclidean path was generated {'kind': 'boolean'}
+    - ok: graph shortest-path metrics satisfy R <= L {'kind': 'boolean', 'detail': {'max_R_minus_L': -1.2446822635267558}}
+    - ok: graph shortest-path metric satisfies the triangle inequality {'kind': 'boolean', 'detail': {'max_violation': np.float64(2.220446049250313e-16)}}
+    - ok: graph efficiencies lie in [0, 1] {'kind': 'boolean', 'detail': {'min_eta': 0.024937219229467723, 'max_eta': 0.4216085547474416}}
+    - ok: discrete metric excursion has eta = 0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: constant discrete path has undefined efficiency {'kind': 'boolean'}
+[PASS] W-12 perturbation bounds
+    - ok: length error within sum(eps_t + eps_t+1) {'kind': 'boolean', 'detail': {'max_ratio': 0.5855481935357151}}
+    - ok: displacement error within eps_0 + eps_T {'kind': 'boolean', 'detail': {'max_ratio': 0.9974076240581549}}
+    - ok: speed error within (eps_t + eps_t+1)/h {'kind': 'boolean', 'detail': {'max_ratio': 0.9976472081187753}}
+    - ok: speed-change error within (eps_t-1 + 2 eps_t + eps_t+1)/h^2 {'kind': 'boolean', 'detail': {'max_ratio': 0.9549023930486897}}
+[PASS] W-13 irregular timestamps and clock
+    - ok: speeds use observed h_t {'kind': 'max_abs_deviation', 'deviation': 1.7763568394002505e-15, 'tolerance': 1e-12}
+    - ok: speed timestamps are interval midpoints {'kind': 'max_abs_deviation', 'deviation': 1.1102230246251565e-16, 'tolerance': 1e-12}
+    - ok: speed-change rates use midpoint differences {'kind': 'max_abs_deviation', 'deviation': 1.4210854715202004e-14, 'tolerance': 1e-12}
+    - ok: L = 4 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: R = 1 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: eta = 0.25 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: L is timestamp-relabel invariant {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-15}
+    - ok: R is timestamp-relabel invariant {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-15}
+    - ok: clock dilation halves speeds {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: clock dilation quarters speed-change rates {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-12}
+    - ok: non-increasing timestamps are rejected {'kind': 'boolean'}
+    - ok: noise-floor angle validity is min(a, b) > 2 e {'kind': 'boolean', 'detail': {'floor': 1.4249999999999998, 'flags': [False, False, False]}}
+    - ok: efficiency validity is L > 2 (T - 1) e {'kind': 'boolean', 'detail': {'floor': 1.4249999999999998, 'efficiency_valid': False}}
+    - ok: at zero noise only exact-zero steps are unresolved {'kind': 'boolean', 'detail': {'flags': [True, True, True]}}
+[PASS] W-14 essential class stripping
+    - ok: finite part of raw diagram {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 0.0}
+    - ok: one essential class counted {'kind': 'boolean', 'detail': {'n_essential': 1}}
+    - ok: all-essential diagram leaves the empty diagram {'kind': 'boolean'}
+    - ok: two essential classes counted {'kind': 'boolean', 'detail': {'n_essential': 2}}
+    - ok: raw non-finite diagrams are rejected by as_diagram {'kind': 'boolean'}
+    - ok: canonical order is sorted by (birth, death) {'kind': 'boolean', 'detail': {'canonical': [[0.0, 5.0], [2.0, 3.0]]}}
+    - ok: stripped diagram distance to a singleton is the metric value {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-09}
+[PASS] W-15 numerical zero tolerance
+    - ok: gudhi returns exactly 0.0 for the true-zero non-identical pair {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 0.0}
+    - ok: persim returns exactly 0.0 for the true-zero non-identical pair {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 0.0}
+    - ok: brute force returns exactly 0.0 for the true-zero non-identical pair {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 0.0}
+    - ok: a 5e-13 distance is snapped to exactly 0.0 {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 0.0}
+    - ok: a 2e-12 distance is preserved above the numerical zero {'kind': 'boolean', 'detail': {'value': 2.000177801164682e-12, 'numerical_zero': 1e-12}}
+    - ok: gudhi and brute force agree above the numerical zero {'kind': 'max_abs_deviation', 'deviation': 0.0, 'tolerance': 1e-15}
+summary: 15/15 cases passed; wall 5.27 s
+figure: research_review/results/phase0/witness/figures/fig_singleton_bottleneck.png
+figure: research_review/results/phase0/witness/figures/fig_equal_speed_paths.png
+figure: research_review/results/phase0/witness/figures/fig_angle_instability.png
+figure: research_review/results/phase0/witness/figures/fig_random_path_checks.png

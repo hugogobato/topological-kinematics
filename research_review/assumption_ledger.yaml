@@ -1,0 +1,482 @@
+schema_version: "1.0"
+artifact: assumption_ledger
+file: research_review/assumption_ledger.yaml
+project: Topological_Kinematics
+phase: 0
+gate: G0
+status: passed
+date: "2026-09-20"
+scope: >-
+  Restricted finite-metric operational model only: a finite sequence of finite persistence diagrams
+  with finite birth and death coordinates, a fixed diagram metric, and strictly increasing timestamps.
+  This artifact does not cover data extraction correctness (G2), predictive value (G3), applications
+  (G4), or theory (G5), and it makes no causal claim. Every diagnostic below is an observable
+  statistic of the observed diagram path under the frozen observation map.
+
+source_documents:
+  - path: research_review/Topological_Kinematics_Research_Plan.md
+    role: "authoritative plan; sections 2, 3, 6, 7 WP-0.1, 12, 13"
+  - path: research_review/Pilot_Experiment_Specification.md
+    role: "executable pilot appendix; sections 1-3 and the decision rules"
+  - path: research_review/foundations.md
+    role: "mathematical caveats for speed, length, direction, acceleration, identification"
+  - path: research_review/email_proposal_audit.md
+    role: "preflight findings TK-1 through TK-7"
+  - path: research_review/topological_kinematics_witness.py
+    role: "legacy finite witness script (operational correctness only)"
+  - path: research_review/results/metric_witness_results.txt
+    role: "saved legacy witness results"
+  - path: src/tk_pilot/witnesses.py
+    role: "Phase 0 machine-readable witness cases (WP-0.2)"
+  - path: research_review/results/phase0/witness/witness_results.json
+    role: "Phase 0 witness case results (environment metadata and figures are separate artifacts)"
+
+environment:
+  python: "3.12.3"
+  numpy: "2.4.3"
+  scipy: "1.17.1"
+  matplotlib: "3.10.8"
+  gudhi: "3.12.0"
+  persim: "0.3.8"
+  pytest: "9.0.3"
+  pyyaml: "available"
+  absent:
+    - ripser
+  note: >-
+    Frozen environment for Phase 0. ripser is NOT installed. No Phase 0 artifact or code may rely
+    on a package outside this list, and version strings here are authoritative for WP-0.2 metadata.
+
+clock_and_timestamps:
+  timestamps: "t_0 < t_1 < ... < t_T strictly increasing, with T >= 1"
+  interval: "h_t = t_{t+1} - t_t > 0 for t = 0, ..., T-1"
+  speed_timestamp: "nu_t is timestamped at the interval midpoint m_t = (t_t + t_{t+1}) / 2"
+  speed_change_timestamp: "a_t uses the midpoint spacing m_t - m_{t-1}, for t = 1, ..., T-1"
+  relabeling: >-
+    Order-preserving relabeling of timestamps leaves L and R unchanged; speeds and speed-change rates
+    depend on the clock. This must be stated, not hidden.
+  master_grid: >-
+    Physical time u = j/128, j = 0..128; strides 1, 2, 4 subsample the same master realization and
+    keep the physical horizon [0, 1] fixed across resolutions.
+  rejection: "Any nonpositive h_t is an input error and must be rejected; no silent repair."
+
+input_interface:
+  primary_window: >-
+    One frame per sample (single-frame window) for the first baseline; each frame maps to a
+    persistence diagram through a declared filtration.
+  causality: >-
+    A window may use only observations at or before its timestamp. Future observations are forbidden.
+    Detection windows are trailing windows.
+  master_grid: "physical time u = j/128, j = 0..128; strides 1, 2, 4 subsample the same master realization; horizon [0, 1] fixed"
+  families:
+    A: "Euclidean Vietoris-Rips H0/H1, edge-length filtration convention"
+    B: "cubical H0/H1 of sublevel sets of -f"
+  trailing_window_pooling: >-
+    A later, separately reported observation map (WP-2.1): trailing-window lengths 1, 3, 5 at strides
+    1, 2, 4, pooling Family A points by concatenation and Family B fields by averaging over each
+    window. It is not part of the primary baseline, and its results are not pooled into the
+    frame-level claim.
+  declaration: >-
+    The window map, filtration, coefficient field, diagram truncation rule, metric, and sampling
+    interval jointly define the observed object.
+
+topology_conventions:
+  coefficient_field: "F2"
+  primary_degree: "H0"
+  secondary_degree: "H1 (predeclared secondary channel, reported separately)"
+  family_A: "Euclidean Vietoris-Rips with the edge-length filtration convention"
+  family_B: "cubical homology of sublevel sets of -f"
+  thresholds: "no label-dependent persistence threshold is allowed; all finite bars are retained"
+  essential_classes: "death = +inf classes are removed before any metric computation; the per-window count is recorded"
+  degenerate_diagram: "the diagonal itself (all points on the diagonal) is an empty finite diagram"
+
+diagram_metric:
+  primary:
+    name: "bottleneck distance"
+    ground_norm: "L-infinity"
+    point_cost: "||p - q||_inf = max(|Delta b|, |Delta d|)"
+    diagonal: "infinite multiplicity; the cost of matching a point p = (b, d) to the diagonal is (d - b)/2"
+    empty_diagram: "a valid operand"
+    implementation: "gudhi.bottleneck_distance (gudhi 3.12.0)"
+    independent_reference: >-
+      Brute-force exact bottleneck inside the project package, enumerating matchings that include
+      diagonal copies; used for diagram pairs with at most 7 points in total.
+    secondary_cross_check: "persim.bottleneck (persim 0.3.8) on finite diagrams"
+    numerical_zero: >-
+      All public metric functions apply a declared numerical-zero tolerance: a computed distance at
+      or below NUMERICAL_ZERO = 1e-12 is returned as exactly 0.0. The primary backend can return
+      denormal values (about 1e-308) for a true-zero distance between non-identical diagrams, for
+      example when one diagram carries an extra point on the diagonal; without the snap, the frozen
+      exact-zero step rule and the zero-noise abstention rule would not trigger. The tolerance is
+      declared, not hidden, and is far below the smallest distance that is meaningful at the pilot's
+      coordinate scale. The independent brute-force reference applies the same convention. The
+      witness suite records the before/after behavior in case W-15. Undefined values are represented
+      by NaN internally and null in JSON.
+    conditioning: >-
+      The comparison angle is ill-conditioned near 0 and pi. Distance roundoff at the 1e-16 level
+      moves an angle near 0 or pi by about 1e-8 at well-scaled steps, and cancellation in
+      a^2 + b^2 - c^2 amplifies further as steps approach zero. The witness suite records this
+      conditioning; angle abstention is governed by the calibrated floor 2e, never by deleting
+      straight or reversal cases.
+  sensitivity_branch:
+    name: "2-Wasserstein distance"
+    ground_norm: "L-infinity"
+    implementation: "gudhi.wasserstein_distance(order=2, internal_p=np.inf)"
+    preprocessing: "essential parts stripped before the call"
+    restriction: >-
+      Not primary. No bottleneck/Wasserstein stability constant is transferred between p-norms.
+  no_threshold_transfer: "stability constants are never transferred between norms"
+
+diagnostics:
+  - id: nu_t
+    symbol: nu_t
+    formula: "nu_t = d(D_t, D_{t+1}) / h_t, for t = 0, ..., T-1"
+    defined_on: "finite diagram sequences D_0, ..., D_T with strictly increasing timestamps and d computed under the frozen metric"
+    undefined_when: "not applicable once timestamps pass input validation; a zero distance yields nu_t = 0, which is a valid value"
+    timestamp_convention: "timestamped at the interval midpoint m_t = (t_t + t_{t+1}) / 2"
+    units: "diagram-distance units per unit of physical time"
+    observable_status: >-
+      Observable statistic of the observed diagram path under the frozen map; this is a
+      Kramar-style inter-frame diagram speed and is established background, not a new quantity.
+    forbidden_interpretation: >-
+      Not a new velocity; not physical speed; not a metric derivative. Do not claim novelty
+      (Kramar et al. Eq. (16)).
+
+  - id: L
+    symbol: L
+    formula: "L = sum_{t=0}^{T-1} d(D_t, D_{t+1})"
+    defined_on: "all valid inputs"
+    undefined_when: "not applicable; L = 0 is a valid value with its own policy"
+    timestamp_convention: "no timestamp; unchanged by order-preserving timestamp relabeling"
+    units: "diagram-distance units"
+    observable_status: "Observable, routine metric summary of the observed path; correct as an operational definition."
+    forbidden_interpretation: >-
+      Not physical path length; discretization- and noise-dependent; adds no information beyond the
+      distance sequence unless a decision task shows parsimony, interpretability, or sample efficiency.
+
+  - id: R
+    symbol: R
+    formula: "R = d(D_0, D_T)"
+    defined_on: "all valid inputs"
+    undefined_when: "not applicable; R = 0 is a valid value"
+    timestamp_convention: "no timestamp; unchanged by order-preserving timestamp relabeling"
+    units: "diagram-distance units"
+    observable_status: >-
+      Observable, routine metric summary of the observed path. R <= L exactly for the mathematical
+      metric. In the public snapped implementation the deviation is bounded by the number of
+      intervals: R - L <= T*NUMERICAL_ZERO, because each of the T adjacent distances can be
+      decreased by at most NUMERICAL_ZERO while the endpoint displacement is a single distance. The
+      declared numerical zero makes the implementation a tolerance pseudometric at the 1e-12 scale.
+    forbidden_interpretation: "Not physical displacement; not a measure of latent structural change."
+
+  - id: eta
+    symbol: eta
+    formula: "eta = R / L"
+    defined_on: "L > 0"
+    undefined_when: "L = 0 (report null and a flag; no imputation)"
+    timestamp_convention: "no timestamp; unchanged by order-preserving timestamp relabeling"
+    units: "dimensionless"
+    observable_status: >-
+      Observable ratio; 0 <= eta <= 1 when L > 0 exactly for the mathematical metric. In the
+      public snapped implementation eta <= 1 + T*NUMERICAL_ZERO/L, so eta can exceed 1 when L is
+      inside the numerical band; at pilot-scale lengths the excess is negligible.
+    forbidden_interpretation: >-
+      Not physical efficiency; inflated by diagram noise and dependent on time discretization; not
+      evidence of information beyond the full distance matrix.
+
+  - id: speed_change_rate
+    symbol: a_t
+    formula: "a_t = (nu_t - nu_{t-1}) / (m_t - m_{t-1}), for t = 1, ..., T-1"
+    defined_on: "t = 1, ..., T-1 with T >= 2 and strictly increasing timestamps"
+    undefined_when: "not applicable; there is simply no interior t when T < 2"
+    timestamp_convention: "indexed by the later midpoint m_t; denominator is the midpoint spacing m_t - m_{t-1}"
+    units: "diagram-distance units per squared physical-time unit (formal units only; not physical acceleration)"
+    observable_status: >-
+      Observable finite difference of the scalar speed. Its usefulness is an open empirical question;
+      it is valid as a finite difference of scalar speed.
+    forbidden_interpretation: >-
+      Never call this physical acceleration. It does not detect a constant-speed change of direction.
+      Finite differences amplify persistence-estimation and observation error.
+
+  - id: comparison_angle
+    symbol: theta_t
+    formula: "a = d(D_{t-1}, D_t); b = d(D_t, D_{t+1}); c = d(D_{t-1}, D_{t+1}); z = (a^2 + b^2 - c^2) / (2ab); theta_t = arccos(clip(z, -1, 1))"
+    defined_on: "interior t = 1, ..., T-1 with ab > 0"
+    undefined_when: "a = 0 or b = 0 (zero step); theta is null and the step is counted as unresolved"
+    timestamp_convention: "reported at the interior time t (the shared vertex of the metric triangle), not at a midpoint"
+    units: "radians in [0, pi]"
+    observable_status: >-
+      Observable comparison-angle / triangle-shape statistic. Straight continuation gives theta = pi;
+      exact reversal gives theta = 0.
+    forbidden_interpretation: >-
+      Not the angle between tangent vectors; no orientation, no signed turning, and no turning
+      direction. Call it a comparison-angle or triangle-shape diagnostic only. Turning claims are
+      unsupported without extra structure.
+
+  - id: turn
+    symbol: tau_t
+    formula: "tau_t = pi - theta_t"
+    defined_on: "same as theta_t: interior t = 1, ..., T-1 with ab > 0"
+    undefined_when: "same as theta_t: a = 0 or b = 0"
+    timestamp_convention: "same as theta_t; reported together with theta_t"
+    units: "radians in [0, pi]"
+    observable_status: >-
+      Reporting companion to theta_t under the convention that a straight continuation gives tau = 0.
+      Same observable status as theta_t.
+    forbidden_interpretation: >-
+      Not a turning direction; never report tau alone as if it were an angle.
+
+  - id: triangle_excess
+    symbol: q_t
+    formula: "q_t = (a + b - c) / (a + b)"
+    defined_on: >-
+      Interior t = 1, ..., T-1 with a + b > 0 (freeze definition). The pilot WP-2.2 operational
+      guidance additionally reports q_t only above a predeclared noise-calibrated scale floor because
+      q_t is unstable near a + b = 0.
+    undefined_when: "a + b = 0"
+    timestamp_convention: "reported at the interior time t"
+    units: "dimensionless in [0, 1]"
+    observable_status: >-
+      Explicitly optional scale-free triangle-excess statistic. It is an optional extension, and it is
+      not a solution to the angle problem.
+    forbidden_interpretation: >-
+      Not a physical reversal indicator; not a solution to the angle problem; never treat a large q_t
+      as a physical reversal.
+
+policies:
+  - id: essential_classes
+    rule: >-
+      Essential classes (death = +inf) are removed before any metric computation; the per-window count
+      is recorded. The extended-metric alternative is declared but unused in the first study.
+    rationale: >-
+      Keeps every metric call on finite diagrams and prevents an infinity from entering the formulas,
+      while recording counts preserves auditability.
+
+  - id: empty_diagram
+    rule: >-
+      Empty finite diagrams are valid objects with zero points. Degenerate diagrams: the diagonal
+      itself (all points on the diagonal) is an empty finite diagram.
+    rationale: >-
+      The diagonal with infinite multiplicity is part of the metric definition; declaring the empty
+      object total avoids ad hoc exclusions.
+
+  - id: diagram_cardinality
+    rule: >-
+      Diagram cardinality may change between windows; metric definitions handle unequal cardinality
+      through diagonal matching. Per-window cardinality is recorded. All finite bars are retained;
+      no label-dependent persistence threshold is allowed.
+    rationale: >-
+      Cardinality changes are expected across windows; diagonal matching keeps the metric total
+      without forcing a feature identity, and retaining all finite bars prevents label-dependent
+      selection.
+
+  - id: missing_window
+    rule: >-
+      Missing window (extraction failure or absent observation): the entire trajectory is excluded
+      from the primary offline analysis; the exclusion count is recorded. No interpolation, no window
+      pooling to repair gaps. Trajectories are never silently deleted.
+    rationale: >-
+      Interpolation or pooling would change the observation map and the estimand; explicit exclusion
+      with recorded counts keeps the primary analysis intact and visible.
+
+  - id: l_zero
+    rule: "L = 0: eta is undefined (null), L is reported, and a flag is recorded. No imputation."
+    rationale: "eta = R/L has no value at L = 0; reporting L with a flag keeps the case visible instead of deleting or imputing it."
+
+  - id: zero_step
+    rule: "Zero step: if a = 0 or b = 0, theta is undefined (null) and the step is counted as unresolved."
+    rationale: "The law-of-cosines denominator 2ab vanishes; marking the step unresolved avoids a fabricated angle."
+
+  - id: near_zero_floor
+    rule: >-
+      Noise-calibrated abstention floors. For each cell defined by (family, degree, resolution,
+      metric), the calibration population is the set of adjacent diagram distances computed on the
+      training-split static-noise trajectories at sigma = 0.05 for that cell; e is the 95th
+      percentile of that population, computed with numpy.percentile's default linear
+      interpolation. Calibrations are never pooled across families, degrees,
+      resolutions, or metrics because the distance units differ. The zero-noise regime is declared
+      as sigma = 0; there e = 0 and only exact-zero abstention applies, where exact zero is the
+      value returned under the numerical-zero convention above. Abstain on efficiency when
+      L <= 2(T-1)e with T the number of intervals; abstain on comparison angles when
+      min(a, b) <= 2e. Validity fractions and coverage must be reported jointly with performance
+      for every regime, and abstention never deletes a trajectory.
+    rationale: >-
+      Near-zero denominators make ratios and angles numerically ill-conditioned; a training-only
+      calibration avoids test-label leakage, joint coverage reporting prevents abstention from
+      manufacturing robustness, and the per-cell population keeps the floor in the units of the
+      distances it compares.
+
+  - id: cosine_clip
+    rule: >-
+      Cosine roundoff: clip z to [-1, 1]; if |z| > 1 + 1e-12 record a cosine-anomaly flag (this
+      indicates roundoff beyond tolerance or a violated metric-triangle input). Never silently hide it.
+    rationale: >-
+      arccos is undefined outside [-1, 1]; clipping makes the computation total, and the anomaly flag
+      exposes roundoff or a triangle-inequality violation instead of hiding it.
+
+  - id: matching_ties
+    rule: >-
+      Nonunique optimal matchings are allowed. Metric distances are well-defined regardless of
+      matching multiplicity; no feature identity or correspondence is claimed.
+    rationale: >-
+      Bottleneck and Wasserstein distances are defined over matchings, not over a chosen matching;
+      the scalar path quantities never require a feature correspondence.
+
+  - id: nonpositive_interval
+    rule: "Strictly increasing timestamps are required. Any nonpositive h_t is an input error and must be rejected; no silent repair."
+    rationale: "Speeds and midpoint spacings divide by h_t; rejection is the only policy consistent with the frozen clock."
+
+  - id: straight_and_reversal_reporting
+    rule: "Straight and reversal cases are valid and must be reported; they are never deleted to obtain a Lipschitz theorem."
+    rationale: >-
+      Straight (theta = pi) and reversal (theta = 0) are valid metric triangles; deleting them would
+      bias validity fractions and manufacture an unearned regularity.
+
+  - id: no_selective_deletion
+    rule: >-
+      No trajectory and no valid case may be selectively deleted or silently removed. Missing windows
+      are excluded with recorded counts; L = 0, zero-step, and noise-floor cases are flagged or
+      abstained, never dropped. Failed and negative results are retained.
+    rationale: >-
+      Selective deletion would invalidate gate-level comparisons and hide failure modes; the freeze
+      requires exclusions to be counted and reported jointly with coverage.
+
+claims_to_estimands:
+  - id: C1
+    claim: "A finite diagram sequence is a metric-valued discrete path"
+    estimand: "The observed sequence (D_t) as a point path in the declared finite-diagram metric space."
+    status: "GO under declared metric and conventions"
+    evidence_required: "Unit tests, zero-distance policy, exact distance implementation"
+    gate: "G0"
+  - id: C2
+    claim: "nu, L, R, eta are meaningful summaries"
+    estimand: "Operational summaries of the observed diagram path under the frozen metric and clock."
+    status: "GO as operational definitions; routine mathematically"
+    evidence_required: "Correctness tests and sensitivity analysis"
+    gate: "G0 for the definitions; G2/G3 for sensitivity analysis"
+  - id: C3
+    claim: "Inter-frame persistence-diagram speed is new"
+    estimand: "Not applicable; the novelty claim is withdrawn."
+    status: "Rejected by Kramar et al. Eq. (16), printed p. 10"
+    evidence_required: "Do not make this novelty claim"
+    gate: "G1"
+  - id: C4
+    claim: "A trajectory of diagrams is new"
+    estimand: "Not applicable in the broad form; any intended new decision use must be stated precisely."
+    status: "Rejected in the broad form by vineyards and dynamic topology literature"
+    evidence_required: "State the intended new decision use precisely"
+    gate: "G1"
+  - id: C5
+    claim: "Scalar speed-change a_t is useful"
+    estimand: "The observed finite difference of the scalar speed sequence, evaluated as an event or decision feature."
+    status: "Open empirical question; valid as a finite difference of scalar speed"
+    evidence_required: "Noise, sampling, and event-detection experiments"
+    gate: "G3"
+  - id: C6
+    claim: "theta_t identifies turning or direction"
+    estimand: "The observed comparison-angle / triangle-shape statistic theta_t."
+    status: "Unsupported without extra structure"
+    evidence_required: "Call it a comparison-angle/triangle-shape diagnostic only"
+    gate: "G0 fixes the diagnostic name; any empirical evaluation is G3"
+  - id: C7
+    claim: "Diagnostics identify latent physical causes"
+    estimand: "Latent-cause labels, which are not recoverable from persistence diagrams alone."
+    status: "Not identified from persistence diagrams alone"
+    evidence_required: "Latent-control DGPs, negative controls, and application validation"
+    gate: "G3 and G4"
+  - id: C8
+    claim: "The collection is domain independent"
+    estimand: "Portability of the same protocol across data-generating families."
+    status: "Only a portability hypothesis"
+    evidence_required: "Same protocol across at least two data-generating families"
+    gate: "G3"
+  - id: C9
+    claim: "The collection improves a real decision"
+    estimand: "The predeclared operating metric on an accessible application under a complete-trajectory split."
+    status: "Unproven"
+    evidence_required: "Predeclared operating requirement on an accessible application"
+    gate: "G4"
+  - id: C10
+    claim: "A new calculus or acceleration theory follows"
+    estimand: "Not applicable; theory is dormant until evidence earns it."
+    status: "No"
+    evidence_required: "Defer until empirical value and well-posedness are established"
+    gate: "G5"
+
+prohibited_language:
+  - "physical acceleration (say speed-change rate instead)"
+  - "identifies a latent cause (say observable statistic of the observed diagram path instead)"
+  - "turning direction (unqualified)"
+  - "canonical kinematics"
+  - "domain independent (as an established property; portability hypothesis only)"
+  - "new velocity"
+  - "solves the direction problem"
+prohibited_language_note: >-
+  The word acceleration is allowed only in the fixed term speed-change rate or when quoting a
+  rejected claim. No claim status in this ledger may be upgraded without new evidence at a later
+  gate.
+
+witness_suite:
+  primary_code: src/tk_pilot/witnesses.py
+  primary_results: research_review/results/phase0/witness/witness_results.json
+  figures: research_review/results/phase0/witness/figures/
+  environment: research_review/results/phase0/witness/environment.json
+  supporting_code: src/tk_pilot/diagram_metrics.py, src/tk_pilot/path_diagnostics.py
+  runner: scripts/run_witness_suite.py
+  legacy_code: research_review/topological_kinematics_witness.py
+  legacy_results: research_review/results/metric_witness_results.txt
+  verdict: "operational correctness only, never novelty evidence"
+  cases:
+    - "W-01 singleton analytic bottleneck and diagonal transition at M/2"
+    - "W-02 empty diagrams and points on the diagonal"
+    - "W-03 brute-force and backend agreement on 60 random pairs including cardinality mismatch, plus an explicit input-order canonicalization check"
+    - "W-04 bottleneck identity, symmetry, and triangle inequality on random triples"
+    - "W-05 bottleneck bounded by the 2-Wasserstein sensitivity branch"
+    - "W-06 equal speed, length, and endpoints with different intermediate order"
+    - "W-07 straight (pi), reversal (0), and generic law-of-cosines angle conventions"
+    - "W-08 zero-step undefined angle, undefined efficiency at L = 0, undefined excess at a + b = 0"
+    - "W-09 near-zero-step angle instability and arccos conditioning"
+    - "W-10 cosine clipping and cosine-anomaly flag"
+    - "W-11 R <= L, efficiency bounds, and graph shortest-path metric checks"
+    - "W-12 randomized perturbation bounds for L, R, speed, and speed-change"
+    - "W-13 irregular timestamps, midpoint denominator, clock dilation, and abstention floors"
+    - "W-14 essential-class stripping, counts, canonical order, and non-finite rejection"
+    - "W-15 numerical-zero tolerance, true-zero non-identical pairs, and above-tolerance preservation"
+  note: >-
+    Structural angle cases use the exact brute-force reference for singleton diagrams because the
+    library bottleneck perturbs distances at the 1e-16 level and arccos is ill-conditioned near 0
+    and pi. The primary library implementation is separately checked against the reference in
+    W-01 through W-05.
+
+verification:
+  requirement: >-
+    A second reader must be able to compute every quantity from one held-out trajectory using only
+    this ledger and the metric interface document, with no unstated convention.
+  how_met:
+    - "research_review/metric_interface.md fixes the input object, every formula, every edge-case policy, and the primary and sensitivity implementations with versions."
+    - "The metric interface contains a fully worked four-diagram example with exact expected values (L = 3, R = 1, eta = 1/3, a_1 = a_2 = 0, theta_1 = pi, theta_2 = 0) reproduced from the analytic singleton bottleneck and confirmed against gudhi 3.12.0."
+    - "This ledger pins claim statuses, forbidden interpretations, and all policies."
+    - "The WP-0.2 suite (src/tk_pilot/witnesses.py) executes all 15 cases and writes witness_results.json plus four figures; it verifies the formulas and edge cases independently of the library where conditioning requires it."
+    - "Independent numerical verification: research_review/results/phase0/verification/numerical_verification.md with its standalone script independent_checks.py."
+    - "Independent second-reader audit: research_review/results/phase0/verification/second_reader_audit.md."
+    - "Independent consistency audit: research_review/results/phase0/verification/consistency_audit.md."
+    - "All blocking and material audit findings were repaired. The fresh-eyes final audit research_review/results/phase0/verification/final_audit.md       recomputes hashes for the frozen revision. Documented residuals: the inherited feature-count wording deferred to the WP-1.2 feature-schema freeze, the cosmetic H3 discretion clause, and the tooling-only pyyaml omission in the pre-registration environment list. The final gate status is recorded in g0_record below."
+  second_reader_artifact_pair:
+    - research_review/assumption_ledger.yaml
+    - research_review/metric_interface.md
+
+g0_record:
+  scope: >-
+    Restricted operational model only: finite sequence of finite persistence diagrams with finite
+    birth and death coordinates, a fixed diagram metric, and strictly increasing timestamps. Does not
+    cover data extraction correctness (G2), predictive value (G3), applications (G4), or theory (G5).
+  pass_criteria: >-
+    PASS if all terms are total or explicitly undefined with a policy; FAIL if a proposed quantity
+    changes meaning across datasets.
+  status: passed
+  decision_record: research_review/results/phase0/G0_decision.md
+  note: >-
+    G0 is recorded as passed for the restricted finite-metric operational model on the basis of the
+    15/15 witness suite, the independent numerical re-verification, the second-reader audit, and the
+    consistency audit recorded under research_review/results/phase0/. The public implementation is a
+    tolerance pseudometric at the 1e-12 scale because of the declared numerical zero; the exact
+    mathematical statements hold for the unsnapped metric. No gate beyond G0 is declared.

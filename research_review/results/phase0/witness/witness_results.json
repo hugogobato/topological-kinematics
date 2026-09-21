@@ -1,0 +1,1526 @@
+{
+  "suite": "tk_pilot_phase0_witness",
+  "gate": "G0",
+  "scope": "Operational correctness of the frozen finite-metric definitions only; not novelty, not extraction correctness, not utility.",
+  "seed": 20260920,
+  "summary": {
+    "n_cases": 15,
+    "n_passed": 15,
+    "n_failed": 0,
+    "all_passed": true,
+    "per_category": {
+      "metric_implementation": {
+        "cases": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "randomized_checks": {
+        "cases": 4,
+        "passed": 4,
+        "failed": 0
+      },
+      "path_definitions": {
+        "cases": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "edge_cases": {
+        "cases": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "policies": {
+        "cases": 2,
+        "passed": 2,
+        "failed": 0
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "W-01",
+      "category": "metric_implementation",
+      "description": "singleton analytic bottleneck",
+      "checks": [
+        {
+          "name": "gudhi matches analytic min(|ds|, M/2)",
+          "kind": "max_abs_deviation",
+          "deviation": 7.216449660063518e-16,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "persim matches analytic min(|ds|, M/2)",
+          "kind": "max_abs_deviation",
+          "deviation": 7.216449660063518e-16,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "bruteforce matches analytic min(|ds|, M/2)",
+          "kind": "max_abs_deviation",
+          "deviation": 7.216449660063518e-16,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "bruteforce matches gudhi",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        }
+      ],
+      "details": {
+        "lifespan": 10.0,
+        "shifts": [
+          0.0,
+          0.3,
+          4.9,
+          5.0,
+          5.1,
+          9.0
+        ],
+        "analytic_min_shifts": [
+          0.0,
+          0.3,
+          4.9,
+          5.0,
+          5.0,
+          5.0
+        ],
+        "gudhi": [
+          0.0,
+          0.3000000000000007,
+          4.9,
+          5.0,
+          5.0,
+          5.0
+        ],
+        "persim": [
+          0.0,
+          0.3000000000000007,
+          4.9,
+          5.0,
+          5.0,
+          5.0
+        ],
+        "bruteforce": [
+          0.0,
+          0.3000000000000007,
+          4.9,
+          5.0,
+          5.0,
+          5.0
+        ],
+        "diagonal_transition": 5.0
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-02",
+      "category": "metric_implementation",
+      "description": "empty and diagonal diagrams",
+      "checks": [
+        {
+          "name": "gudhi matches expected empty/diagonal values",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "persim matches expected empty/diagonal values",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "bruteforce matches expected empty/diagonal values",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        }
+      ],
+      "details": {
+        "expected": [
+          0.0,
+          5.0,
+          0.25,
+          0.0
+        ],
+        "gudhi": [
+          0.0,
+          5.0,
+          0.25,
+          0.0
+        ],
+        "persim": [
+          0.0,
+          5.0,
+          0.25,
+          0.0
+        ],
+        "bruteforce": [
+          0.0,
+          5.0,
+          0.25,
+          0.0
+        ]
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-03",
+      "category": "randomized_checks",
+      "description": "brute-force and backend agreement",
+      "checks": [
+        {
+          "name": "gudhi agrees with brute force",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_deviation": 2.220446049250313e-16,
+            "tolerance": 1e-09
+          }
+        },
+        {
+          "name": "persim agrees with brute force",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_deviation": 0.0,
+            "tolerance": 1e-09
+          }
+        },
+        {
+          "name": "distance is symmetric",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_deviation": 2.220446049250313e-16,
+            "tolerance": 1e-09
+          }
+        },
+        {
+          "name": "cardinality mismatch case equals 5 (large bar to diagonal)",
+          "kind": "max_abs_deviation",
+          "deviation": 8.881784197001252e-16,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "canonicalized public distance matches the exact reference on the order-sensitive pair",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "persim cross-check on the order-sensitive pair",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "public distance is invariant to input row order",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-15,
+          "passed": true
+        }
+      ],
+      "details": {
+        "n_pairs": 60,
+        "max_gudhi_deviation": 2.220446049250313e-16,
+        "max_persim_deviation": 0.0,
+        "max_symmetry_deviation": 2.220446049250313e-16,
+        "cardinality_mismatch_example": {
+          "diagram_a": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              10.0
+            ]
+          ],
+          "diagram_b": [
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "value": 4.999999999999999
+        },
+        "order_sensitive_pair": {
+          "expected_exact": 0.8980590011828029,
+          "public_canonicalized": 0.8980590011828029,
+          "persim_cross_check": 0.8980590011828029,
+          "raw_unsorted_library_value": 0.8994791936886859,
+          "note": "the public API canonicalizes input rows, so the frozen metric is deterministic even though the raw library call can depend on input order on rare configurations"
+        }
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-04",
+      "category": "randomized_checks",
+      "description": "bottleneck metric axioms",
+      "checks": [
+        {
+          "name": "d(D, D) = 0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "d(X, Y) = d(Y, X)",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        },
+        {
+          "name": "d(X, Z) <= d(X, Y) + d(Y, Z)",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_triangle_violation": 0.0,
+            "tolerance": 1e-09
+          }
+        }
+      ],
+      "details": {
+        "n_triples": 40,
+        "max_identity_deviation": 0.0,
+        "max_symmetry_deviation": 0.0,
+        "max_triangle_violation": 0.0
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-05",
+      "category": "metric_implementation",
+      "description": "bottleneck bounded by W2",
+      "checks": [
+        {
+          "name": "d_bottleneck <= d_W2 for all pairs",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_violation": 0.0,
+            "tolerance": 1e-09
+          }
+        }
+      ],
+      "details": {
+        "n_pairs": 40,
+        "max_bottleneck_minus_w2": 0.0
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-06",
+      "category": "path_definitions",
+      "description": "equal speed, different order",
+      "checks": [
+        {
+          "name": "equal consecutive distances",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "equal path length L = 4",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "equal path length for path B",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "equal endpoint displacement R = 0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "constant speed 4 on the uniform grid",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "zero speed-change rates on both paths",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "path A comparison angles (pi, 0, pi)",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "path B comparison angles (0, 0, 0)",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "path A turns (0, pi, 0)",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "angle sequences differ",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "library consecutive distances match the exact reference",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "library angles stay within the arccos conditioning tolerance",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_angle_deviation": 2.9802322387695312e-08,
+            "tolerance": 1e-06,
+            "note": "arccos is ill-conditioned near 0 and pi; an O(1e-16) distance perturbation can move the angle by O(1e-8)"
+          }
+        }
+      ],
+      "details": {
+        "timestamps": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "path_a_singleton_birth_coordinates": [
+          0.0,
+          1.0,
+          2.0,
+          1.0,
+          0.0
+        ],
+        "path_b_singleton_birth_coordinates": [
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "path_a_angles": [
+          3.141592653589793,
+          0.0,
+          3.141592653589793
+        ],
+        "path_b_angles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "path_a_speeds": [
+          4.0,
+          4.0,
+          4.0,
+          4.0
+        ],
+        "path_a_length": 4.0,
+        "path_a_displacement": 0.0,
+        "note": "L, R, and the speed history are identical across the two paths; the angle sequence separates them. This is an information witness, not a utility claim."
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-07",
+      "category": "path_definitions",
+      "description": "straight, reversal, angle convention",
+      "checks": [
+        {
+          "name": "straight continuation gives theta = pi",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "straight continuation gives tau = 0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "exact reversal gives theta = 0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "exact reversal gives tau = pi",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "right angle gives theta = pi/2",
+          "kind": "max_abs_deviation",
+          "deviation": 2.220446049250313e-16,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "3-4-5 triangle gives theta = pi/2",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "unit triangle gives theta = pi/3",
+          "kind": "max_abs_deviation",
+          "deviation": 2.220446049250313e-16,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "all reported angles lie in [0, pi]",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "library straight angle stays within the arccos conditioning tolerance",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "library_deviation_from_pi": 2.9802322387695312e-08,
+            "tolerance": 1e-06
+          }
+        }
+      ],
+      "details": {
+        "straight_theta": [
+          3.141592653589793
+        ],
+        "straight_tau": [
+          0.0
+        ],
+        "reversal_theta": [
+          0.0
+        ],
+        "reversal_tau": [
+          3.141592653589793
+        ],
+        "right_angle_theta": [
+          1.5707963267948968
+        ],
+        "scalene_example_sides": {
+          "a": 3.0,
+          "b": 4.0,
+          "c": 5.0
+        },
+        "equilateral_theta": [
+          1.0471975511965979
+        ],
+        "note": "theta is the comparison angle; tau is the reported turn (pi - theta)."
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-08",
+      "category": "edge_cases",
+      "description": "zero step undefined",
+      "checks": [
+        {
+          "name": "b = 0 gives undefined angle",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "b = 0 gives undefined turn",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "a = 0 gives undefined angle",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "triangle excess is still defined when a + b > 0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "constant path has L = 0",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "length": 0.0
+          }
+        },
+        {
+          "name": "constant path has undefined efficiency",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "constant path has undefined excess",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "constant path has zero valid angles",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "angle_valid_fraction": 0.0
+          }
+        }
+      ],
+      "details": {
+        "one_zero_step": {
+          "timestamps": [
+            0.0,
+            0.25,
+            0.5
+          ],
+          "adjacent_distances": [
+            1.0,
+            0.0
+          ],
+          "interval_speeds": [
+            4.0,
+            0.0
+          ],
+          "interval_speed_times": [
+            0.125,
+            0.375
+          ],
+          "length": 1.0,
+          "displacement": 1.0,
+          "efficiency": 1.0,
+          "speed_change_rates": [
+            -16.0
+          ],
+          "speed_change_times": [
+            0.375
+          ],
+          "comparison_angles": [
+            null
+          ],
+          "comparison_turns": [
+            null
+          ],
+          "comparison_valid": [
+            false
+          ],
+          "cosine_raw": [
+            null
+          ],
+          "cosine_anomaly": [
+            false
+          ],
+          "triangle_excess": [
+            0.0
+          ],
+          "triangle_excess_valid": [
+            true
+          ],
+          "angle_valid_fraction": 0.0
+        },
+        "first_zero_step": {
+          "timestamps": [
+            0.0,
+            0.25,
+            0.5
+          ],
+          "adjacent_distances": [
+            0.0,
+            1.0
+          ],
+          "interval_speeds": [
+            0.0,
+            4.0
+          ],
+          "interval_speed_times": [
+            0.125,
+            0.375
+          ],
+          "length": 1.0,
+          "displacement": 1.0,
+          "efficiency": 1.0,
+          "speed_change_rates": [
+            16.0
+          ],
+          "speed_change_times": [
+            0.375
+          ],
+          "comparison_angles": [
+            null
+          ],
+          "comparison_turns": [
+            null
+          ],
+          "comparison_valid": [
+            false
+          ],
+          "cosine_raw": [
+            null
+          ],
+          "cosine_anomaly": [
+            false
+          ],
+          "triangle_excess": [
+            0.0
+          ],
+          "triangle_excess_valid": [
+            true
+          ],
+          "angle_valid_fraction": 0.0
+        },
+        "constant_path": {
+          "timestamps": [
+            0.0,
+            0.25,
+            0.5
+          ],
+          "adjacent_distances": [
+            0.0,
+            0.0
+          ],
+          "interval_speeds": [
+            0.0,
+            0.0
+          ],
+          "interval_speed_times": [
+            0.125,
+            0.375
+          ],
+          "length": 0.0,
+          "displacement": 0.0,
+          "efficiency": null,
+          "speed_change_rates": [
+            0.0
+          ],
+          "speed_change_times": [
+            0.375
+          ],
+          "comparison_angles": [
+            null
+          ],
+          "comparison_turns": [
+            null
+          ],
+          "comparison_valid": [
+            false
+          ],
+          "cosine_raw": [
+            null
+          ],
+          "cosine_anomaly": [
+            false
+          ],
+          "triangle_excess": [
+            null
+          ],
+          "triangle_excess_valid": [
+            false
+          ],
+          "angle_valid_fraction": 0.0
+        }
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-09",
+      "category": "edge_cases",
+      "description": "near-zero angle instability",
+      "checks": [
+        {
+          "name": "angle jump exceeds 3.14 at eps = 1e-8",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "angle_jump": 3.1414499586176032
+          }
+        },
+        {
+          "name": "configuration perturbation is below 1e-7 at eps = 1e-8",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "perturbation": 2e-08
+          }
+        },
+        {
+          "name": "diagram-space plus side is pi within arccos conditioning",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "theta_plus": 3.141592653589793,
+            "deviation": 0.0,
+            "note": "cancellation in a^2 + b^2 - c^2 at 1e-16 mixed with arccos conditioning near pi gives O(sqrt(eps)) angle error"
+          }
+        },
+        {
+          "name": "diagram-space minus side is 0 within arccos conditioning",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "theta_minus": 3.2445518884509834e-05,
+            "deviation": 3.2445518884509834e-05
+          }
+        },
+        {
+          "name": "monotone sweep: jump is still pi at eps = 1e-10",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "final_jump": 3.141592653589793
+          }
+        },
+        {
+          "name": "roundoff anomaly near pi is flagged, not hidden",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "raw_cosine": -1.000000082740371,
+            "anomaly": true
+          }
+        }
+      ],
+      "details": {
+        "sweep": [
+          {
+            "epsilon": 0.0001,
+            "theta_plus": 3.141592184262351,
+            "theta_minus": 1.1534692335346162e-06,
+            "angle_jump": 3.1415910307931174,
+            "configuration_perturbation": 0.0002
+          },
+          {
+            "epsilon": 1e-06,
+            "theta_plus": 3.141579826537291,
+            "theta_minus": 0.0,
+            "angle_jump": 3.141579826537291,
+            "configuration_perturbation": 2e-06
+          },
+          {
+            "epsilon": 1e-08,
+            "theta_plus": 3.1414824041364877,
+            "theta_minus": 3.2445518884509834e-05,
+            "angle_jump": 3.1414499586176032,
+            "configuration_perturbation": 2e-08
+          },
+          {
+            "epsilon": 1e-10,
+            "theta_plus": 3.141592653589793,
+            "theta_minus": 0.0,
+            "angle_jump": 3.141592653589793,
+            "configuration_perturbation": 2e-10
+          }
+        ],
+        "diagram_instance_eps": 1e-08,
+        "diagram_plus_raw_cosine": -1.000000082740371,
+        "diagram_plus_anomaly": true,
+        "diagram_minus_raw_cosine": 0.9999999994736442,
+        "diagram_minus_anomaly": false
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-10",
+      "category": "edge_cases",
+      "description": "cosine clipping and anomaly",
+      "checks": [
+        {
+          "name": "right angle raw cosine is 0 without anomaly",
+          "kind": "max_abs_deviation",
+          "deviation": 2.220446049250313e-16,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "right angle has no anomaly",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "straight raw cosine is exactly -1",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-15,
+          "passed": true
+        },
+        {
+          "name": "straight has no anomaly",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "roundoff case is clipped to theta = pi",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "roundoff case within 1e-12 does not raise an anomaly",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "raw_cosine": -1.0000000000003997
+          }
+        },
+        {
+          "name": "non-metric triple raises the anomaly flag",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "raw_cosine": -3.5
+          }
+        },
+        {
+          "name": "non-metric triple is clipped to theta = pi",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        }
+      ],
+      "details": {
+        "right_angle_raw_cosine": -2.220446049250313e-16,
+        "roundoff_raw_cosine": -1.0000000000003997,
+        "roundoff_anomaly": false,
+        "non_metric_raw_cosine": -3.5,
+        "non_metric_anomaly": true
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-11",
+      "category": "randomized_checks",
+      "description": "R <= L and efficiency",
+      "checks": [
+        {
+          "name": "Euclidean paths satisfy R <= L",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_R_minus_L": -0.9483112075850586,
+            "tolerance": 1e-09
+          }
+        },
+        {
+          "name": "all Euclidean efficiencies lie in [0, 1]",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "min_eta": 0.0003942896065988577,
+            "max_eta": 0.6736980325128753
+          }
+        },
+        {
+          "name": "no zero-length Euclidean path was generated",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "graph shortest-path metrics satisfy R <= L",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_R_minus_L": -1.2446822635267558
+          }
+        },
+        {
+          "name": "graph shortest-path metric satisfies the triangle inequality",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_violation": 2.220446049250313e-16
+          }
+        },
+        {
+          "name": "graph efficiencies lie in [0, 1]",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "min_eta": 0.024937219229467723,
+            "max_eta": 0.4216085547474416
+          }
+        },
+        {
+          "name": "discrete metric excursion has eta = 0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "constant discrete path has undefined efficiency",
+          "kind": "boolean",
+          "passed": true
+        }
+      ],
+      "details": {
+        "n_euclidean_paths": 150,
+        "max_euclidean_R_minus_L": -0.9483112075850586,
+        "euclidean_eta_range": [
+          0.0003942896065988577,
+          0.6736980325128753
+        ],
+        "n_graphs": 50,
+        "max_graph_R_minus_L": -1.2446822635267558,
+        "max_graph_triangle_violation": 2.220446049250313e-16,
+        "graph_eta_range": [
+          0.024937219229467723,
+          0.4216085547474416
+        ],
+        "discrete_excursion": {
+          "timestamps": [
+            0.0,
+            1.0,
+            2.0,
+            3.0,
+            4.0
+          ],
+          "adjacent_distances": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "interval_speeds": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "interval_speed_times": [
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ],
+          "length": 4.0,
+          "displacement": 0.0,
+          "efficiency": 0.0,
+          "speed_change_rates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "speed_change_times": [
+            1.5,
+            2.5,
+            3.5
+          ],
+          "comparison_angles": [
+            0.0,
+            1.0471975511965979,
+            0.0
+          ],
+          "comparison_turns": [
+            3.141592653589793,
+            2.0943951023931953,
+            3.141592653589793
+          ],
+          "comparison_valid": [
+            true,
+            true,
+            true
+          ],
+          "cosine_raw": [
+            1.0,
+            0.5,
+            1.0
+          ],
+          "cosine_anomaly": [
+            false,
+            false,
+            false
+          ],
+          "triangle_excess": [
+            1.0,
+            0.5,
+            1.0
+          ],
+          "triangle_excess_valid": [
+            true,
+            true,
+            true
+          ],
+          "angle_valid_fraction": 1.0
+        }
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-12",
+      "category": "randomized_checks",
+      "description": "perturbation bounds",
+      "checks": [
+        {
+          "name": "length error within sum(eps_t + eps_t+1)",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_ratio": 0.5855481935357151
+          }
+        },
+        {
+          "name": "displacement error within eps_0 + eps_T",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_ratio": 0.9974076240581549
+          }
+        },
+        {
+          "name": "speed error within (eps_t + eps_t+1)/h",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_ratio": 0.9976472081187753
+          }
+        },
+        {
+          "name": "speed-change error within (eps_t-1 + 2 eps_t + eps_t+1)/h^2",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "max_ratio": 0.9549023930486897
+          }
+        }
+      ],
+      "details": {
+        "n_trials": 100,
+        "n_points": 8,
+        "step": 0.1,
+        "max_observed_over_bound": {
+          "length": 0.5855481935357151,
+          "displacement": 0.9974076240581549,
+          "speed": 0.9976472081187753,
+          "speed_change": 0.9549023930486897
+        }
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-13",
+      "category": "path_definitions",
+      "description": "irregular timestamps and clock",
+      "checks": [
+        {
+          "name": "speeds use observed h_t",
+          "kind": "max_abs_deviation",
+          "deviation": 1.7763568394002505e-15,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "speed timestamps are interval midpoints",
+          "kind": "max_abs_deviation",
+          "deviation": 1.1102230246251565e-16,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "speed-change rates use midpoint differences",
+          "kind": "max_abs_deviation",
+          "deviation": 1.4210854715202004e-14,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "L = 4",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "R = 1",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "eta = 0.25",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "L is timestamp-relabel invariant",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-15,
+          "passed": true
+        },
+        {
+          "name": "R is timestamp-relabel invariant",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-15,
+          "passed": true
+        },
+        {
+          "name": "clock dilation halves speeds",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "clock dilation quarters speed-change rates",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "non-increasing timestamps are rejected",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "noise-floor angle validity is min(a, b) > 2 e",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "floor": 1.4249999999999998,
+            "flags": [
+              false,
+              false,
+              false
+            ]
+          }
+        },
+        {
+          "name": "efficiency validity is L > 2 (T - 1) e",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "floor": 1.4249999999999998,
+            "efficiency_valid": false
+          }
+        },
+        {
+          "name": "at zero noise only exact-zero steps are unresolved",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "flags": [
+              true,
+              true,
+              true
+            ]
+          }
+        }
+      ],
+      "details": {
+        "timestamps": [
+          0.0,
+          0.1,
+          0.3,
+          0.6,
+          0.7
+        ],
+        "raw_diagnostics": {
+          "timestamps": [
+            0.0,
+            0.1,
+            0.3,
+            0.6,
+            0.7
+          ],
+          "adjacent_distances": [
+            1.0,
+            0.5,
+            1.5,
+            1.0
+          ],
+          "interval_speeds": [
+            10.0,
+            2.5,
+            5.0,
+            10.000000000000002
+          ],
+          "interval_speed_times": [
+            0.05,
+            0.2,
+            0.44999999999999996,
+            0.6499999999999999
+          ],
+          "length": 4.0,
+          "displacement": 1.0,
+          "efficiency": 0.25,
+          "speed_change_rates": [
+            -49.99999999999999,
+            10.000000000000002,
+            25.000000000000014
+          ],
+          "speed_change_times": [
+            0.2,
+            0.44999999999999996,
+            0.6499999999999999
+          ],
+          "comparison_angles": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "comparison_turns": [
+            3.141592653589793,
+            3.141592653589793,
+            3.141592653589793
+          ],
+          "comparison_valid": [
+            true,
+            true,
+            true
+          ],
+          "cosine_raw": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "cosine_anomaly": [
+            false,
+            false,
+            false
+          ],
+          "triangle_excess": [
+            0.6666666666666666,
+            0.5,
+            0.8
+          ],
+          "triangle_excess_valid": [
+            true,
+            true,
+            true
+          ],
+          "angle_valid_fraction": 1.0
+        },
+        "noise_floor_e": 1.4249999999999998,
+        "angle_validity_floor_flags": [
+          false,
+          false,
+          false
+        ],
+        "efficiency_validity_flag": false
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-14",
+      "category": "policies",
+      "description": "essential class stripping",
+      "checks": [
+        {
+          "name": "finite part of raw diagram",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 0.0,
+          "passed": true
+        },
+        {
+          "name": "one essential class counted",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "n_essential": 1
+          }
+        },
+        {
+          "name": "all-essential diagram leaves the empty diagram",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "two essential classes counted",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "n_essential": 2
+          }
+        },
+        {
+          "name": "raw non-finite diagrams are rejected by as_diagram",
+          "kind": "boolean",
+          "passed": true
+        },
+        {
+          "name": "canonical order is sorted by (birth, death)",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "canonical": [
+              [
+                0.0,
+                5.0
+              ],
+              [
+                2.0,
+                3.0
+              ]
+            ]
+          }
+        },
+        {
+          "name": "stripped diagram distance to a singleton is the metric value",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-09,
+          "passed": true
+        }
+      ],
+      "details": {
+        "raw_diagram": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.5,
+            null
+          ]
+        ],
+        "finite_part": [
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "n_essential": 1,
+        "n_essential_all": 2
+      },
+      "passed": true
+    },
+    {
+      "case_id": "W-15",
+      "category": "policies",
+      "description": "numerical zero tolerance",
+      "checks": [
+        {
+          "name": "gudhi returns exactly 0.0 for the true-zero non-identical pair",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 0.0,
+          "passed": true
+        },
+        {
+          "name": "persim returns exactly 0.0 for the true-zero non-identical pair",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 0.0,
+          "passed": true
+        },
+        {
+          "name": "brute force returns exactly 0.0 for the true-zero non-identical pair",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 0.0,
+          "passed": true
+        },
+        {
+          "name": "a 5e-13 distance is snapped to exactly 0.0",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 0.0,
+          "passed": true
+        },
+        {
+          "name": "a 2e-12 distance is preserved above the numerical zero",
+          "kind": "boolean",
+          "passed": true,
+          "detail": {
+            "value": 2.000177801164682e-12,
+            "numerical_zero": 1e-12
+          }
+        },
+        {
+          "name": "gudhi and brute force agree above the numerical zero",
+          "kind": "max_abs_deviation",
+          "deviation": 0.0,
+          "tolerance": 1e-15,
+          "passed": true
+        }
+      ],
+      "details": {
+        "true_zero_pair": {
+          "base": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              2.0,
+              3.0
+            ]
+          ],
+          "with_extra_diagonal_point": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              2.0,
+              3.0
+            ],
+            [
+              5.0,
+              5.0
+            ]
+          ],
+          "gudhi": 0.0,
+          "persim": 0.0,
+          "bruteforce": 0.0
+        },
+        "numerical_zero": 1e-12,
+        "tiny_distance_case": 0.0,
+        "above_tolerance_case_gudhi": 2.000177801164682e-12,
+        "above_tolerance_case_bruteforce": 2.000177801164682e-12
+      },
+      "passed": true
+    }
+  ]
+}
