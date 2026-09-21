@@ -1,0 +1,691 @@
+{
+  "calibration": {
+    "cells": {
+      "A|0|1": 0.057546560026171124,
+      "B|0|1": 0.057937338086144374
+    },
+    "degrees": [
+      0
+    ],
+    "families": [
+      "A",
+      "B"
+    ],
+    "metric": "bottleneck_linf",
+    "moment_scaling_cells": {
+      "A|0|1": {
+        "mean": [
+          12.29606108956763,
+          0.0,
+          0.0,
+          2.6636024929657554,
+          0.0,
+          0.6191109685060261
+        ],
+        "std": [
+          0.22105142995656316,
+          1.0,
+          1.0,
+          0.08625218851097115,
+          1.0,
+          0.03283224096003196
+        ]
+      },
+      "B|0|1": {
+        "mean": [
+          5.06919309542338,
+          -0.45985432866139603,
+          0.046806093555349135,
+          0.35594804042475237,
+          -0.03710687293313898,
+          0.03115043950751606
+        ],
+        "std": [
+          0.3187856550357425,
+          0.04088995428946465,
+          0.00611077038307443,
+          0.036751745134739715,
+          0.005357085756717261,
+          0.004925984013420865
+        ]
+      }
+    },
+    "moment_scaling_population": "training-split static-noise trajectories at sigma = 0.05, the same predeclared per-cell population as the noise floor",
+    "n_distances": {
+      "A|0|1": 128,
+      "B|0|1": 128
+    },
+    "percentile": 95.0,
+    "seeds": [
+      11
+    ],
+    "sigma": 0.05,
+    "sigma_zero_policy": "at sigma = 0 the floor is exactly 0 and only exact-zero abstention applies",
+    "strides": [
+      1
+    ]
+  },
+  "calibration_file": "calibration.json",
+  "controls": {
+    "matched": {
+      "matched_folded|A|sigma0": {
+        "displacement": 0.0,
+        "length": 0.21265578120293332
+      },
+      "matched_folded|A|sigma50": {
+        "displacement": 0.03651302676515128,
+        "length": 0.1557890020624461
+      },
+      "matched_forward|A|sigma0": {
+        "displacement": 0.0,
+        "length": 0.21414421340493783
+      },
+      "matched_forward|A|sigma50": {
+        "displacement": 0.03651302676515128,
+        "length": 0.15610866542277502
+      }
+    },
+    "note": "controls are reported outside the three-class accuracy calculation",
+    "static": {
+      "A|sigma0": {
+        "angle_valid_fraction": 0.0,
+        "efficiency_valid": false,
+        "max_adjacent_distance": 0.0,
+        "mean_adjacent_distance": 0.0
+      },
+      "A|sigma50": {
+        "angle_valid_fraction": 0.0,
+        "efficiency_valid": false,
+        "max_adjacent_distance": 0.07147555231803865,
+        "mean_adjacent_distance": 0.03731800033794555
+      },
+      "B|sigma0": {
+        "angle_valid_fraction": 0.0,
+        "efficiency_valid": false,
+        "max_adjacent_distance": 0.0,
+        "mean_adjacent_distance": 0.0
+      },
+      "B|sigma50": {
+        "angle_valid_fraction": 0.0,
+        "efficiency_valid": false,
+        "max_adjacent_distance": 0.07753401562819967,
+        "mean_adjacent_distance": 0.03300823708651085
+      }
+    },
+    "translation": {
+      "A|sigma0": {
+        "angle_valid_fraction": 0.0,
+        "displacement": 0.0,
+        "length": 0.0
+      },
+      "A|sigma50": {
+        "angle_valid_fraction": 0.0,
+        "displacement": 0.0373108086333431,
+        "length": 4.776704043257032
+      }
+    }
+  },
+  "degrees": [
+    0
+  ],
+  "figures": [
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/phase1/smoke/figures/fig_stride_curves_degree0.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/phase1/smoke/figures/fig_confusion_compact_degree0.png"
+  ],
+  "grid": {
+    "classes": [
+      "return",
+      "ramp",
+      "jump"
+    ],
+    "degrees": [
+      0
+    ],
+    "families": [
+      "A",
+      "B"
+    ],
+    "metric": "bottleneck_linf",
+    "representations": [
+      "compact",
+      "speed_history",
+      "complete_distances",
+      "recurrence_summary",
+      "raw_geometry_flat",
+      "raw_geometry_summary",
+      "moments_flat",
+      "moments_summary",
+      "moment_signature",
+      "moment_signature_time"
+    ],
+    "seed_namespaces": {
+      "test_confirmatory_start": 10000,
+      "test_exploratory": [
+        3000,
+        3039
+      ],
+      "train": [
+        1000,
+        1039
+      ],
+      "validation": [
+        2000,
+        2019
+      ]
+    },
+    "sigmas": [
+      0.0,
+      0.05
+    ],
+    "stage": "smoke",
+    "strides": [
+      1
+    ]
+  },
+  "metrics_file": "metrics.parquet",
+  "n_control_rows": 100,
+  "n_ok_rows": 240,
+  "n_rows": 340,
+  "n_trajectories": 46,
+  "notes": [
+    "trajectory generation may be cached; timings record stored cold-cache costs when available",
+    "train, validation, and test use seed 11 in the smoke stage, which checks construction and cost rather than comparative accuracy"
+  ],
+  "peak_ram_bytes": 190828544,
+  "preprocessing_file": "preprocessing.npz",
+  "probe": {
+    "degree": 0,
+    "peak_ram_bytes": 123879424,
+    "seconds": 18.094204320994322,
+    "stride": 1,
+    "trajectory_id": "A_jump_11_sigma0"
+  },
+  "run_id": "smoke-37d8df5bcf60",
+  "seed": 11,
+  "selection_table_file": "selection_table.parquet",
+  "split_manifest_file": "split_manifest.csv",
+  "stage": "smoke",
+  "table_format": "parquet",
+  "test_cell_table": [
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "compact",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 0.3937007874015748
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "complete_distances",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moment_signature",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moment_signature_time",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moments_flat",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moments_summary",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_flat",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_summary",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "recurrence_summary",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "speed_history",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "compact",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 0.010498687664041995
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "complete_distances",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moment_signature",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moment_signature_time",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moments_flat",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "moments_summary",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_flat",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_summary",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "recurrence_summary",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "A",
+      "n_trajectories": 3,
+      "representation": "speed_history",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "compact",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 0.3359580052493438
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "complete_distances",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moment_signature",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moment_signature_time",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moments_flat",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moments_summary",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_flat",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_summary",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "recurrence_summary",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "speed_history",
+      "sigma": 0.0,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "compact",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 0.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "complete_distances",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moment_signature",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moment_signature_time",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moments_flat",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "moments_summary",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_flat",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "raw_geometry_summary",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "recurrence_summary",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    },
+    {
+      "degree": 0,
+      "error": 0.0,
+      "family": "B",
+      "n_trajectories": 3,
+      "representation": "speed_history",
+      "sigma": 0.05,
+      "split": "test",
+      "stride": 1,
+      "valid_fraction": 1.0
+    }
+  ],
+  "test_equal_weight": {
+    "compact": 0.0,
+    "complete_distances": 0.0,
+    "moment_signature": 0.0,
+    "moment_signature_time": 0.0,
+    "moments_flat": 0.0,
+    "moments_summary": 0.0,
+    "raw_geometry_flat": 0.0,
+    "raw_geometry_summary": 0.0,
+    "recurrence_summary": 0.0,
+    "speed_history": 0.0
+  },
+  "translation_check": [
+    {
+      "base_seed": 11,
+      "control": "translation",
+      "degree": 0,
+      "family": "A",
+      "filtration_range": 0.2104695169176629,
+      "max_distance": 0.0,
+      "n_frames": 129,
+      "passed": true,
+      "sigma": 0.0,
+      "tolerance": 1e-07
+    },
+    {
+      "base_seed": 11,
+      "control": "translation",
+      "degree": 0,
+      "family": "A",
+      "filtration_range": 0.36856922481027776,
+      "max_distance": 0.0,
+      "n_frames": 129,
+      "passed": true,
+      "sigma": 0.05,
+      "tolerance": 1e-07
+    }
+  ],
+  "wall_seconds": 168.709434270997,
+  "workers": 4
+}

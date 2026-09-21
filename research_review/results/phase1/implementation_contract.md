@@ -199,7 +199,7 @@ Details.
   matrix is the stride-1 matrix subsampled at indices `0, s, 2s, ...` when a cached stride-1
   matrix is supplied, otherwise computed directly. Include an optional argument
   `distance_matrix=None` to avoid recomputation; if `None`, compute the full pairwise matrix.
-- `compact` (11 features): `L`, `R`, `eta`; mean, std, max of `nu`; mean signed speed-change,
+- `compact` (12 features): `L`, `R`, `eta`; mean, std, max of `nu`; mean signed speed-change,
   mean absolute speed-change, max absolute speed-change; mean `cos(theta)` over valid angles;
   angle-valid fraction; efficiency-valid flag (`L > 2 (T-1) e`). This resolves the inherited
   "six speed and speed-change summaries" ambiguity by adding the mean signed speed-change to the

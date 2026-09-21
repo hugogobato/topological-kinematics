@@ -1,0 +1,406 @@
+schema_version: "1.0"
+artifact: "WP-1.2 claims-to-tests matrix"
+phase: "Phase 1"
+work_package: "WP-1.2"
+gate: "G1"
+date: "2026-09-20"
+authority:
+  - "research_review/Pilot_Experiment_Specification.md"
+  - "research_review/preregistration_draft.md"
+  - "research_review/assumption_ledger.yaml"
+  - "research_review/metric_interface.md"
+  - "research_review/results/phase1/implementation_contract.md"
+  - "research_review/results/phase1/baseline_protocol.md"
+status_vocabulary:
+  claim_status: ["operational", "withdrawn", "open"]
+  stage: ["smoke", "exploratory", "confirmatory"]
+  gate_status: ["GO", "CONDITIONAL GO", "PIVOT", "INCREMENTAL-ONLY", "KILL", "INDETERMINATE"]
+outcome_inspection:
+  inspected: false
+  statement: >-
+    No outcome label, prediction, error rate, or comparative result from any stage has been
+    inspected or generated at the time this matrix is frozen. All pass and fail rules below are
+    predeclared conditions, not results. The pilot package beyond the Phase 0 artifacts does not
+    exist yet and no smoke run has occurred.
+freeze:
+  status: "frozen_before_outcome_inspection"
+  protocol: "research_review/results/phase1/baseline_protocol.md"
+  protocol_sha256: "1a31cb509bad64b0d9584cde997127c01d46af3d21d21469f8d8885c2246fdd9"
+  route_freeze_record: "research_review/results/g3/route_freeze.md"
+  confirmatory_authorized_only_after_route_freeze: true
+
+claims:
+  - id: C1
+    statement: "A finite diagram sequence is a metric-valued discrete path"
+    plan_status: "GO under declared metric and conventions"
+    status: "operational"
+    gate: "G0 passed; re-verified at smoke"
+    falsifier: >-
+      A declared-domain input on which the frozen metric violates identity, symmetry, or the
+      triangle inequality beyond the declared numerical zero, or a compact path quantity that is
+      not computable from the frozen definitions.
+    tests:
+      - test_id: "T-C1-01"
+        stage: "smoke"
+        representations: ["compact"]
+        metric: "Exact agreement of compact L, R, eta, and nu summaries with PathDiagnostics and the Phase 0 witness values."
+        pass_fail_rule: >-
+          PASS if all Phase 0 witness and metric tests pass and compact L, R, eta agree with
+          path_diagnostics within 1e-9 relative tolerance on every smoke trajectory, with no
+          undeclared NaN. FAIL blocks all learned claims at G1.
+        artifacts:
+          - "research_review/results/phase1/smoke/"
+          - "tests/test_features.py"
+          - "research_review/results/phase0/witness/witness_results.json"
+        timing: "before any exploratory outcome is opened"
+        dependencies: ["WP-0.2", "A4", "A5"]
+      - test_id: "T-C1-02"
+        stage: "smoke"
+        representations: ["all"]
+        metric: "Postprocessed feature_dim per (representation, family, sigma, stride, degree) cell."
+        pass_fail_rule: >-
+          PASS if feature_dim is constant within each cell and equal to the baseline_protocol.md
+          Section 7 schema for every representation, and an independent rerun obtains identical
+          dimensions. FAIL resets the affected empirical results.
+        artifacts:
+          - "research_review/results/phase1/smoke/manifest.json"
+          - "research_review/results/phase1/baseline_protocol.md"
+        timing: "before any exploratory outcome is opened"
+        dependencies: ["A1", "A4", "A5"]
+
+  - id: C2
+    statement: "nu, L, R, eta are meaningful summaries"
+    plan_status: "GO as operational definitions; routine mathematically"
+    status: "operational"
+    gate: "G0 for definitions; sensitivity at exploratory"
+    falsifier: >-
+      A quantity that changes meaning across cells, for example eta outside [0, 1] beyond the
+      declared pseudometric bound, L not equal to the sum of adjacent distances, or an undeclared
+      NaN.
+    tests:
+      - test_id: "T-C2-01"
+        stage: "smoke"
+        representations: ["compact"]
+        metric: "Policy conformance of L, R, eta, and the speed and speed-change summaries."
+        pass_fail_rule: >-
+          PASS if R <= L within T * NUMERICAL_ZERO, 0 <= eta <= 1 + T * NUMERICAL_ZERO / L when
+          L > 0, eta is null exactly when L = 0, and no undeclared NaN appears. FAIL repairs the
+          affected quantity before exploratory work.
+        artifacts:
+          - "research_review/results/phase1/smoke/"
+          - "research_review/metric_interface.md"
+        timing: "before any exploratory outcome is opened"
+        dependencies: ["WP-0.2"]
+      - test_id: "T-C2-02"
+        stage: "exploratory"
+        representations: ["compact"]
+        metric: "Per-cell validity fraction, coverage, and rank stability of summaries under sigma and stride changes."
+        pass_fail_rule: >-
+          PASS if every quantity is total or explicitly undefined with its declared policy in all
+          primary cells. FAIL for a meaning change; the affected quantity is repaired or removed
+          from the compact representation before confirmatory seeds are opened.
+        artifacts:
+          - "research_review/results/g3/exploratory/exploratory_report.md"
+        timing: "exploratory stage only; no confirmatory seeds opened"
+        dependencies: ["A4", "A5"]
+
+  - id: C3
+    statement: "Inter-frame persistence-diagram speed is new"
+    plan_status: "Rejected by Kramar et al. Eq. (16), printed p. 10"
+    status: "withdrawn"
+    gate: "G1"
+    falsifier: >-
+      The novelty statement is precluded by Kramar et al. (2016) Eq. (16) on printed p. 10; the
+      audit fails if the withdrawn language reappears in any artifact.
+    tests:
+      - test_id: "T-C3-01"
+        stage: "smoke"
+        representations: ["none"]
+        metric: "Prohibited-language and novelty audit over protocol, preregistration, smoke, and exploratory reports."
+        pass_fail_rule: >-
+          PASS with zero occurrences of the withdrawn novelty statement. FAIL removes the language
+          before the G1 packet is signed.
+        artifacts:
+          - "research_review/results/phase1/baseline_protocol.md"
+          - "research_review/results/phase1/decision_packet_G1.md"
+        timing: "G1 prior-art lock, before outcome inspection"
+        dependencies: ["WP-1.1"]
+      - test_id: "T-C3-02"
+        stage: "smoke"
+        representations: ["none"]
+        metric: "Citation resolution: each locator resolves to a DOI or primary URL and maps to an exact equation or page."
+        pass_fail_rule: >-
+          PASS if every novelty-sensitive citation in the ledger resolves and carries an exact
+          locator. FAIL leaves the claim withdrawn and is reported as a WP-1.1 gap.
+        artifacts:
+          - "research_review/results/phase1/citation_ledger.md"
+        timing: "G1 prior-art lock, before outcome inspection"
+        dependencies: ["A3", "WP-1.1"]
+
+  - id: C4
+    statement: "A trajectory of diagrams is new"
+    plan_status: "Rejected in the broad form by vineyards and dynamic topology literature"
+    status: "withdrawn"
+    gate: "G1"
+    falsifier: >-
+      Broad trajectory novelty is precluded by Cohen-Steiner, Edelsbrunner, and Morozov (2006)
+      vineyards and by the dynamic topology literature; the audit fails if the broad claim
+      reappears without a precise intended decision use.
+    tests:
+      - test_id: "T-C4-01"
+        stage: "smoke"
+        representations: ["none"]
+        metric: "Intended decision use statement and broad-novelty language audit."
+        pass_fail_rule: >-
+          PASS if the operational decision-use sentence is present in the preregistration and this
+          protocol and no broad novelty wording appears in any artifact. FAIL blocks the G1 packet.
+        artifacts:
+          - "research_review/results/phase1/baseline_protocol.md"
+          - "research_review/preregistration_draft.md"
+          - "research_review/results/phase1/citation_ledger.md"
+        timing: "G1 prior-art lock, before outcome inspection"
+        dependencies: ["A3", "WP-1.1"]
+
+  - id: C5
+    statement: "Scalar speed-change a_t is useful"
+    plan_status: "Open empirical question; valid as a finite difference of scalar speed"
+    status: "open"
+    gate: "G3"
+    falsifier: >-
+      The matched-speed ordering control shows no information beyond the matched speed summaries,
+      or the predeclared speed-change ablation removes no decision value.
+    tests:
+      - test_id: "T-C5-01"
+        stage: "exploratory"
+        representations: ["compact", "speed_history", "compact_ablation_no_speed_change"]
+        metric: "Separation of the matched-speed ordering control (matched_forward versus matched_folded) under identical learners and identical inputs."
+        pass_fail_rule: >-
+          Control results are reported outside the three-class accuracy calculation. If no
+          representation separates the ordering beyond the matched speed summaries, C5 is marked
+          not supported; the speed-change quantity remains a valid operational statistic with no
+          claimed advantage.
+        artifacts:
+          - "research_review/results/g3/nulls/"
+          - "research_review/results/g3/exploratory/exploratory_report.md"
+        timing: "exploratory stage only"
+        dependencies: ["A1", "A4", "A5"]
+      - test_id: "T-C5-02"
+        stage: "confirmatory"
+        representations: ["compact", "compact_ablation_no_speed_change"]
+        metric: "Paired cell-averaged macro balanced error difference for the predeclared speed-change ablation."
+        pass_fail_rule: >-
+          Report the paired interval and per-cell table. C5 is supported only if the ordering
+          control separates and the ablation removes no parsimony-relevant or superiority-relevant
+          advantage. This test is not a GO condition and never changes the primary decision rule.
+        artifacts:
+          - "research_review/results/g3/confirmatory/"
+        timing: "confirmatory stage, after the route freeze"
+        dependencies: ["A4", "A5"]
+
+  - id: C6
+    statement: "theta_t identifies turning or direction"
+    plan_status: "Unsupported without extra structure"
+    status: "open"
+    gate: "G0 fixed the diagnostic name; empirical evaluation at G3"
+    falsifier: >-
+      Near-zero steps or equal-distance paths with different intermediate order make the angle
+      unstable or order-dependent while supplying no orientation, and any direction wording fails
+      the audit.
+    tests:
+      - test_id: "T-C6-01"
+        stage: "smoke"
+        representations: ["compact"]
+        metric: "Angle range, clip and anomaly flags, straight and reversal retention, and near-zero instability reproduction."
+        pass_fail_rule: >-
+          PASS if every valid theta lies in [0, pi], clipping and anomaly flags are recorded,
+          straight and reversal cases are reported, and the near-zero instability witness
+          reproduces. FAIL repairs the implementation before exploratory work.
+        artifacts:
+          - "research_review/results/phase1/smoke/"
+          - "research_review/results/phase0/witness/witness_results.json"
+        timing: "before any exploratory outcome is opened"
+        dependencies: ["WP-0.2"]
+      - test_id: "T-C6-02"
+        stage: "smoke"
+        representations: ["compact"]
+        metric: "Direction-language audit and order-preserving clock invariance of theta."
+        pass_fail_rule: >-
+          PASS with zero direction claims in any artifact and theta unchanged under an
+          order-preserving timestamp change, since theta depends only on distances. FAIL removes
+          the wording or repairs the computation.
+        artifacts:
+          - "research_review/results/phase1/decision_packet_G1.md"
+          - "research_review/results/g3/exploratory/exploratory_report.md"
+        timing: "G1 prior-art lock and exploratory reporting"
+        dependencies: ["WP-1.1"]
+
+  - id: C7
+    statement: "Diagnostics identify latent physical causes"
+    plan_status: "Not identified from persistence diagrams alone"
+    status: "open"
+    gate: "G3 and G4"
+    falsifier: >-
+      Distinct raw processes share a diagram path while differing in the proposed cause, as
+      translation invariance already demonstrates for Family A.
+    tests:
+      - test_id: "T-C7-01"
+        stage: "exploratory"
+        representations: ["all"]
+        metric: "Null-process behavior and invariance controls: static z(u) = 0.5 with and without noise, Family A rigid translation, and raw-observable comparison."
+        pass_fail_rule: >-
+          PASS if static nulls generate no systematic event signal, Family A diagrams are
+          translation invariant within 1e-7 * max(1, filtration range), and no report claims
+          latent identification. FAIL triggers extraction or metric repair before G3 scoring.
+        artifacts:
+          - "research_review/results/g3/nulls/"
+          - "research_review/results/phase1/smoke/"
+        timing: "exploratory stage"
+        dependencies: ["A1", "A2"]
+      - test_id: "T-C7-02"
+        stage: "smoke"
+        representations: ["none"]
+        metric: "Prohibited identification-language audit."
+        pass_fail_rule: >-
+          PASS with zero occurrences of latent-cause identification as a claim. FAIL blocks the
+          G1 packet until the language is removed.
+        artifacts:
+          - "research_review/results/phase1/decision_packet_G1.md"
+        timing: "G1 prior-art lock, before outcome inspection"
+        dependencies: ["WP-1.1"]
+
+  - id: C8
+    statement: "The collection is domain independent"
+    plan_status: "Only a portability hypothesis"
+    status: "open"
+    gate: "G3"
+    falsifier: >-
+      Sign reversal of delta across families, or a family-specific deterioration above 0.05 under
+      the simultaneous Bonferroni bounds.
+    tests:
+      - test_id: "T-C8-01"
+        stage: "confirmatory"
+        representations: ["compact", "incumbent", "eligible_comparators"]
+        metric: "Per-family cell-averaged delta with paired base-seed cluster bootstrap, Bonferroni-adjusted to 97.5 percent per family."
+        pass_fail_rule: >-
+          GO requires the upper endpoint of each family interval below 0.05. A family-specific
+          deterioration above 0.05 blocks GO on both routes and blocks any portability claim; the
+          outcome may be INCREMENTAL-ONLY or PIVOT per the G3 memo.
+        artifacts:
+          - "research_review/results/g3/confirmatory/"
+          - "research_review/results/g3/metrics.parquet"
+          - "research_review/results/g3/gate_memo.md"
+        timing: "confirmatory stage, after the route freeze"
+        dependencies: ["A5"]
+
+  - id: C9
+    statement: "The collection improves a real decision"
+    plan_status: "Unproven"
+    status: "open"
+    gate: "G4"
+    falsifier: >-
+      No practical gain on the WP-4.1 operating metric at the held-out application operating
+      point, or disappearance of the gain on the replication task.
+    tests:
+      - test_id: "T-C9-01"
+        stage: "smoke"
+        representations: ["none"]
+        metric: "Application-impact language scope audit for pilot artifacts."
+        pass_fail_rule: >-
+          PASS with zero application-impact claims. The substantive test requires WP-4.1 and
+          WP-4.2 data, is not authorized at G1, and leaves C9 open if data are inaccessible.
+        artifacts:
+          - "research_review/results/phase1/decision_packet_G1.md"
+        timing: "G1 scope audit; substantive evaluation deferred"
+        dependencies: ["WP-4.1", "WP-4.2"]
+
+  - id: C10
+    statement: "A new calculus or acceleration theory follows"
+    plan_status: "No"
+    status: "withdrawn"
+    gate: "G5"
+    falsifier: >-
+      No nonvacuous target survives selection, existing results already cover the target, or a
+      bounded-variation path has no convergent difference quotient.
+    tests:
+      - test_id: "T-C10-01"
+        stage: "smoke"
+        representations: ["none"]
+        metric: "Theory-language audit and G5 deferral check."
+        pass_fail_rule: >-
+          PASS with zero acceleration-theory or canonical-kinematics claims before G5. FAIL removes
+          the language; the claim remains withdrawn.
+        artifacts:
+          - "research_review/results/phase1/decision_packet_G1.md"
+          - "research_review/results/g3/gate_memo.md"
+        timing: "G1 prior-art lock and G3 memo"
+        dependencies: ["WP-1.1"]
+
+source_obligations:
+  - obligation_id: "SO-01"
+    statement_must_not_be_claimed: "Inter-frame persistence-diagram speed is a new construction."
+    precluding_source: "Kramar et al. (2016), Definition 5.1 p. 7, Eq. (10) p. 8, Eq. (16) p. 10."
+    url: "https://doi.org/10.1016/j.physd.2016.02.003"
+    applies_to_claims: ["C3", "C10"]
+    enforcement: "G1 citation and prohibited-language audit"
+  - obligation_id: "SO-02"
+    statement_must_not_be_claimed: "Studying changes in diagram speed over time is new."
+    precluding_source: "Kramar et al. (2016), Section 6, printed pp. 9-11."
+    url: "https://doi.org/10.1016/j.physd.2016.02.003"
+    applies_to_claims: ["C3", "C5"]
+    enforcement: "G1 citation audit; C3 remains withdrawn"
+  - obligation_id: "SO-03"
+    statement_must_not_be_claimed: "A parameterized trajectory or family of persistence diagrams is a new object."
+    precluding_source: "Cohen-Steiner, Edelsbrunner, and Morozov (2006), Section 2 p. 3 and Sections 3-4 pp. 3-7 (vineyards); Xian et al. (2021) dynamic metric spaces."
+    url: "https://doi.org/10.1145/1137856.1137877"
+    applies_to_claims: ["C4"]
+    enforcement: "G1 citation audit; precise decision use required in its place"
+  - obligation_id: "SO-04"
+    statement_must_not_be_claimed: "Time-indexed persistence summaries and their continuity under sampling are new."
+    precluding_source: "Xian, Adams, Topaz, and Ziegelmeier (2021), Section 4.1 p. 10, Definition 4.1 p. 11, Section 6.3 p. 26, Lemmas 7.3-7.4 and Theorem 7.5 pp. 31-32."
+    url: "https://doi.org/10.3934/fods.2021033"
+    applies_to_claims: ["C4", "C8"]
+    enforcement: "G1 citation audit"
+  - obligation_id: "SO-05"
+    statement_must_not_be_claimed: "Broad topological-velocity novelty, including a universal theory of temporal persistence velocity."
+    precluding_source: "Khormali (2025), Sections 3.2-3.4 and Theorem 4.5 (preprint); Malhotra et al. (2026), Eqs. (2) and methods (preprint); Bernal-Alvarado et al. (2026), Eqs. (11)-(15) p. 10 (preprint)."
+    url: "https://arxiv.org/abs/2512.14615"
+    applies_to_claims: ["C3", "C4", "C10"]
+    enforcement: "G1 citation audit; cite all three as source-reported preprints, application-specific, no universal theory"
+  - obligation_id: "SO-06"
+    statement_must_not_be_claimed: "The Giusti and Lee Lipschitz-free isometry supports arbitrary W_p or bottleneck stability, differentiability of diagram-valued paths, or a canonical acceleration."
+    precluding_source: "Giusti and Lee (2021), Definition 4.2 and Theorem 4.2 pp. 10-11 (partial 1-Wasserstein quotient only); signature results pp. 12-20."
+    url: "https://arxiv.org/abs/2108.02727"
+    applies_to_claims: ["C6", "C10"]
+    enforcement: "G1 citation audit; signatures used only as an explicit finite-vector comparator"
+  - obligation_id: "SO-07"
+    statement_must_not_be_claimed: "The comparison angle supplies direction, signed turning, or physical acceleration."
+    precluding_source: "Frozen internal conventions: a metric triangle supplies no direction; metric_interface.md Sections 3.3-3.4 and 7 define no orientation, and assumption_ledger.yaml lists the prohibited language."
+    url: "research_review/metric_interface.md"
+    applies_to_claims: ["C6", "C10"]
+    enforcement: "G1 and G3 prohibited-language audits; theta and tau reported together only"
+  - obligation_id: "SO-08"
+    statement_must_not_be_claimed: "The delta-dense subsample theorem provides a universal finite-sample guarantee for the pipeline."
+    precluding_source: "Kramar et al. (2016), Theorem 7.3 p. 14 is a bottleneck perturbation bound for a delta-dense subsample; it supports a sampling stress test only."
+    url: "https://doi.org/10.1016/j.physd.2016.02.003"
+    applies_to_claims: ["C2", "C8"]
+    enforcement: "G1 citation audit; sampling claims limited to the stress test"
+  - obligation_id: "SO-09"
+    statement_must_not_be_claimed: "Finite persistence moments are injective or identify the latent mechanism."
+    precluding_source: "Frozen moment semantics in implementation_contract.md Section 6; plan Section 3 fourth issue (persistence summaries do not identify a unique latent mechanism)."
+    url: "research_review/Topological_Kinematics_Research_Plan.md"
+    applies_to_claims: ["C7"]
+    enforcement: "G1 audit; moments remain a comparator only"
+  - obligation_id: "SO-10"
+    statement_must_not_be_claimed: "Any result of the pilot establishes canonical kinematics, domain independence as an established property, or application impact."
+    precluding_source: "Plan Sections 1, 3, and 5 and assumption_ledger.yaml prohibited_language; G0 decision record scope."
+    url: "research_review/results/phase0/G0_decision.md"
+    applies_to_claims: ["C8", "C9", "C10"]
+    enforcement: "G1, G3, and G4 scope audits; portability hypothesis language only"
+
+notes: >-
+  Representation names follow implementation_contract.md Section 6. The ablation name
+  compact_ablation_no_speed_change is a reporting variant of the proposed method used only by
+  T-C5-02; it is not one of the ten frozen representations, is not eligible as incumbent, and
+  never enters the primary GO decision. All artifacts marked as planned paths become real files
+  only when the corresponding stage runs; no artifact listed here has been created by this
+  matrix.

@@ -1,0 +1,210 @@
+schema_version: 1
+artifact: "WP-1.1 primary-source citation ledger and implementation availability (agent A3)"
+date: "2026-09-20"
+method_note: "Local PDFs were extracted with pdftotext -layout into /tmp/opencode/tk_pdfs. Each locator was checked against the displayed equation, definition, or theorem on the cited printed page. Printed page numbers are the folios shown in the supplied PDF where present; where a supplied PDF has no folios the page number means the position in the local PDF page sequence, and the published pagination is given in the note. The image-only email.pdf has no text layer and was rendered with pdftoppm and read as page images. Web availability checks were performed on 2026-09-20; an inaccessible repository is never treated as evidence that no implementation exists."
+sources:
+  - id: CSEM2006
+    citation: "Cohen-Steiner, Edelsbrunner, Morozov, 'Vines and vineyards by updating persistence in linear time', Proc. 22nd Annual Symposium on Computational Geometry (SCG 2006), pp. 119-126, DOI 10.1145/1137856.1137877"
+    local_file: "morozov-vineyards-socg06.pdf"
+    claims:
+      - claim: "Stability d_B(D_p(f),D_p(g)) <= ||f-g||_infinity (Section 2, printed p. 3, DOI 10.1145/1137856.1137877)"
+        locator: "Stability Theorem, local PDF p. 3 (Section 2 spans local pp. 2-3); DOI resolves to SCG 2006 pp. 119-126"
+        status: verified
+        note: "Exact statement found at the top of local p. 3; the published DOI was resolved via doi.org and the author record at https://www.mrzv.org/publications/vineyards/ on 2026-09-20. The local PDF carries no printed folios, so 'printed page N' here is the local PDF page order (published page = 118 + N when the article page range is used)."
+      - claim: "Secs. 3-4, pp. 3-7, update pairings and define vineyards, vines, and knees"
+        locator: "Section 3, local pp. 3-5 (Pairing Uniqueness Lemma p. 3, transposition cases p. 4, worst-case O(n) update p. 5); Section 4, local pp. 5-6 (Combinatorial Stability Theorem p. 5; vineyard, vine, open/half-open/closed vine, and knee definitions p. 5; protein-folding application pp. 5-6); Section 5 discussion begins local p. 7"
+        status: verified
+        note: "All cited objects are defined exactly as stated; the page range pp. 3-7 contains Sections 3 and 4 plus the start of Section 5, and the exact vineyard/vine/knee definitions are on local p. 5."
+      - claim: "Section 2 claim table: 'A trajectory of diagrams is new' is rejected in the broad form by vineyards and the dynamic topology literature"
+        locator: "Vineyard definition, local PDF p. 5; Xian et al. Section 4.1, printed p. 10"
+        status: verified
+        note: "A vineyard is already a one-parameter family of diagrams with tracked points, so only a narrower decision or diagnostic claim can be novel."
+  - id: KRAMAR2016
+    citation: "Kramar, Levanger, Tithof, Suri, Xu, Paul, Schatz, Mischaikow, 'Analysis of Kolmogorov flow and Rayleigh-Benard convection using persistent homology', Physica D 334 (2016) 82-98, DOI 10.1016/j.physd.2016.02.003"
+    local_file: "1-s2.0-S0167278916000270-am.pdf"
+    claims:
+      - claim: "Definition 5.1, printed p. 7, defines the bottleneck and degree-p Wasserstein diagram distances"
+        locator: "Definition 5.1, printed p. 7, Eqs. (8)-(9); d_B <= d_{W_p} stated as Eq. (12), printed p. 8"
+        status: verified
+        note: "Eq. (8) is the bottleneck max-inf-sup over bijections; Eq. (9) is the degree-p Wasserstein distance using the L-infinity ground norm with diagonal copies allowed."
+      - claim: "PH stability, Eq. (10), printed p. 8"
+        locator: "Eq. (10), printed p. 8: d_B(PD(f),PD(g)) <= sup_x |f(x)-g(x)|"
+        status: verified
+        note: "The accepted-manuscript PDF numbers printed pages 1-21, matching the local page order; the published pagination is Physica D 334, 82-98. Eq. (11) on the same page gives d_B <= 2*epsilon for a numerical approximation with L-infinity error epsilon."
+      - claim: "Eq. (16), printed p. 10, defines s_*(t_i) = d_*(PD(f_i),PD(f_{i+1}))/Delta t for * in {B,W1,W2} and calls it an average speed in diagram space"
+        locator: "Eq. (16), printed p. 10"
+        status: verified
+        note: "Verbatim match; the surrounding text says the quantity 'can be interpreted as an average speed in the space of persistence diagrams over the time interval [t_i, t_{i+1}]'."
+      - claim: "Studies speed changes in Section 6, printed pp. 9-11"
+        locator: "Section 6 begins on printed p. 8 and ends on printed p. 11; the derivative-sign comparison of s_B, s_W1, s_W2 is on printed p. 10; the Figure 10 W2 distance matrix and its discussion begin on printed p. 10, the Figure 9 speed profiles and normalized speed discussion continue on printed p. 11"
+        status: verified
+        note: "The cited pp. 9-11 are inside Section 6 and contain the speed-change analysis; for citation precision, the section and the speed definition begin one page earlier (p. 8), and the derivative discussion and the metric-dependence warning are on p. 10."
+      - claim: "Theorem 7.3, printed p. 14: a delta-dense subsample of a metric point cloud gives a bottleneck perturbation bound"
+        locator: "Theorem 7.3, printed p. 14: if Y is a delta-dense subsample of point cloud X, then d_B(PD(X,d),PD(Y,d)) < delta; Definitions 7.1-7.2 on the same page"
+        status: verified
+        note: "The statement is present as claimed and is attributed in the paper to reference [28]; it is a source-reported theorem about metric point clouds, not about finite-difference speed consistency."
+      - claim: "Section 2 claim table: 'Inter-frame persistence-diagram speed is new' is rejected by Kramar et al. Eq. (16), printed p. 10"
+        locator: "Eq. (16), printed p. 10"
+        status: verified
+        note: "The formula is exactly the proposed local speed nu_t = d(D_t,D_{t+1})/Delta t, so the novelty rejection is correct."
+  - id: XIAN2021
+    citation: "Xian, Adams, Topaz, Ziegelmeier, 'Capturing dynamics of time-varying data via topology', Foundations of Data Science 4(1), 1 (published online 13 December 2021), DOI 10.3934/fods.2021033; supplied manuscript is arXiv:2010.05780v2 (28 June 2021)"
+    local_file: "2010.05780v2.pdf"
+    claims:
+      - claim: "Section 4.1, printed p. 10: dynamic metric spaces, time-varying persistence modules, GH continuity, and the remark that a vineyard contains more information than a time-varying persistence module"
+        locator: "Section 4.1, printed p. 10, including the definition of a time-varying metric space as a GH-continuous map t -> X_t and of a time-varying persistence module as a bottleneck-continuous map t -> V_t"
+        status: verified
+        note: "The local v2 front matter contains a placeholder DOI (doi:10.3934/xx.xxxxxxx, pp. X-XX), so the page locators in the plan refer to this v2 pagination, not to the published FoDS pagination; the published DOI resolves via doi.org as verified on 2026-09-20."
+      - claim: "Definition 4.1, printed p. 11: crocker stack f_V(t,epsilon,alpha) = rank(V_t(epsilon-alpha) -> V_t(epsilon+alpha))"
+        locator: "Definition 4.1, printed p. 11"
+        status: verified
+        note: "Verbatim match, including the domain [0,T] x [0,infinity) x [0,infinity) and the non-increasing-in-alpha property."
+      - claim: "Section 6.3, printed p. 26: d_B(PH(VR(X)),PH(VR(Y))) <= 2 d_GH(X,Y)"
+        locator: "Section 6.3, printed p. 26, displayed inequality (attributed to Theorem 5.2 of reference [18])"
+        status: verified
+        note: "The same page notes the analogous Cech-complex bound and the used (not exact) application of d_GH <= d_H."
+      - claim: "Lemmas 7.3-7.4 and Theorem 7.5, printed pp. 31-32"
+        locator: "Lemma 7.3 statement and proof, printed p. 31; Lemma 7.4 statement at the foot of printed p. 31, proof on printed p. 32; Theorem 7.5 (continuity of crocker stacks under d_GH^infinity <= delta/2) on printed p. 32"
+        status: verified
+        note: "Lemma 7.3 gives d_b^p(PH(VR(X)),PH(VR(Y))) <= 2 d_GH^p(X,Y) for 1 <= p <= infinity; the erosion inequalities and the crocker-stack theorem are as described."
+      - claim: "Example 2, printed p. 30, shows instability of some visual plots"
+        locator: "Example 2 begins at the foot of printed p. 29; the instability computation (beta_0 differs by 3 for n=4 and can be made arbitrarily large for large n) is on printed p. 30"
+        status: verified
+        note: "The example shows that unsmoothed Betti or crocker plots are not stable under matrix distances; the related note that crocker stacks are not continuous in the Euclidean norm used for vectorization is on printed p. 32."
+      - claim: "Section 4.1/A section-level claim: continuity of time-indexed summaries must be stated at the level of the chosen summary"
+        locator: "Section 4.1, printed p. 10; Example 2, printed p. 30; Euclidean-norm caveat printed p. 32"
+        status: verified
+        note: "Supported by the discontinuity example and by the explicit vectorization caveat on p. 32."
+  - id: GIUSTILEE2021
+    citation: "Giusti and Lee, 'Signatures, Lipschitz-free spaces, and paths of persistence diagrams', published as SIAM Journal on Applied Algebra and Geometry 7(4), 828-866, DOI 10.1137/22M1528471 (online 14 December 2023); supplied manuscript is arXiv:2108.02727v2 (16 November 2023)"
+    local_file: "2108.02727v2.pdf"
+    claims:
+      - claim: "Eq. (3.1), printed p. 7: Omega = {(b,d) in R^2 : b <= d}, Delta = {(x,x)} subset Omega"
+        locator: "Eq. (3.1), printed p. 7; partial p-Wasserstein by matchings on pp. 7-8 and by couplings in Eq. (3.2), printed p. 8"
+        status: verified
+        note: "Verbatim match; the diagonal-collapsed quotient and the 1-Wasserstein completion follow at pp. 9-10."
+      - claim: "Quotient construction, printed pp. 9-10"
+        locator: "Definition 4.1, printed p. 9 with the quotient metric formula displayed on printed p. 10"
+        status: verified
+        note: "The quotient metric is d~(x,y) = min{d(x,y), d(x,A) + d(y,A)} with the diagonal collapsed to a basepoint."
+      - claim: "Definition 4.2 and Theorem 4.2, printed pp. 10-11, give an isometric embedding of finite persistence diagrams into a Lipschitz-free space"
+        locator: "Definition 4.2, printed p. 10 (Lipschitz-free space as the completion of V_fin under the 1-Wasserstein norm); Theorem 4.2, printed p. 11 (the inclusion D_fin^+(Z) into F(Z) is an isometric embedding)"
+        status: verified
+        note: "The isometry is for the partial 1-Wasserstein norm only, with no claim for arbitrary W_p or bottleneck; this confirms the plan's Section 3 restriction of the theorem to partial W1."
+      - claim: "Section 5, printed pp. 12-15: bounded-variation paths, path signature, tree-like equivalence, and injective/universal/characteristic normalized signatures"
+        locator: "Section 5, printed pp. 12-15; Definition 5.1 and Eq. (5.1) for p-variation on printed p. 12; Definition 5.2 and Eq. (5.4) for the signature on printed p. 13, with reparametrization invariance noted after Definition 5.2; Definitions 5.3-5.4, Theorem 5.1 (tree-like equivalence), and Theorems 5.3-5.4 on printed p. 14; Remark 5.2 and the Section 6 heading on printed p. 15"
+        status: verified
+        note: "Section span confirmed. Audit correction: foundations.md places Theorems 5.3-5.4 on printed p. 15, but the displayed theorem statements are on printed p. 14; p. 15 contains Remark 5.2 and the start of Section 6. The plan's Section 5 page range is correct."
+      - claim: "Definition 5.1 and Definition 5.2, printed pp. 12-13"
+        locator: "Definition 5.1 printed p. 12; Definition 5.2 printed p. 13"
+        status: verified
+        note: "Bounded p-variation paths of a Banach space and the iterated-integral signature, exactly as cited."
+      - claim: "Section 6, printed pp. 16-20: persistence moments, injectivity and Lipschitz stability, truncation control, and the composition theorem"
+        locator: "Section 6 actually spans printed pp. 15-19 (heading on printed p. 15); moment definition, Example 6.1, and Definition 6.1 on printed p. 16; Theorem 6.1 and Lemma 6.1 on printed p. 17; Theorem 6.2 and Definition 6.2 on printed pp. 18-19"
+        status: corrected
+        note: "The section start is printed p. 15, not p. 16, and it ends on printed p. 19, not p. 20 (printed p. 20 starts Section 7). All cited results are present; use pp. 15-19 for the section and pp. 16-18 for the moment and truncation results."
+      - claim: "Theorem 6.1 and Theorem 6.2, printed pp. 17-18"
+        locator: "Theorem 6.1 printed p. 17 (the moment map is Lipschitz and injective on bounded persistence measures); Theorem 6.2 printed p. 18 (the truncated path signature composed with the moment map is Lipschitz on paths of bounded 1-variation)"
+        status: verified
+        note: "Lemma 6.1 truncation bound is also on printed p. 17; Example 6.1 (pure-birth moments are not Lipschitz) is on printed p. 16."
+      - claim: "Application to the 3D D'Orsogna swarm model, Section 7"
+        locator: "Section 7 heading printed p. 20; 7.1-7.2 on printed p. 21 (500 simulations, T = 200 time points, 3D D'Orsogna model, Vietoris-Rips up to H2); feature details and signature truncation at level m = 3 on printed p. 22; 7.4 heterogeneous splits and agent subsampling normalization on printed p. 23; 7.6 KME comparison on printed p. 24; Section 8 conclusion printed p. 25"
+        status: verified
+        note: "The plan's foundations note says Sections 7.1-7.5 occupy printed pp. 21-24; in fact 7.6 begins on printed p. 24 and 7.1-7.5 close on printed p. 23. The application description itself is accurate."
+      - claim: "Citation year and venue"
+        locator: "Published record: SIAM J. Appl. Algebra Geom. 7(4), 828-866, online 2023-12-14, DOI 10.1137/22M1528471 (Crossref, checked 2026-09-20)"
+        status: corrected
+        note: "The plan cites the 2021 arXiv posting only; for publication use the 2023 SIAM citation or the supplied arXiv v2 (16 November 2023). The supplied PDF does not carry the journal DOI, but the published DOI now exists."
+  - id: KHORMALI2025
+    citation: "Khormali, 'Hierarchical Persistence Velocity for Network Anomaly Detection: Theory and Applications to Cryptocurrency Markets', arXiv:2512.14615v2 (17 December 2025)"
+    local_file: "2512.14615v2.pdf"
+    claims:
+      - claim: "Sections 3.2-3.4 and Definition 3.1 define a filtration-scale birth/death velocity for a single diagram"
+        locator: "Sections 3.2 HNAV and 3.3 HWNAV on printed p. 5; Section 3.4 OW-HNPV on printed p. 6; Definition 3.1 spans printed pp. 6-7; Example 1 and the O(n m n_sub) cost statement on printed p. 7"
+        status: verified
+        note: "The overlap weight w_i^{j,l} = length([b_i,d_i) intersect [t_jl,t_jl+1)) and the normalization by total persistence P(D) = sum(d_i - b_i) are exactly as described. The plan's range starts at p. 4, which contains the Section 3 introduction and Section 3.1."
+      - claim: "Theorem 4.5, printed pp. 8-14: stability of OW-HNPV under the L1 1-Wasserstein distance"
+        locator: "Theorem 4.5 statement on printed p. 12; proof spans printed pp. 12-14; Section 4 lemmas 4.1-4.4 span printed pp. 9-12"
+        status: corrected
+        note: "The theorem is on printed p. 12, not distributed over pp. 8-14; the displayed bound is ||H1-H2||_infinity <= 3 n_sub m / ((beta-alpha) min{P(D1),P(D2)}) * d_1^1(D1,D2)."
+      - claim: "Different velocity object, but it precludes broad novelty language around 'topological velocity'; cite as a preprint"
+        locator: "Abstract and Sections 3.2-3.4, printed pp. 4-7; arXiv record arXiv:2512.14615 clearly labels the claim 'the first velocity-based perspective on persistence diagrams'"
+        status: verified
+        note: "The paper's velocity is a within-diagram filtration-scale rate, not a distance-over-time speed, so the plan's distinction is correct; the priority claim itself is source-reported and this ledger does not certify it."
+  - id: MALHOTRA2026
+    citation: "Malhotra, Ambadkar, Gupta, Kasivel, Schwarz, Ferry, Monod, 'Tracking Representation Dynamics in Large Language Models with Persistent Homology', arXiv:2606.19542v1 (17 June 2026), 29 pages"
+    local_file: "2606.19542v1.pdf"
+    claims:
+      - claim: "Eq. (2) and methods, printed pp. 3-4 and 13: consecutive-checkpoint H1 Wasserstein activity interpreted as topological velocity"
+        locator: "Eq. (2) on printed p. 4: C = sum_{t <= T/3} v_t / sum_t v_t, where v_t is the Wasserstein distance between H1 barcodes at consecutive checkpoints, called a topological velocity; pipeline description on printed pp. 3-4; Appendix B.3 on printed p. 13: 64 overlapping subsamples of size 160, Vietoris-Rips to dimension 1, Euclidean metric, ripser for PH, and order-2 Wasserstein via persim"
+        status: verified
+        note: "The displayed topological velocity has no division by elapsed checkpoint time; with a fixed checkpoint schedule it is proportional to a speed, which matches the plan's source description. Table 1 on printed p. 11 reports that the early concentration beats the checkpoint-order null in 11 of 12 cells."
+      - claim: "Recent direct application precedent; use as a comparator template, not settled peer-reviewed priority"
+        locator: "arXiv record arXiv:2606.19542v1 (checked 2026-09-20); printed p. 1 and abstract; code repository linked on printed p. 2"
+        status: verified
+        note: "The arXiv record resolves and matches the supplied manuscript; it is an unrefereed preprint as of 2026-09-20."
+  - id: BERNAL2026
+    citation: "Bernal-Alvarado, Delepine, Pinedo Guadarrama, 'Structural Divergence of the Roman-Byzantine Trade Network, 0-1453 CE: Persistent Homology, Topological Velocity, and Criticality Indicators of Imperial Collapse', arXiv:2607.05695v1 (6 July 2026)"
+    local_file: "2607.05695v1.pdf"
+    claims:
+      - claim: "Eqs. (11)-(15), printed p. 10: explicit inter-decade W2 velocity and composite criticality indicator"
+        locator: "Eq. (11) W2(t,t+10); Eq. (12) Wdot(t) = W2(t,t+10)/Delta t with Delta t = 10 yr; Eq. (13) W_cross; Eq. (14) rho(t); Eq. (15) ICT(t) = (1/3)(chi_t/chi_max + xi_t/xi_max + Wdot_norm(t)); all on printed p. 10. An earlier ICT statement is Eq. (1) on printed p. 3"
+        status: verified
+        note: "Verbatim formulas and page confirmed; a three-point Gaussian smoothing (sigma = 1 decade) is applied to the velocity for visualization."
+      - claim: "Direct collision for temporal W2 speed; preprint and application-specific, so no universal theory follows"
+        locator: "Eqs. (11)-(12), printed p. 10; abstract and arXiv record arXiv:2607.05695v1 (checked 2026-09-20)"
+        status: verified
+        note: "The scalar W2(D_t,D_{t+10})/10yr is published in the preprint; the record is unrefereed as of 2026-09-20."
+      - claim: "Audit cross-check: Roman and Byzantine velocities use different cost units and are not absolutely comparable (dynamic_prior_art cites PDF p. 26, reference note [23])"
+        locator: "Reference note [23], printed p. 26: Roman W2 values are in orbis denarius cost units, Byzantine values in normalized units from a separate pipeline, so absolute magnitudes are not directly comparable"
+        status: verified
+        note: "The audit quotation is accurate; the paper restricts inter-period statements to relative velocities or within-period rankings."
+  - id: EMAIL2026
+    citation: "Diamantis (DAD), co-author proposal 'Topological Kinematics', Gmail printout dated 3 September 2026, local file email.pdf"
+    local_file: "email.pdf"
+    claims:
+      - claim: "The email proposes position, speed/velocity, acceleration, turning, path length, net displacement, trajectory efficiency, and structural instability as the kinematic vocabulary for a sequence of persistence diagrams"
+        locator: "email.pdf p. 1 (rendered page image; no text layer)"
+        status: verified
+        note: "Rendered at 110 dpi with pdftoppm and read as an image; the page lists the eight proposed quantities."
+      - claim: "The email defines nu_t = d(D_t,D_{t+1})/(t_{t+1}-t_t), L = sum d(D_t,D_{t+1}), R = d(D_0,D_T), eta = R/L with 0 <= eta <= 1 and L > 0, a_t^speed = (nu_t - nu_{t-1})/Delta t, and cos theta_t = (a^2+b^2-c^2)/(2ab)"
+        locator: "email.pdf p. 4, items 5-10 (rendered page image)"
+        status: verified
+        note: "Formulas match the plan exactly; the same page states 'this cannot be the whole definition of acceleration' and notes that constant-speed direction change is not captured by the scalar speed difference."
+      - claim: "The email acknowledges that diagram trajectories and consecutive Wasserstein distance as topological velocity are not new"
+        locator: "email.pdf p. 2 literature review ('simply defining consecutive Wasserstein distance as topological velocity would not be a novel contribution by itself'; 'this confirms that scalar topological velocity based on consecutive persistence diagrams already exists') and p. 3 ('the idea of a persistence-diagram trajectory itself is definitely not new')"
+        status: verified
+        note: "The plan's and foundations' attribution of this withdrawal to the email is accurate; the email also lists vineyards, Kramar, Xian, Giusti-Lee, Khormali, Malhotra, and Bernal-Alvarado as related work."
+      - claim: "The email frames stability as an open proof obligation and requires synthetic validation before real data"
+        locator: "email.pdf p. 5, items 11-13 (local instability descriptors, stability under perturbations with the epsilon_t + epsilon_{t+1} speed bound, synthetic tests) and p. 6, item 14 (real data only after synthetic validation)"
+        status: verified
+        note: "The elementary reverse-triangle-inequality bound quoted in the audits is exactly the one displayed on p. 5."
+implementation_availability:
+  - incumbent: "Cohen-Steiner, Edelsbrunner, Morozov (2006) vineyards"
+    url: "https://github.com/mrzv/dionysus"
+    status: available
+    note: "Dionysus 2, maintained by paper coauthor D. Morozov, implements vineyard updates under adjacent transpositions and linear homotopies; tutorial at https://mrzv.org/software/dionysus2/tutorial/vineyards.html (accessed 2026-09-20). An independent third-party PyPI package 'vineyards' v1.0.x (https://pypi.org/project/vineyards/) extends the 2006 kernel to kinetic point sets; it is not author-maintained and should be verified before use. The frozen pilot environment does not include Dionysus, so vineyards tracking is documentation support only."
+  - incumbent: "Kramar et al. (2016) code/data"
+    url: "https://math.ou.edu/~mkramar/publications.html"
+    status: partial
+    note: "The paper states that persistent homology computations used Perseus, which is public (https://people.maths.ox.ac.uk/nanda/perseus/, accessed 2026-09-20). No repository for the paper-specific diagram-distance, speed-profile, or second-PH pipeline and no public copy of the Kolmogorov flow or Rayleigh-Benard simulation data were found on the author page, the arXiv record (1505.06168), or by search on 2026-09-20. Per WP-1.1, absence of a located repository is not evidence that none exists; the paper-specific pipeline is treated as unavailable and is reimplemented transparently."
+  - incumbent: "Xian et al. (2021/2022) code"
+    url: "https://github.com/lxiancode/tda-crocker"
+    status: partial
+    note: "Replication repository for the paper exists and contains MATLAB Vicsek simulation code, R crocker plot and crocker stack functions, and some example clustering scripts (accessed 2026-09-20; the repository redirects from https://github.com/xianl-si/tda-crocker). The README refers to analysis scripts crocker-plot-analysis.R, crocker-stack-analysis.R, and op-analaysis.R and to a bottleneck-distance step that are not present in the repository file listing, so end-to-end replication requires gap-filling."
+  - incumbent: "Giusti and Lee (2021/2023) code"
+    url: "https://github.com/ldarrick/paths-of-persistence-diagrams"
+    status: available
+    note: "Code linked from the paper ('We develop code to perform signature kernel computations ...') contains Julia code and Python notebooks that reproduce Sections 7.5-7.6, including run_experiments.ipynb, run_heterogeneous_experiments.ipynb, kme_analysis.ipynb, and kme_timing_experiments.ipynb (accessed 2026-09-20). Published paper DOI 10.1137/22M1528471."
+  - incumbent: "Malhotra et al. (2026) code (supplementary, beyond the four required baselines)"
+    url: "https://github.com/malhotranaman/tracking-representation-dynamics-with-persistent-homology"
+    status: available
+    note: "Full pipeline released (pure numpy/scipy/analysis package, configs, tests, computed metrics, and figures); heavy artifacts such as checkpoints, activations, and diagram caches are not committed but regenerate from the provided scripts (accessed 2026-09-20)."
+  - incumbent: "Khormali (2025) code/data (supplementary)"
+    url: "https://arxiv.org/abs/2512.14615"
+    status: not found
+    note: "No code or data link appears in the PDF or the arXiv record (checked 2026-09-20). This is a not-found result only; it is not evidence that no implementation exists."
+  - incumbent: "Bernal-Alvarado et al. (2026) code/data (supplementary)"
+    url: "https://arxiv.org/abs/2607.05695"
+    status: not found
+    note: "No code link appears in the PDF or the arXiv record; source data cited are ORBIS (https://orbis.stanford.edu) and other gazetteers (checked 2026-09-20). This is a not-found result only; it is not evidence that no implementation exists."

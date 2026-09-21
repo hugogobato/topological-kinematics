@@ -1,0 +1,66 @@
+{
+  "cells": {
+    "A|0|1": 0.057546560026171124,
+    "B|0|1": 0.057937338086144374
+  },
+  "degrees": [
+    0
+  ],
+  "families": [
+    "A",
+    "B"
+  ],
+  "metric": "bottleneck_linf",
+  "moment_scaling_cells": {
+    "A|0|1": {
+      "mean": [
+        12.29606108956763,
+        0.0,
+        0.0,
+        2.6636024929657554,
+        0.0,
+        0.6191109685060261
+      ],
+      "std": [
+        0.22105142995656316,
+        1.0,
+        1.0,
+        0.08625218851097115,
+        1.0,
+        0.03283224096003196
+      ]
+    },
+    "B|0|1": {
+      "mean": [
+        5.06919309542338,
+        -0.45985432866139603,
+        0.046806093555349135,
+        0.35594804042475237,
+        -0.03710687293313898,
+        0.03115043950751606
+      ],
+      "std": [
+        0.3187856550357425,
+        0.04088995428946465,
+        0.00611077038307443,
+        0.036751745134739715,
+        0.005357085756717261,
+        0.004925984013420865
+      ]
+    }
+  },
+  "moment_scaling_population": "training-split static-noise trajectories at sigma = 0.05, the same predeclared per-cell population as the noise floor",
+  "n_distances": {
+    "A|0|1": 128,
+    "B|0|1": 128
+  },
+  "percentile": 95.0,
+  "seeds": [
+    11
+  ],
+  "sigma": 0.05,
+  "sigma_zero_policy": "at sigma = 0 the floor is exactly 0 and only exact-zero abstention applies",
+  "strides": [
+    1
+  ]
+}
