@@ -52,6 +52,10 @@ REPRESENTATIONS = (
     "moments_summary",
     "moment_signature",
     "moment_signature_time",
+    "compact_lr_eta",
+    "compact_speed_change",
+    "compact_angle",
+    "compact_speed_angle",
 )
 
 _MOMENT_PAIRS = ((0, 1), (1, 1), (2, 1), (0, 2), (1, 2), (0, 3))
@@ -296,4 +300,8 @@ def build_representations(
         "moments_summary": moments_summary,
         "moment_signature": moment_signature,
         "moment_signature_time": moment_signature_time,
+        "compact_lr_eta": compact[:3],
+        "compact_speed_change": compact[3:9],
+        "compact_angle": compact[9:12],
+        "compact_speed_angle": compact[3:12],
     }
