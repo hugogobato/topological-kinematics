@@ -53,3 +53,21 @@ supervisor: starting run at Mon Sep 21 05:06:46 -03 2026
   warnings.warn(
 supervisor: run exited with 124 at Mon Sep 21 05:40:07 -03 2026
 supervisor: starting run at Mon Sep 21 05:40:12 -03 2026
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 14 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 5 leaked folder objects to clean up at shutdown
+  warnings.warn(
+supervisor: run exited with 124 at Mon Sep 21 06:13:32 -03 2026
+supervisor: starting run at Mon Sep 21 06:13:38 -03 2026
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 14 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+supervisor: run exited with 124 at Mon Sep 21 06:46:51 -03 2026
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 5 leaked folder objects to clean up at shutdown
+  warnings.warn(
+supervisor: starting run at Mon Sep 21 06:46:56 -03 2026
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 14 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 5 leaked folder objects to clean up at shutdown
+  warnings.warn(
+supervisor: run exited with 124 at Mon Sep 21 07:19:46 -03 2026
+supervisor: starting run at Mon Sep 21 07:19:51 -03 2026

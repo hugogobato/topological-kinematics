@@ -1,0 +1,24 @@
+{
+  "base_seed": 1000,
+  "family": "A",
+  "frame_count": 129,
+  "label": "jump",
+  "latent": {
+    "a": 0.1932647921267142,
+    "b": 0.7504281554362343,
+    "m": 0.47184647378147426,
+    "phases": [
+      3.13820022443146,
+      2.525676895763413
+    ],
+    "phi": 1.3231448827535026,
+    "r": 1.083746611670745
+  },
+  "sha256_frames": "89bd1740dc856c807793a07f53b32a02adfee20a9c847c8e72d739a0bf5b1d77",
+  "sha256_npz": "59880ff99d6ff4276f6de6ba28a423426946b97835890ebbe64ca9c6ee9eadff",
+  "sha256_timestamps": "d7b1fd07f63d583f1f173a3755b697395a6662671d57068e8d3a0b1cfabde520",
+  "sha256_z": "68a2067a5f7281aa3d90f957438fd033222c8b51af819691305f8bd5b029f35f",
+  "sigma": 0.05,
+  "stride": 1,
+  "trajectory_id": "A_jump_1000_sigma50"
+}

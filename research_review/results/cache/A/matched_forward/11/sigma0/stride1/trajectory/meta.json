@@ -1,0 +1,24 @@
+{
+  "base_seed": 11,
+  "family": "A",
+  "frame_count": 5,
+  "label": "matched_forward",
+  "latent": {
+    "a": 0.2302239093290859,
+    "b": 0.8250076850122253,
+    "m": 0.5276157971706557,
+    "phases": [
+      3.361378890706478,
+      0.5429892400174997
+    ],
+    "phi": 0.21875170870083374,
+    "r": 1.0336482395509574
+  },
+  "sha256_frames": "56f81a3183e0bc634fb743faed8a55749b39cab7c7a43988f644366a94be5a58",
+  "sha256_npz": "a71b6b413938e3ad7e141b48a4f3e9055d793281ac7de9f457e18c1d1e2f339e",
+  "sha256_timestamps": "b775cb658293f2d9056d63a2bb64185bb77284c3a55650287f38ab52c8758828",
+  "sha256_z": "734459d33030d3f299a045d37b0fa562da623ff129dbfb706a56ce78853b98eb",
+  "sigma": 0.0,
+  "stride": 1,
+  "trajectory_id": "A_matched_forward_11_sigma0"
+}

@@ -1,0 +1,21 @@
+{
+  "base_seed": 3003,
+  "family": "B",
+  "frame_count": 129,
+  "label": "return",
+  "latent": {
+    "A1": 0.9560622719909846,
+    "A2": 0.9305533449418545,
+    "a": 0.22537000788070571,
+    "b": 0.7832117263297376,
+    "m": 0.5042908671052216,
+    "w": 0.3732639356350811
+  },
+  "sha256_frames": "20826fe1473ad3f588b5e47c7c785d1720e9f07b314a0006da152a13b338cf6c",
+  "sha256_npz": "741cf760ce6e993b2dcba9627df306bea899ec89992ccc5114e0fd837198eaeb",
+  "sha256_timestamps": "d7b1fd07f63d583f1f173a3755b697395a6662671d57068e8d3a0b1cfabde520",
+  "sha256_z": "3f21f70d23d807a68df3c7d0085b2c8f9d379e99effef11dc7ebf70c870f4e89",
+  "sigma": 0.05,
+  "stride": 1,
+  "trajectory_id": "B_return_3003_sigma50"
+}

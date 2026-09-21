@@ -1,0 +1,24 @@
+{
+  "base_seed": 11,
+  "family": "A",
+  "frame_count": 5,
+  "label": "matched_folded",
+  "latent": {
+    "a": 0.2302239093290859,
+    "b": 0.8250076850122253,
+    "m": 0.5276157971706557,
+    "phases": [
+      3.361378890706478,
+      0.5429892400174997
+    ],
+    "phi": 0.21875170870083374,
+    "r": 1.0336482395509574
+  },
+  "sha256_frames": "4070f2f8622c3f4ce612da076193d538793407713834c52ae021b81c15b7884c",
+  "sha256_npz": "2f1e7d0c6141a28129d99ec15d24805303a9b5edd33fd0dd840cb26d1ec7450b",
+  "sha256_timestamps": "b775cb658293f2d9056d63a2bb64185bb77284c3a55650287f38ab52c8758828",
+  "sha256_z": "562bfa2d08cc34479c8b918a9959f1a3290a746c6bb2e0a555cc1f09cb8bf0b0",
+  "sigma": 0.05,
+  "stride": 1,
+  "trajectory_id": "A_matched_folded_11_sigma50"
+}

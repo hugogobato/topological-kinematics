@@ -1,0 +1,21 @@
+{
+  "base_seed": 3008,
+  "family": "B",
+  "frame_count": 129,
+  "label": "ramp",
+  "latent": {
+    "A1": 0.9014579773847883,
+    "A2": 0.9479628605153073,
+    "a": 0.2166188355799114,
+    "b": 0.8466821277741379,
+    "m": 0.5316504816770247,
+    "w": 0.41594904074028227
+  },
+  "sha256_frames": "cc54ccdfb208828d8d5e1a7927ff7e7be5ed30417d04ba279ca5ac7b41f78fd6",
+  "sha256_npz": "1a3e15a4dc9243e69826d49f468d0b01f78615d32e01acf3a7dd0a122cc64e65",
+  "sha256_timestamps": "d7b1fd07f63d583f1f173a3755b697395a6662671d57068e8d3a0b1cfabde520",
+  "sha256_z": "80abcd4b0214879920cfa31049e51a78ecf320c301405c21272d6b48d60179ba",
+  "sigma": 0.05,
+  "stride": 1,
+  "trajectory_id": "B_ramp_3008_sigma50"
+}

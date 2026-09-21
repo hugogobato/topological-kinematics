@@ -1,0 +1,20 @@
+{
+  "base_seed": 11,
+  "degrees": [
+    0,
+    1
+  ],
+  "family": "A",
+  "frame_count": 5,
+  "gudhi_version": "3.12.0",
+  "label": "matched_folded",
+  "sigma": 0.0,
+  "stride": 1,
+  "timestamps": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ]
+}
