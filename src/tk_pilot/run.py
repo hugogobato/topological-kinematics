@@ -481,7 +481,7 @@ def _load_trajectory(generators, family, label, base_seed, sigma, stride, cache_
     if hasattr(generators, "save_trajectory"):
         try:
             generators.save_trajectory(traj, Path(cache_dir))
-        except OSError:
+        except Exception:
             pass
     return traj, False
 
@@ -506,7 +506,7 @@ def _load_control(generators, control, family, base_seed, sigma, stride, cache_d
     if hasattr(generators, "save_trajectory"):
         try:
             generators.save_trajectory(traj, Path(cache_dir))
-        except OSError:
+        except Exception:
             pass
     return traj, False
 
@@ -2914,6 +2914,28 @@ def _run_confirmatory(
         )
     incumbent = str(conf.get("incumbent", "complete_distances"))
     eligible_config = conf.get("eligible_comparators")
+    freeze_path = _resolve_path(
+        cfg.get("route_freeze_file", "research_review/results/g3/route_freeze.json"),
+        REPO_ROOT,
+    )
+    if not freeze_path.is_file():
+        raise SystemExit(
+            "confirmatory stage requires a written route freeze record at "
+            f"{freeze_path}; freeze the route, incumbent, eligible comparator set, "
+            "and test size after the exploratory stage and before opening test seeds"
+        )
+    freeze = _read_json(freeze_path)
+    if str(freeze.get("route")) != route or str(freeze.get("incumbent")) != incumbent:
+        raise SystemExit(
+            "confirmatory configuration does not match the frozen route record "
+            f"(frozen route {freeze.get('route')!r} incumbent {freeze.get('incumbent')!r}, "
+            f"config route {route!r} incumbent {incumbent!r})"
+        )
+    if int(freeze.get("n_clusters", -1)) != int(conf.get("n_clusters", -2)):
+        raise SystemExit(
+            "confirmatory.n_clusters does not match the frozen route record "
+            f"({freeze.get('n_clusters')!r} versus {conf.get('n_clusters')!r})"
+        )
     shard_index = int(conf.get("shard_index", 0))
     n_shards = int(conf.get("n_shards", 1))
     if n_shards < 1 or shard_index < 0 or shard_index >= n_shards:

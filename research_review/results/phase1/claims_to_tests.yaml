@@ -133,7 +133,7 @@ claims:
           PASS if every novelty-sensitive citation in the ledger resolves and carries an exact
           locator. FAIL leaves the claim withdrawn and is reported as a WP-1.1 gap.
         artifacts:
-          - "research_review/results/phase1/citation_ledger.md"
+          - "research_review/results/phase1/citation_ledger.yaml"
         timing: "G1 prior-art lock, before outcome inspection"
         dependencies: ["A3", "WP-1.1"]
 
@@ -157,7 +157,7 @@ claims:
         artifacts:
           - "research_review/results/phase1/baseline_protocol.md"
           - "research_review/preregistration_draft.md"
-          - "research_review/results/phase1/citation_ledger.md"
+          - "research_review/results/phase1/citation_ledger.yaml"
         timing: "G1 prior-art lock, before outcome inspection"
         dependencies: ["A3", "WP-1.1"]
 

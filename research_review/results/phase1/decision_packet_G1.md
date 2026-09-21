@@ -1,3 +1,7 @@
+**Status update (2026-09-21):** superseded by `research_review/results/phase1/G1_decision.md`.
+This file is retained as the pre-decision template; all `[PENDING: ...]` markers below were resolved by the
+independent audit `research_review/results/phase1/verification/G1_audit.md` and by the written decision record.
+
 # G1 decision packet: prior-art and baseline lock (template)
 
 **Gate.** G1 between Phase 1 and Phase 2.

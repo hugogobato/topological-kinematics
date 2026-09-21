@@ -28,7 +28,11 @@ holds ``diagrams.npz`` (keys ``d0_000``, ``d1_000``, ``d0_001``, ...),
 from __future__ import annotations
 
 import hashlib
+import fcntl
+import contextlib
 import json
+import random
+import time
 import os
 import shutil
 import uuid
@@ -59,6 +63,20 @@ _POOL_LENGTHS: tuple[int, ...] = (1, 3, 5)
 _POOL_STRIDES: tuple[int, ...] = (1, 2, 4)
 _CACHE_FILES: tuple[str, ...] = ("diagrams.npz", "essential.npz", "meta.json")
 _SHA256SUMS = "SHA256SUMS"
+
+
+
+@contextlib.contextmanager
+def _cache_lock(directory: Path):
+    """Exclusive per-cache lock; serializes verify, repair, and commit."""
+    lock_path = directory.parent / (directory.name + ".lock")
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(lock_path, "w", encoding="utf-8") as handle:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
 def finite_diagram(raw_intervals) -> tuple[np.ndarray, int]:
@@ -209,26 +227,28 @@ def _verify_sha256sums(directory: Path) -> None:
 def save_diagram_cache(traj: Trajectory, cache_dir) -> Path:
     """Compute and persist diagrams, essential counts, metadata, and checksums.
 
-    Returns the per-trajectory cache directory. Writes are staged in a unique
-    temporary directory and committed with an atomic rename, so concurrent
-    workers can never observe a partially written cache. An existing valid cache
-    is reused; an existing corrupt cache is removed and replaced.
+    Returns the per-trajectory cache directory. A per-cache file lock serializes
+    verification, repair, and commit across processes; writes are staged in a
+    unique temporary directory and committed with an atomic rename, so
+    concurrent workers can never observe a partially written cache. An existing
+    valid cache is reused; an existing corrupt cache is removed and replaced.
     """
     import gudhi
 
     directory = _cache_path(traj, cache_dir)
-    if directory.exists():
-        try:
-            load_diagram_cache(traj, cache_dir)
-            return directory
-        except Exception:
-            shutil.rmtree(directory, ignore_errors=True)
     directory.parent.mkdir(parents=True, exist_ok=True)
-    staging = directory.parent / (
-        f".{directory.name}.tmp-{os.getpid()}-{uuid.uuid4().hex[:8]}"
-    )
-    staging.mkdir(parents=False, exist_ok=False)
-    try:
+    with _cache_lock(directory):
+        if directory.exists():
+            try:
+                load_diagram_cache(traj, cache_dir)
+                return directory
+            except Exception:
+                for name in _CACHE_FILES + (_SHA256SUMS,):
+                    try:
+                        (directory / name).unlink()
+                    except FileNotFoundError:
+                        pass
+        directory.mkdir(parents=True, exist_ok=True)
         frames = np.asarray(traj.frames)
         timestamps = np.asarray(traj.timestamps, dtype=float)
         n_frames = int(frames.shape[0])
@@ -247,8 +267,12 @@ def save_diagram_cache(traj: Trajectory, cache_dir) -> Path:
                 essential_arrays[f"e{degree}_{index:03d}"] = np.asarray(
                     essential[degree][index], dtype=np.int64
                 )
-        np.savez(staging / "diagrams.npz", **diagram_arrays)
-        np.savez(staging / "essential.npz", **essential_arrays)
+        suffix = f"{os.getpid()}-{uuid.uuid4().hex[:8]}"
+        diagram_tmp = directory / f"diagrams.tmp-{suffix}.npz"
+        essential_tmp = directory / f"essential.tmp-{suffix}.npz"
+        meta_tmp = directory / f"meta.tmp-{suffix}.json"
+        np.savez(diagram_tmp, **diagram_arrays)
+        np.savez(essential_tmp, **essential_arrays)
         meta = {
             "family": str(traj.family),
             "label": str(traj.label),
@@ -260,20 +284,21 @@ def save_diagram_cache(traj: Trajectory, cache_dir) -> Path:
             "degrees": [int(degree) for degree in _DEFAULT_DEGREES],
             "gudhi_version": gudhi.__version__,
         }
-        (staging / "meta.json").write_text(
+        meta_tmp.write_text(
             json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8"
         )
-        _write_sha256sums(staging)
-        try:
-            os.rename(staging, directory)
-        except OSError:
-            shutil.rmtree(staging, ignore_errors=True)
-            if not directory.exists():
-                raise
-            load_diagram_cache(traj, cache_dir)
-    except BaseException:
-        shutil.rmtree(staging, ignore_errors=True)
-        raise
+        os.replace(diagram_tmp, directory / "diagrams.npz")
+        os.replace(essential_tmp, directory / "essential.npz")
+        os.replace(meta_tmp, directory / "meta.json")
+        sums_tmp = directory / f"{_SHA256SUMS}.tmp-{suffix}"
+        sums_tmp.write_text(
+            "\n".join(
+                f"{_sha256_file(directory / name)}  {name}" for name in _CACHE_FILES
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        os.replace(sums_tmp, directory / _SHA256SUMS)
     return directory
 
 
