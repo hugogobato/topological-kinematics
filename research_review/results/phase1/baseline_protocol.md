@@ -171,3 +171,13 @@ The hashes below were computed at the time this protocol was frozen. They fix th
 | `research_review/results/phase0/G0_decision.md` | `44571b588492bbf01507b1ee191cb238828bcf3ca41444561c24a8c7688a31cb` |
 | `research_review/results/phase0/verification/consistency_audit.md` | `b399b8c1054b6d55bced92b48bbc81d17db495cb306ab93d4a39f110031bc660` |
 | `research_review/Topological_Kinematics_Research_Plan.md` | `8fd06530e2c26e81eb6d6e257dd9522b12a3c92300dbc86177327bf59ff38a2a` |
+
+## Amendment 1 (2026-09-21, pre-outcome): exploratory grid reduction and secondary channel scope
+
+The exact primary metric amendment (see `metric_interface.md`, "G2 amendment") raised the measured cost of a noisy Family B trajectory to about 7.1 minutes for the full H0 and H1 distance matrices. Projecting the frozen exploratory grid of 40/20/40 base seeds at 6 workers gives about 84 core-hours, which does not fit the overnight execution window. Because the pilot specification explicitly permits a pre-run reduction of the exploratory grid with the reduction recorded and no outcomes inspected, the following changes are frozen for the exploratory stage only. No classification outcome had been inspected at the time of this amendment; only correctness, resource, and raw-control artifacts existed.
+
+1. Seed namespaces are reduced to 20 training base seeds (1000-1019), 10 validation base seeds (2000-2009), and 20 exploratory test base seeds (3000-3019), per family and class, with the same sigma and stride structure.
+2. The secondary H1 channel runs for Family A only. Family B finite H1 at sigma=0 is empty by construction (no finite H1 bars in the noise-free sublevel sets of -f), and at sigma=0.05 it is dominated by pixel-noise bars (median persistence 0.042, more than 150 bars per 32x32 frame) with no latent-scale structure. Family B H1 will be reported descriptively through cardinality and persistence summaries and per-frame extraction costs, not through the full distance matrix.
+3. The confirmatory stage is unaffected by items 1 and 2: it keeps the frozen protocol, the frozen decision rule, and new test seeds from the confirmatory namespace. Any precision shortfall caused by the reduced exploratory variance estimate is handled by the predeclared test-size rule and, if unresolvable, by an INDETERMINATE status.
+
+This amendment is recorded before any confirmatory or exploratory test outcome has been opened and does not change the estimand, hypotheses, thresholds, or decision rules.

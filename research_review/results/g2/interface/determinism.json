@@ -1,0 +1,171 @@
+{
+  "determinism": {
+    "method": "Each trajectory was diagram-computed into two independent temporary caches with persistence.save_diagram_cache, loaded back with persistence.load_diagram_cache, and compared per degree and frame by np.array_equal and by sha256 over the canonical array bytes. The length 1 stride 1 trailing-window call was compared against the direct trajectory call in the same process.",
+    "trajectories": [
+      {
+        "base_seed": 1000,
+        "cache_recompute_bitwise_equal": true,
+        "degrees": {
+          "0": {
+            "bitwise_equal": true,
+            "essential_counts_equal": true,
+            "essential_counts_first_frame": 1,
+            "first_frame_shape": [
+              63,
+              2
+            ],
+            "n_diagrams": 129,
+            "sha256_cache1": "1a96e5b3be2eecd2a677cd452bc75885e6c10d5ad7826fa6dbf211d0d268f2e3",
+            "sha256_cache2": "1a96e5b3be2eecd2a677cd452bc75885e6c10d5ad7826fa6dbf211d0d268f2e3"
+          },
+          "1": {
+            "bitwise_equal": true,
+            "essential_counts_equal": true,
+            "essential_counts_first_frame": 0,
+            "first_frame_shape": [
+              13,
+              2
+            ],
+            "n_diagrams": 129,
+            "sha256_cache1": "2d71f0472ea57d46c685bef0e7a108534ebc2d7305f97ea2e192639b3d743c85",
+            "sha256_cache2": "2d71f0472ea57d46c685bef0e7a108534ebc2d7305f97ea2e192639b3d743c85"
+          }
+        },
+        "family": "A",
+        "file_bytes_equal": {
+          "diagrams.npz": true,
+          "essential.npz": true,
+          "meta.json": true
+        },
+        "file_sha256": {
+          "cache1": {
+            "diagrams.npz": "1533d983c67951fd7730e961cbb3b94cedf20277d4178d28183d19d70527171e",
+            "essential.npz": "2a56e8774e399615f87675976e88753f08051abb366eda654b41de423b1caecf",
+            "meta.json": "99b5c066b610542bf8d8093a432a362b2147345df0c792af9669a7e07330a238"
+          },
+          "cache2": {
+            "diagrams.npz": "1533d983c67951fd7730e961cbb3b94cedf20277d4178d28183d19d70527171e",
+            "essential.npz": "2a56e8774e399615f87675976e88753f08051abb366eda654b41de423b1caecf",
+            "meta.json": "99b5c066b610542bf8d8093a432a362b2147345df0c792af9669a7e07330a238"
+          }
+        },
+        "label": "return",
+        "n_frames": 129,
+        "sigma": 0.0,
+        "stride": 1,
+        "trajectory_id": "A_return_1000_sigma0",
+        "verdict": "PASS",
+        "window_equality": {
+          "bitwise_equal": true,
+          "call": "diagrams_for_windows(frames, family, length=1, stride=1) vs trajectory_diagrams(frames, family)",
+          "degrees": {
+            "0": {
+              "bitwise_equal": true,
+              "max_component_diff": 0.0,
+              "n_diagrams": 129,
+              "sha256_diagrams_for_windows": "1a96e5b3be2eecd2a677cd452bc75885e6c10d5ad7826fa6dbf211d0d268f2e3",
+              "sha256_trajectory_diagrams": "1a96e5b3be2eecd2a677cd452bc75885e6c10d5ad7826fa6dbf211d0d268f2e3"
+            },
+            "1": {
+              "bitwise_equal": true,
+              "max_component_diff": 0.0,
+              "n_diagrams": 129,
+              "sha256_diagrams_for_windows": "2d71f0472ea57d46c685bef0e7a108534ebc2d7305f97ea2e192639b3d743c85",
+              "sha256_trajectory_diagrams": "2d71f0472ea57d46c685bef0e7a108534ebc2d7305f97ea2e192639b3d743c85"
+            }
+          }
+        }
+      },
+      {
+        "base_seed": 1000,
+        "cache_recompute_bitwise_equal": true,
+        "degrees": {
+          "0": {
+            "bitwise_equal": true,
+            "essential_counts_equal": true,
+            "essential_counts_first_frame": 1,
+            "first_frame_shape": [
+              109,
+              2
+            ],
+            "n_diagrams": 129,
+            "sha256_cache1": "7b45be52a607d28bc6563906f8376fd04892f25d481e3d3b8287b381368284ae",
+            "sha256_cache2": "7b45be52a607d28bc6563906f8376fd04892f25d481e3d3b8287b381368284ae"
+          },
+          "1": {
+            "bitwise_equal": true,
+            "essential_counts_equal": true,
+            "essential_counts_first_frame": 0,
+            "first_frame_shape": [
+              171,
+              2
+            ],
+            "n_diagrams": 129,
+            "sha256_cache1": "ad84197877bd2066fffce6ed3824766d51a31523d66e4050a2f3ba1dfbbe1901",
+            "sha256_cache2": "ad84197877bd2066fffce6ed3824766d51a31523d66e4050a2f3ba1dfbbe1901"
+          }
+        },
+        "family": "B",
+        "file_bytes_equal": {
+          "diagrams.npz": true,
+          "essential.npz": true,
+          "meta.json": true
+        },
+        "file_sha256": {
+          "cache1": {
+            "diagrams.npz": "9c7f8f4232844ff12d6ebcaedb83b9e009881e8f5fd0e714f1b1f4209c2ef5fe",
+            "essential.npz": "2a56e8774e399615f87675976e88753f08051abb366eda654b41de423b1caecf",
+            "meta.json": "eb7780285d6c47aa38a17003b2e3ef630fe3d141057900339fad63842d47e397"
+          },
+          "cache2": {
+            "diagrams.npz": "9c7f8f4232844ff12d6ebcaedb83b9e009881e8f5fd0e714f1b1f4209c2ef5fe",
+            "essential.npz": "2a56e8774e399615f87675976e88753f08051abb366eda654b41de423b1caecf",
+            "meta.json": "eb7780285d6c47aa38a17003b2e3ef630fe3d141057900339fad63842d47e397"
+          }
+        },
+        "label": "jump",
+        "n_frames": 129,
+        "sigma": 0.05,
+        "stride": 1,
+        "trajectory_id": "B_jump_1000_sigma50",
+        "verdict": "PASS",
+        "window_equality": {
+          "bitwise_equal": true,
+          "call": "diagrams_for_windows(frames, family, length=1, stride=1) vs trajectory_diagrams(frames, family)",
+          "degrees": {
+            "0": {
+              "bitwise_equal": true,
+              "max_component_diff": 0.0,
+              "n_diagrams": 129,
+              "sha256_diagrams_for_windows": "7b45be52a607d28bc6563906f8376fd04892f25d481e3d3b8287b381368284ae",
+              "sha256_trajectory_diagrams": "7b45be52a607d28bc6563906f8376fd04892f25d481e3d3b8287b381368284ae"
+            },
+            "1": {
+              "bitwise_equal": true,
+              "max_component_diff": 0.0,
+              "n_diagrams": 129,
+              "sha256_diagrams_for_windows": "ad84197877bd2066fffce6ed3824766d51a31523d66e4050a2f3ba1dfbbe1901",
+              "sha256_trajectory_diagrams": "ad84197877bd2066fffce6ed3824766d51a31523d66e4050a2f3ba1dfbbe1901"
+            }
+          }
+        }
+      }
+    ],
+    "verdict": "PASS"
+  },
+  "environment": {
+    "gudhi": "3.12.0",
+    "numpy": "2.4.3",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "gate_dependency": {
+    "conditional_on": "G1",
+    "g1_decision_packet": "research_review/results/phase1/decision_packet_G1.md",
+    "g1_recorded_status_at_run_time": "unresolved (pending items present)",
+    "labeling": "All WP-2.1 outputs are conditional on G1 and do not constitute a G2 decision.",
+    "pending_marker_count": 25,
+    "work_package": "WP-2.1"
+  },
+  "work_package": "WP-2.1"
+}

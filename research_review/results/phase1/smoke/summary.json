@@ -120,7 +120,7 @@
       },
       "A|sigma50": {
         "angle_valid_fraction": 0.0,
-        "displacement": 0.0373108086333431,
+        "displacement": 0.03731080863334311,
         "length": 4.776704043257032
       }
     }
@@ -191,12 +191,12 @@
     "trajectory generation may be cached; timings record stored cold-cache costs when available",
     "train, validation, and test use seed 11 in the smoke stage, which checks construction and cost rather than comparative accuracy"
   ],
-  "peak_ram_bytes": 190828544,
+  "peak_ram_bytes": 208039936,
   "preprocessing_file": "preprocessing.npz",
   "probe": {
     "degree": 0,
-    "peak_ram_bytes": 123879424,
-    "seconds": 18.094204320994322,
+    "peak_ram_bytes": 137015296,
+    "seconds": 34.292893088997516,
     "stride": 1,
     "trajectory_id": "A_jump_11_sigma0"
   },
@@ -686,6 +686,6 @@
       "tolerance": 1e-07
     }
   ],
-  "wall_seconds": 168.709434270997,
+  "wall_seconds": 724.725420720999,
   "workers": 4
 }

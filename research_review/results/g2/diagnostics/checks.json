@@ -1,0 +1,1525 @@
+{
+  "work_package": "WP-2.2",
+  "gate_label": "conditional_on_G1: WP-2.2 executed after the coordinator's G1 record and before the G2 decision; scientific pass condition is stable definitions only; no predictive value is claimed",
+  "generated_at": "2026-09-21T00:10:24-0300",
+  "grid": {
+    "families": [
+      "A",
+      "B"
+    ],
+    "classes": [
+      "return",
+      "ramp",
+      "jump",
+      "static"
+    ],
+    "seeds": [
+      11,
+      1000,
+      1001
+    ],
+    "sigmas": [
+      0.0,
+      0.05
+    ],
+    "strides": [
+      1,
+      2,
+      4
+    ],
+    "degrees": [
+      0,
+      1
+    ]
+  },
+  "metric_backends": {
+    "gudhi_default": "frozen primary call: tk_pilot.bottleneck_linf, gudhi default e, canonicalized inputs; order-dependent and defective",
+    "exact_scipy": "corrected candidate: independent SciPy exact solver, validated against the project brute-force reference, persim, and an order-invariance test"
+  },
+  "tolerances": {
+    "R_le_L": 1e-09,
+    "eta_bounds": 1e-09,
+    "triangle_inequality": 1e-09,
+    "triangle_excess_bounds": 1e-09,
+    "backend_agreement": 1e-12,
+    "cosine_anomaly": 1e-12
+  },
+  "q_floor_factor": 4.0,
+  "floor_percentile": 95.0,
+  "floor_population": {
+    "sigma": 0.05,
+    "class": "static",
+    "seeds": [
+      1000,
+      1001
+    ],
+    "seed11_sensitivity_floors": {
+      "A|0|1": 0.057546560026171124,
+      "A|0|2": 0.05188331076253114,
+      "A|0|4": 0.05419473445741186,
+      "A|1|1": 0.09880489640631576,
+      "A|1|2": 0.08692180376744074,
+      "A|1|4": 0.0902865901349277,
+      "B|0|1": 0.057937338086144374,
+      "B|0|2": 0.06169914105370065,
+      "B|0|4": 0.05577232503664032,
+      "B|1|1": 0.05476222403980188,
+      "B|1|2": 0.05042378932233049,
+      "B|1|4": 0.059774825819942194
+    }
+  },
+  "solver_validation": {
+    "verdict": "pass",
+    "description": "independent SciPy exact solver against the project brute-force reference, persim, exhaustive enumeration, and an order-invariance test; gudhi defects quantified separately",
+    "comparisons": {
+      "scipy_vs_project_bruteforce": 80,
+      "scipy_vs_gudhi_default": 80,
+      "scipy_vs_gudhi_e0": 80
+    },
+    "mismatches": {
+      "project_bruteforce": 0,
+      "gudhi_default": 0,
+      "gudhi_e0": 0
+    },
+    "max_abs_difference": {
+      "project_bruteforce": 0.0,
+      "gudhi_default": 0.0,
+      "gudhi_e0": 1.1102230246251565e-16
+    },
+    "order_invariance": {
+      "comparisons": 30,
+      "mismatches": 0,
+      "max_abs_difference": 0.0
+    },
+    "gudhi_order_sensitivity": {
+      "default_canonical_mismatches": 2,
+      "default_shuffled_mismatches": 2,
+      "e0_canonical_mismatches": 1,
+      "e0_shuffled_mismatches": 2,
+      "pairs_wrong_in_all_four_tests": 1,
+      "witness": {
+        "diagram_a": [
+          [
+            0.5649379679218175,
+            0.8859625423557974
+          ],
+          [
+            0.3328420761268649,
+            1.0046039216594465
+          ],
+          [
+            0.5823101209138964,
+            1.2044611831166603
+          ],
+          [
+            0.39153755359604436,
+            1.0230226649348044
+          ]
+        ],
+        "diagram_b": [
+          [
+            0.11869142275472266,
+            0.9584997235165631
+          ],
+          [
+            0.12213669672757577,
+            0.3077607545405331
+          ],
+          [
+            0.04531101063553622,
+            0.49532288645891787
+          ],
+          [
+            0.17035264352228385,
+            0.3417164877000588
+          ]
+        ],
+        "scipy_exact": 0.31574255566938003,
+        "gudhi_default_canonical": 0.4199041503809202,
+        "gudhi_e0_canonical": 0.5092810352005286,
+        "gudhi_default_shuffled": 0.4199041503809202,
+        "gudhi_e0_shuffled": 0.5092810352005286
+      },
+      "n_pairs": 60
+    },
+    "exhaustive_verification": {
+      "n": 4,
+      "m": 4,
+      "scipy_exact": 0.31574255566938003,
+      "exhaustive_enumeration": 0.31574255566938003,
+      "gudhi_e0_canonical": 0.5092810352005286,
+      "agreement": true
+    },
+    "persim_comparisons": 8,
+    "persim_mismatches": 0,
+    "persim_max_abs_difference": 0.0,
+    "real_diagram_pairs_comparisons": 12,
+    "real_diagram_pairs_mismatches": 0,
+    "real_diagram_pairs_max_abs_difference": 0.0
+  },
+  "cross_backend": {
+    "n_pairs_compared": 33600,
+    "n_above_tolerance": 0,
+    "max_abs_difference": 0.0,
+    "witnesses": [],
+    "by_degree": {
+      "0": {
+        "n_pairs_compared": 16800,
+        "n_above_tolerance": 0,
+        "max_abs_difference": 0.0
+      },
+      "1": {
+        "n_pairs_compared": 16800,
+        "n_above_tolerance": 0,
+        "max_abs_difference": 0.0
+      }
+    }
+  },
+  "overall_verdict": {
+    "gudhi_default": "pass",
+    "exact_scipy": "pass"
+  },
+  "wp22_definition_verdict": "pass under the corrected candidate exact_scipy; the frozen primary fails the metric axiom checks and is a G2 blocker documented in metric_backend_audit.md; cached frozen-backend artifacts must be regenerated after the interface amendment",
+  "backends": {
+    "gudhi_default": {
+      "role": "frozen_primary",
+      "verdict": "pass",
+      "checks": [
+        {
+          "id": "R_le_L",
+          "description": "R <= L + 1e-9 on every row",
+          "verdict": "pass",
+          "n_checked": 288,
+          "n_violations": 0,
+          "worst_R_minus_L": 0.0,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "eta_range",
+          "description": "0 <= eta <= 1 + 1e-9 on every row with L > 0",
+          "verdict": "pass",
+          "n_checked": 225,
+          "n_violations": 0,
+          "worst_eta_minus_one": 0.0,
+          "worst_minus_eta": 0.0,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "eta_undefined_iff_L_zero",
+          "description": "eta is defined exactly when L > 0 and null exactly when L = 0",
+          "verdict": "pass",
+          "n_rows_with_L_zero": 63,
+          "n_undefined_with_L_positive": 0,
+          "n_defined_with_L_zero": 0
+        },
+        {
+          "id": "triangle_inequality",
+          "description": "c <= a + b and c >= |a - b| on every interior triple within 1e-9",
+          "verdict": "pass",
+          "n_triples_checked": 21216,
+          "n_violations": 0,
+          "worst_excess": 5.551115123125783e-17,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "triangle_excess_range",
+          "description": "0 <= q_t <= 1 + 1e-9 wherever q is defined (a + b > 0)",
+          "verdict": "pass",
+          "n_checked": 13066,
+          "n_violations": 0,
+          "worst_q_minus_one": 0.0,
+          "worst_minus_q": 1.5531164106501242e-16,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "angle_defined_iff_positive_steps",
+          "description": "theta_t is defined exactly when a > 0 and b > 0",
+          "verdict": "pass",
+          "n_violations": 0
+        },
+        {
+          "id": "cosine_anomaly_accounting",
+          "description": "cosine-anomaly flags equal |z| > 1 + 1e-12 wherever z is defined",
+          "verdict": "pass",
+          "n_violations": 0,
+          "tolerance": 1e-12
+        },
+        {
+          "id": "straight_and_reversal_retained",
+          "description": "every interior time with ab > 0 carries a reported angle; straight and reversal cases are retained",
+          "verdict": "pass",
+          "n_violations": 0,
+          "n_straight": 921,
+          "n_reversal": 226
+        },
+        {
+          "id": "no_trajectory_deleted",
+          "description": "the written feature table covers the complete predeclared grid",
+          "verdict": "pass",
+          "n_expected_rows": 288,
+          "n_rows_written": 288
+        },
+        {
+          "id": "floor_calibration_positive_sigma50",
+          "description": "every (family, degree, stride) sigma=0.05 floor is strictly positive",
+          "verdict": "pass",
+          "n_cells": 12,
+          "cells_with_nonpositive_floor": []
+        },
+        {
+          "id": "floor_zero_sigma0",
+          "description": "sigma = 0 rows use the exact-zero floor",
+          "verdict": "pass",
+          "n_rows_sigma0": 144,
+          "n_nonzero": 0
+        },
+        {
+          "id": "timestamps_strictly_increasing",
+          "description": "every stride variant keeps strictly increasing timestamps (the frozen library also rejects nonpositive intervals)",
+          "verdict": "pass",
+          "n_rows": 288,
+          "n_violations": 0,
+          "note": "compute_path_diagnostics raises on any nonpositive interval; no silent repair is used"
+        },
+        {
+          "id": "cached_distance_matrix_comparison",
+          "description": "seed 11 degree 0 stride 1 distances against the cached smoke distance matrices",
+          "verdict": "pass",
+          "n_values_compared": 2064,
+          "n_above_tolerance": 0,
+          "max_abs_difference": 0.0,
+          "tolerance": 1e-12,
+          "note": "the cached matrices were produced by the frozen backend, so exact agreement is a reproducibility check, not a correctness check"
+        }
+      ],
+      "coverage_by_cell": [
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2979002624671916,
+          "angle_floor_valid_fraction_mean": 0.2979002624671916,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3097112860892388
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.29894179894179895,
+          "angle_floor_valid_fraction_mean": 0.29894179894179895,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.32275132275132273
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.30376344086021506,
+          "angle_floor_valid_fraction_mean": 0.30376344086021506,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.35215053763440857
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2900262467191601,
+          "angle_floor_valid_fraction_mean": 0.2900262467191601,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.30314960629921256
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.291005291005291,
+          "angle_floor_valid_fraction_mean": 0.291005291005291,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3174603174603175
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2956989247311828,
+          "angle_floor_valid_fraction_mean": 0.2956989247311828,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3494623655913978
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.055153732833621016,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.009186351706036745,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.03280839895013123
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.06467399107753946,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.007936507936507936,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.03571428571428571
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.05785205792112252,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.05107526881720429,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.09677419354838708
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.1045617016282595,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.003937007874015748
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.11098942010746575,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.007936507936507936
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.10801281900487454,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.02419354838709677,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.04838709677419354
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2716535433070866,
+          "angle_floor_valid_fraction_mean": 0.2716535433070866,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.28346456692913385
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2738095238095238,
+          "angle_floor_valid_fraction_mean": 0.2738095238095238,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.2976190476190476
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.27956989247311825,
+          "angle_floor_valid_fraction_mean": 0.27956989247311825,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3279569892473118
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 0.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 0.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 0.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.05344460778252064,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0013123359580052493,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.00984251968503937
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.052177047198146705,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.01455026455026455,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.03968253968253968
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.04142585927858325,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.09139784946236558,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.15591397849462366
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.05650591423074903,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.05717450186806192,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.06082530705673119,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.0
+        }
+      ],
+      "floors": {
+        "A|0|1": 0.055153732833621016,
+        "A|0|2": 0.06467399107753946,
+        "A|0|4": 0.05785205792112252,
+        "A|1|1": 0.1045617016282595,
+        "A|1|2": 0.11098942010746575,
+        "A|1|4": 0.10801281900487454,
+        "B|0|1": 0.05344460778252064,
+        "B|0|2": 0.052177047198146705,
+        "B|0|4": 0.04142585927858325,
+        "B|1|1": 0.05650591423074903,
+        "B|1|2": 0.05717450186806192,
+        "B|1|4": 0.06082530705673119
+      },
+      "floor_population": {
+        "A|0|1": {
+          "family": "A",
+          "degree": 0,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.055153732833621016
+        },
+        "A|0|2": {
+          "family": "A",
+          "degree": 0,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.06467399107753946
+        },
+        "A|0|4": {
+          "family": "A",
+          "degree": 0,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.05785205792112252
+        },
+        "A|1|1": {
+          "family": "A",
+          "degree": 1,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.1045617016282595
+        },
+        "A|1|2": {
+          "family": "A",
+          "degree": 1,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.11098942010746575
+        },
+        "A|1|4": {
+          "family": "A",
+          "degree": 1,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.10801281900487454
+        },
+        "B|0|1": {
+          "family": "B",
+          "degree": 0,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.05344460778252064
+        },
+        "B|0|2": {
+          "family": "B",
+          "degree": 0,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.052177047198146705
+        },
+        "B|0|4": {
+          "family": "B",
+          "degree": 0,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.04142585927858325
+        },
+        "B|1|1": {
+          "family": "B",
+          "degree": 1,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.05650591423074903
+        },
+        "B|1|2": {
+          "family": "B",
+          "degree": 1,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.05717450186806192
+        },
+        "B|1|4": {
+          "family": "B",
+          "degree": 1,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.06082530705673119
+        }
+      }
+    },
+    "exact_scipy": {
+      "role": "corrected_candidate",
+      "verdict": "pass",
+      "checks": [
+        {
+          "id": "R_le_L",
+          "description": "R <= L + 1e-9 on every row",
+          "verdict": "pass",
+          "n_checked": 288,
+          "n_violations": 0,
+          "worst_R_minus_L": 0.0,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "eta_range",
+          "description": "0 <= eta <= 1 + 1e-9 on every row with L > 0",
+          "verdict": "pass",
+          "n_checked": 225,
+          "n_violations": 0,
+          "worst_eta_minus_one": 0.0,
+          "worst_minus_eta": 0.0,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "eta_undefined_iff_L_zero",
+          "description": "eta is defined exactly when L > 0 and null exactly when L = 0",
+          "verdict": "pass",
+          "n_rows_with_L_zero": 63,
+          "n_undefined_with_L_positive": 0,
+          "n_defined_with_L_zero": 0
+        },
+        {
+          "id": "triangle_inequality",
+          "description": "c <= a + b and c >= |a - b| on every interior triple within 1e-9",
+          "verdict": "pass",
+          "n_triples_checked": 21216,
+          "n_violations": 0,
+          "worst_excess": 5.551115123125783e-17,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "triangle_excess_range",
+          "description": "0 <= q_t <= 1 + 1e-9 wherever q is defined (a + b > 0)",
+          "verdict": "pass",
+          "n_checked": 13066,
+          "n_violations": 0,
+          "worst_q_minus_one": 0.0,
+          "worst_minus_q": 1.5531164106501242e-16,
+          "tolerance": 1e-09
+        },
+        {
+          "id": "angle_defined_iff_positive_steps",
+          "description": "theta_t is defined exactly when a > 0 and b > 0",
+          "verdict": "pass",
+          "n_violations": 0
+        },
+        {
+          "id": "cosine_anomaly_accounting",
+          "description": "cosine-anomaly flags equal |z| > 1 + 1e-12 wherever z is defined",
+          "verdict": "pass",
+          "n_violations": 0,
+          "tolerance": 1e-12
+        },
+        {
+          "id": "straight_and_reversal_retained",
+          "description": "every interior time with ab > 0 carries a reported angle; straight and reversal cases are retained",
+          "verdict": "pass",
+          "n_violations": 0,
+          "n_straight": 921,
+          "n_reversal": 226
+        },
+        {
+          "id": "no_trajectory_deleted",
+          "description": "the written feature table covers the complete predeclared grid",
+          "verdict": "pass",
+          "n_expected_rows": 288,
+          "n_rows_written": 288
+        },
+        {
+          "id": "floor_calibration_positive_sigma50",
+          "description": "every (family, degree, stride) sigma=0.05 floor is strictly positive",
+          "verdict": "pass",
+          "n_cells": 12,
+          "cells_with_nonpositive_floor": []
+        },
+        {
+          "id": "floor_zero_sigma0",
+          "description": "sigma = 0 rows use the exact-zero floor",
+          "verdict": "pass",
+          "n_rows_sigma0": 144,
+          "n_nonzero": 0
+        },
+        {
+          "id": "timestamps_strictly_increasing",
+          "description": "every stride variant keeps strictly increasing timestamps (the frozen library also rejects nonpositive intervals)",
+          "verdict": "pass",
+          "n_rows": 288,
+          "n_violations": 0,
+          "note": "compute_path_diagnostics raises on any nonpositive interval; no silent repair is used"
+        },
+        {
+          "id": "cached_distance_matrix_comparison",
+          "description": "seed 11 degree 0 stride 1 distances against the cached smoke distance matrices",
+          "verdict": "pass",
+          "n_values_compared": 2064,
+          "n_above_tolerance": 0,
+          "max_abs_difference": 0.0,
+          "tolerance": 1e-12,
+          "note": "differences against the cached frozen-backend matrices quantify the backend defect"
+        }
+      ],
+      "coverage_by_cell": [
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2979002624671916,
+          "angle_floor_valid_fraction_mean": 0.2979002624671916,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3097112860892388
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.29894179894179895,
+          "angle_floor_valid_fraction_mean": 0.29894179894179895,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.32275132275132273
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.30376344086021506,
+          "angle_floor_valid_fraction_mean": 0.30376344086021506,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.35215053763440857
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2900262467191601,
+          "angle_floor_valid_fraction_mean": 0.2900262467191601,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.30314960629921256
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.291005291005291,
+          "angle_floor_valid_fraction_mean": 0.291005291005291,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3174603174603175
+        },
+        {
+          "family": "A",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2956989247311828,
+          "angle_floor_valid_fraction_mean": 0.2956989247311828,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3494623655913978
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.055153732833621016,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.009186351706036745,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.03280839895013123
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.06467399107753946,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.007936507936507936,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.03571428571428571
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.05785205792112252,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.05107526881720429,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.09677419354838708
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.1045617016282595,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.003937007874015748
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.11098942010746575,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.007936507936507936
+        },
+        {
+          "family": "A",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.10801281900487454,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.02419354838709677,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.04838709677419354
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2716535433070866,
+          "angle_floor_valid_fraction_mean": 0.2716535433070866,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.28346456692913385
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.2738095238095238,
+          "angle_floor_valid_fraction_mean": 0.2738095238095238,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.2976190476190476
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.27956989247311825,
+          "angle_floor_valid_fraction_mean": 0.27956989247311825,
+          "efficiency_coverage": 0.75,
+          "eta_defined_fraction": 0.75,
+          "q_valid_fraction_mean": 0.3279569892473118
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 0.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 0.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.0,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.0,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 0.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 0.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 1,
+          "floor_e": 0.05344460778252064,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0013123359580052493,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.00984251968503937
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 2,
+          "floor_e": 0.052177047198146705,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.01455026455026455,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.03968253968253968
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 0,
+          "stride": 4,
+          "floor_e": 0.04142585927858325,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.09139784946236558,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.15591397849462366
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 1,
+          "floor_e": 0.05650591423074903,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 2,
+          "floor_e": 0.05717450186806192,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.0
+        },
+        {
+          "family": "B",
+          "sigma": 0.05,
+          "degree": 1,
+          "stride": 4,
+          "floor_e": 0.06082530705673119,
+          "n_rows": 12,
+          "n_scientific_rows": 9,
+          "angle_defined_fraction_mean": 1.0,
+          "angle_floor_valid_fraction_mean": 0.0,
+          "efficiency_coverage": 0.0,
+          "eta_defined_fraction": 1.0,
+          "q_valid_fraction_mean": 0.0
+        }
+      ],
+      "floors": {
+        "A|0|1": 0.055153732833621016,
+        "A|0|2": 0.06467399107753946,
+        "A|0|4": 0.05785205792112252,
+        "A|1|1": 0.1045617016282595,
+        "A|1|2": 0.11098942010746575,
+        "A|1|4": 0.10801281900487454,
+        "B|0|1": 0.05344460778252064,
+        "B|0|2": 0.052177047198146705,
+        "B|0|4": 0.04142585927858325,
+        "B|1|1": 0.05650591423074903,
+        "B|1|2": 0.05717450186806192,
+        "B|1|4": 0.06082530705673119
+      },
+      "floor_population": {
+        "A|0|1": {
+          "family": "A",
+          "degree": 0,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.055153732833621016
+        },
+        "A|0|2": {
+          "family": "A",
+          "degree": 0,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.06467399107753946
+        },
+        "A|0|4": {
+          "family": "A",
+          "degree": 0,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.05785205792112252
+        },
+        "A|1|1": {
+          "family": "A",
+          "degree": 1,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.1045617016282595
+        },
+        "A|1|2": {
+          "family": "A",
+          "degree": 1,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.11098942010746575
+        },
+        "A|1|4": {
+          "family": "A",
+          "degree": 1,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.10801281900487454
+        },
+        "B|0|1": {
+          "family": "B",
+          "degree": 0,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.05344460778252064
+        },
+        "B|0|2": {
+          "family": "B",
+          "degree": 0,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.052177047198146705
+        },
+        "B|0|4": {
+          "family": "B",
+          "degree": 0,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.04142585927858325
+        },
+        "B|1|1": {
+          "family": "B",
+          "degree": 1,
+          "stride": 1,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 256,
+          "n_distances_per_seed": {
+            "1000": 128,
+            "1001": 128
+          },
+          "e": 0.05650591423074903
+        },
+        "B|1|2": {
+          "family": "B",
+          "degree": 1,
+          "stride": 2,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 128,
+          "n_distances_per_seed": {
+            "1000": 64,
+            "1001": 64
+          },
+          "e": 0.05717450186806192
+        },
+        "B|1|4": {
+          "family": "B",
+          "degree": 1,
+          "stride": 4,
+          "sigma": 0.05,
+          "percentile": 95.0,
+          "seeds": [
+            1000,
+            1001
+          ],
+          "n_distances": 64,
+          "n_distances_per_seed": {
+            "1000": 32,
+            "1001": 32
+          },
+          "e": 0.06082530705673119
+        }
+      }
+    }
+  }
+}

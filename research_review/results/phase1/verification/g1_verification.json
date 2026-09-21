@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "artifact": "G1 independent verification, machine-readable result",
+  "gate": "G1",
+  "auditor": "independent verifier",
+  "date": "2026-09-20",
+  "proposed_decision": {
+    "status": "CONDITIONAL GO",
+    "scope": "Phase 2: WP-2.1 and the G2 raw-data correctness work are authorized; confirmatory seeds remain unauthorized",
+    "evidence": "WP-1.1 locators independently reproduced at the page level; WP-1.2 smoke rerun with a fresh cache obtains identical feature dimensions, valid fractions, and predicted labels and passes the translation control at tolerance 1e-7; 112 tests pass; all ten representations present; 16 hyperparameter evaluations per cell and representation.",
+    "conditions": [
+      "Before G2 consumes WP-1.2 outputs: append the missing execution-log entries (eligible-comparator reference reading; implementation_contract hash change), freeze the claims_to_tests sha256 a99063ed73f7d3fd31faedb0a6362aa60e173b8548c62eb2351ef3bad5d2bd12 in the decision packet Appendix B, and correct the two citation_ledger.md artifact paths to citation_ledger.yaml.",
+      "Before the exploratory split manifest is used: add the protocol-required diagram_hash column or amend baseline_protocol.md Section 4 explicitly, and verify base-seed isolation on the real training, validation, and exploratory namespaces.",
+      "Before G3 confirmatory authorization: implement compact_ablation_no_speed_change or restate T-C5-01 and T-C5-02, harmonize evaluate.decide statuses with the protocol decision table or log the divergence, and add a route-freeze guard that blocks confirmatory generation without a freeze record.",
+      "Record in the execution log that model selection in validation-tied cells is pinned by the frozen record, not bitwise reproducible."
+    ]
+  },
+  "checks": {
+    "1_citation_spot_check": {
+      "status": "PASS",
+      "evidence": [
+        "Kramar Eq. (16) on printed p. 10 reproduced verbatim (average speed in diagram space).",
+        "Kramar Def. 5.1 p. 7 with Eqs. (8)-(9), Eq. (11) p. 8, Eq. (12) d_B <= d_Wp p. 8, Theorem 7.3 p. 14 (delta-dense subsample bound, attributed to [28]).",
+        "Giusti-Lee Thm 4.2 p. 11 with Def 4.2 p. 10: isometry for the partial 1-Wasserstein norm only; the V_fin norm is W1_partial; no W_p or bottleneck claim.",
+        "Giusti-Lee corrected locator confirmed: Section 6 spans printed pp. 15-19; Example 6.1/Def 6.1 p. 16; Thm 6.1/Lemma 6.1 p. 17; Thm 6.2 p. 18; Def 6.2 p. 19; Section 7 starts p. 20.",
+        "Xian Def 4.1 p. 11, Sec 6.3 p. 26, Example 2 instability p. 30, Lemma 7.3 p. 31, Lemma 7.4 foot of p. 31, Theorem 7.5 p. 32 with d_GH^infinity <= delta/2.",
+        "Khormali corrected locator confirmed: Theorem 4.5 statement on printed p. 12 with the exact bound; Definition 3.1 begins p. 6.",
+        "Bernal Eqs. (11)-(15) p. 10 and reference note [23] p. 26 reproduced.",
+        "Malhotra Eq. (2) p. 4 and Appendix B.3 p. 13 reproduced.",
+        "Cohen-Steiner Stability Theorem at the top of local p. 3; vineyard and knee definitions on local pp. 5-7.",
+        "Email pages 2 and 4 rendered and read: non-novelty statements and interpolation formulas reproduced."
+      ],
+      "notes": [
+        "Locator defect: the ledger attributes 'the idea of a persistence-diagram trajectory itself is definitely not new' to email p. 3; the sentence is on email p. 2. Substance verified, page number off by one.",
+        "Ledger totals independently counted: 36 claims, 33 verified, 3 corrected, 0 unverifiable."
+      ]
+    },
+    "2_baseline_reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "Executable code present for Kramar-style speed, complete distance matrix and recurrence, persistence moments, and level-2 signatures with and without time augmentation (features.py, signatures.py), with analytic and known-matrix tests in tests/test_features.py.",
+        "Stored smoke: manifest 46 trajectories, 340 rows, wall 168.709 s, peak RAM 190959616 bytes, 4 workers; config file sha256 1862b1bb58c4ddede8946782e6d2f55d6a4e87b752ad163a03560baaaa297091 matches the repository config.",
+        "metrics.parquet contains all ten representations (240 scientific rows, 100 control rows).",
+        "selection_table.parquet: exactly 16 configurations for each of the 40 (cell, representation) groups.",
+        "Translation check in the stored summary: max_distance 0.0, tolerance 1e-7, passed for sigma 0 and sigma 0.05.",
+        "Fresh-cache rerun: no crash, translation check passed, feature_dim mismatches 0 of 340, valid_fraction max difference 0.0, predicted labels identical."
+      ],
+      "notes": [
+        "Stored smoke used 4 workers, not the 2-worker smoke definition; the independent 2-worker rerun finishes in 248.1 s, inside the 20-minute cap.",
+        "Bitwise reproducibility is overstated: all smoke cells tie on validation error, so the measured-time tie-break decides; 72 of 120 (family, sigma, representation, split) groups selected a different learner on the rerun, with predicted labels unchanged.",
+        "The clean-cache claim rests on the execution log and contiguous cache mtimes (22:21 to 22:24 local); it is supported but not directly recorded in the manifest.",
+        "The execution log timestamp 22:35 disagrees with the manifest creation time 01:24:56Z (22:24:56 local) by about ten minutes."
+      ]
+    },
+    "3_protocol_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "baseline_protocol.md freezes the six comparator families, ten representation names, 16-configuration equal tuning, training-only preprocessing, validation-only incumbent selection, complete-trajectory splits, eligible set at 0.02, fourfold worst-case ratio, route-freeze procedure, missing-value policies, and the Bonferroni family safeguard.",
+        "Thresholds match configs/tk_pilot.yaml, Pilot_Experiment_Specification.md Sections 5 and 7, and preregistration_draft.md Section 7: -0.05, 0.02, 4.0, 0.05, half-width target 0.01, bootstrap 2000 resamples with seed 20260907.",
+        "Eight authority-document hashes in Appendix B match their files, including baseline_protocol.md at 1a31cb509bad64b0d9584cde997127c01d46af3d21d21469f8d8885c2246fdd9.",
+        "configs/tk_pilot.yaml sha256 matches the stored smoke manifest, so the frozen configuration is the one that ran."
+      ],
+      "notes": [
+        "Freeze integrity: implementation_contract.md current hash c8f48782514974b55a6e3fb1d747824ad408dd15927e09df70d48e07e688bf3d differs from the frozen b024c04f5126c8c5f7781b931a567d7dd3666774e5d12fb168dd447555a6c4f0; mtimes show the contract was edited after the protocol freeze; A5 changes are logged but the hash tables were not updated.",
+        "claims_to_tests.yaml hash is still PENDING in the packet; current value a99063ed73f7d3fd31faedb0a6362aa60e173b8548c62eb2351ef3bad5d2bd12.",
+        "split_manifest.csv lacks the protocol-required diagram_hash column.",
+        "The smoke split manifest reuses trajectory_id across train, validation, and test by design, so cross-split isolation cannot be demonstrated before the exploratory stage.",
+        "evaluate.decide adds CONDITIONAL GO and automatic PIVOT statuses and makes realized half-width <= 0.01 a GO condition; the protocol reserves PIVOT for the G3 memo and conditions adequacy on the planned size; the additions are logged but not harmonized.",
+        "run.py does not require a route-freeze record before generating confirmatory seeds; config defaults pre-fill n_clusters 500, route superiority, incumbent complete_distances.",
+        "Only the compact 12-feature reading is in the execution log; the eligible-comparator reference reading is absent."
+      ]
+    },
+    "4_independent_rerun": {
+      "status": "PASS",
+      "evidence": [
+        "PYTHONPATH=src python3 -m pytest tests/ -q -o addopts= returned 112 passed in 11.15s.",
+        "Fresh-cache smoke probe with 2 workers and a redirected temp cache exited 0: 340 rows, wall 248.093 s, peak RAM 189927424 bytes, probe 18.715 s.",
+        "translation_check passed with max_distance 0.0 and tolerance 1e-7 at sigma 0 (filtration range 0.2104695169176629) and sigma 0.05 (range 0.36856922481027776).",
+        "Rerun vs stored smoke: feature_dim mismatches 0, valid_fraction max difference 0.0, predicted labels identical.",
+        "Repository cache untouched: 198 files with identical per-file mtimes before and after; no repository cache files were created."
+      ],
+      "notes": [
+        "The literal requested command was run with --config /tmp/opencode/g1_audit_config.yaml because configs/tk_pilot.yaml hard-wires cache_dir to the repository cache; the temp config differs only in cache_dir, as required to honor the no-repository-cache constraint."
+      ]
+    },
+    "5_claims_to_tests_coverage": {
+      "status": "PASS",
+      "evidence": [
+        "C1 through C10 of plan Section 2 all appear with explicit pass/fail rules and stage assignments.",
+        "Statuses match the plan: C1 and C2 operational, C3, C4, and C10 withdrawn, C5 through C9 open.",
+        "Source obligations SO-01 to SO-10 map each withdrawn or restricted statement to a precluding source.",
+        "Prohibited-language scan over the Phase 1 artifacts found no forbidden novelty assertion."
+      ],
+      "notes": [
+        "T-C3-02 and T-C4-01 point to citation_ledger.md, which does not exist; the ledger is citation_ledger.yaml.",
+        "T-C5-01 and T-C5-02 reference compact_ablation_no_speed_change, which is not implemented anywhere in src/ or the config, so the C5 rule cannot run at G3 as written.",
+        "T-C1-01 references research_review/results/phase0/witness/witness_results.json, which exists."
+      ]
+    }
+  },
+  "pending_item_resolution": {
+    "resolved": [
+      "A3 citation ledger path and result",
+      "A3 reproducibility memo",
+      "smoke-stage manifest and report",
+      "baseline API smoke tests via the analytic signature tests",
+      "signature path-coordinate scaling verification (implemented and logged, packet marker stale)",
+      "independent smoke feature-dimension rerun (this audit)"
+    ],
+    "partially_resolved": [
+      "freeze-time sha256 of claims_to_tests.yaml (packet still PENDING; hash recorded by this audit)",
+      "independent split-manifest verification (diagram_hash missing; real namespaces not yet run)",
+      "execution-log entries for the two recorded readings (only the compact 12-feature reading is present)"
+    ],
+    "unresolved": [
+      "final wording check of the intended contribution sentence has no recorded artifact",
+      "overall G1 status and authorization line (this audit proposes CONDITIONAL GO and Phase 2 authorization under conditions)"
+    ]
+  },
+  "evidence_hashes": {
+    "citation_ledger.yaml": "0084f94427bb3111",
+    "reproducibility_status.md": "40fcb48f17b862b5",
+    "baseline_protocol.md": "1a31cb509bad64b0",
+    "claims_to_tests.yaml": "a99063ed73f7d3fd",
+    "decision_packet_G1.md": "8989feaeafe17c63",
+    "implementation_contract.md_current": "c8f48782514974b5",
+    "implementation_contract.md_frozen": "b024c04f5126c8c5",
+    "EXECUTION_LOG.md": "c5ec4fabe2210012",
+    "smoke/manifest.json": "59262f673de680c4",
+    "smoke/summary.json": "cedf804166fe072b",
+    "smoke/metrics.parquet": "43a808c8061d28c8",
+    "smoke/split_manifest.csv": "2c2df8f32ced107b",
+    "smoke/calibration.json": "af5e943b0b5cf1e8",
+    "src/tk_pilot/features.py": "44be21c2518d4720",
+    "src/tk_pilot/signatures.py": "23864ae5cc217f72",
+    "src/tk_pilot/models.py": "7f17c51c8f9a9c1a",
+    "src/tk_pilot/evaluate.py": "f13263a355a4f0c0",
+    "src/tk_pilot/run.py": "82a4a261e7bb6ad2",
+    "configs/tk_pilot.yaml": "1862b1bb58c4dded"
+  },
+  "commands": [
+    "PYTHONPATH=src python3 -m pytest tests/ -q -o addopts=\"\"",
+    "PYTHONPATH=src python3 -m tk_pilot.run --stage smoke --workers 2 --max-trajectories 1 --config /tmp/opencode/g1_audit_config.yaml --outdir /tmp/opencode/g1_audit_smoke",
+    "pdftotext -layout <each ledger PDF>",
+    "pdftotext -layout -f P -l P <each ledger PDF> for per-page locator scans"
+  ]
+}

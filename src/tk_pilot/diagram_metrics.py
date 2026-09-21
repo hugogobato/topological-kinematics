@@ -10,20 +10,31 @@ Frozen conventions (see ``assumption_ledger.yaml`` and ``metric_interface.md``):
   diagonal costs ``(death - birth) / 2``.
 - The empty diagram is a valid operand.
 
-Backends: ``gudhi`` supplies the primary implementation, ``persim`` is a
-secondary cross-check, and an exact brute-force enumeration over matchings with
-diagonal copies is an independent reference for diagram pairs with at most seven
-points in total. All three are finite-diagram only; ``as_diagram`` rejects
-non-finite input so a backend can never silently drop an essential class.
+Backends: ``bottleneck_exact`` is the primary implementation, an exact
+augmented-matching binary search over the candidate costs of the cost matrix
+produced by ``_bruteforce_cost_matrix`` whose feasibility test uses
+``scipy.sparse.csgraph.maximum_bipartite_matching``. ``persim`` is a secondary
+cross-check, and an exact brute-force enumeration over matchings with diagonal
+copies is an independent reference for diagram pairs with at most seven points
+in total. All are finite-diagram only; ``as_diagram`` rejects non-finite input
+so a backend can never silently drop an essential class.
+
+``gudhi.bottleneck_distance`` (gudhi 3.12.0) is retained under
+``bottleneck_gudhi`` for audit and legacy comparison only. That implementation
+is defective in the frozen environment: its result depends on the order of the
+input points and it returns wrong distances on some real pilot diagrams even
+when the exact ``e=0.0`` algorithm is requested, to the point of breaking the
+triangle inequality (WP-2.2 audit, ``metric_backend_witness.json``). It must
+not be used as a primary backend.
 
 Numerical zero. All public distance functions apply the declared numerical-zero
 convention ``NUMERICAL_ZERO = 1e-12``: a computed distance at or below this
-value is returned as exactly ``0.0``. The primary backend can return denormal
-values (about ``1e-308``) for a true-zero distance between non-identical
-diagrams, for example when one diagram carries an extra point on the diagonal.
-Without the snap, the frozen exact-zero step rule would not trigger at zero
-noise. The tolerance is declared, not hidden, and is far below the smallest
-distance that is meaningful at the pilot's coordinate scale.
+value is returned as exactly ``0.0``. The legacy ``gudhi`` backend can return
+denormal values (about ``1e-308``) for a true-zero distance between
+non-identical diagrams, for example when one diagram carries an extra point on
+the diagonal. Without the snap, the frozen exact-zero step rule would not
+trigger at zero noise. The tolerance is declared, not hidden, and is far below
+the smallest distance that is meaningful at the pilot's coordinate scale.
 """
 
 from __future__ import annotations
@@ -38,6 +49,7 @@ __all__ = [
     "strip_essential",
     "diagonal_cost",
     "bottleneck_bruteforce",
+    "bottleneck_exact",
     "bottleneck_gudhi",
     "bottleneck_persim",
     "bottleneck_linf",
@@ -190,7 +202,12 @@ def _identical(a: np.ndarray, b: np.ndarray) -> bool:
 
 
 def bottleneck_gudhi(d1, d2) -> float:
-    """Primary implementation: ``gudhi.bottleneck_distance`` (L-infinity ground)."""
+    """Legacy ``gudhi.bottleneck_distance`` backend, retained for audit only.
+
+    Defective in gudhi 3.12.0: order dependent and incorrect on some inputs,
+    and able to break the triangle inequality on real diagrams. See the module
+    docstring and the WP-2.2 audit; do not use as a primary backend.
+    """
     import gudhi
 
     a = as_diagram(d1)
@@ -213,7 +230,56 @@ def bottleneck_persim(d1, d2) -> float:
     return _snap(persim.bottleneck(a, b))
 
 
-bottleneck_linf = bottleneck_gudhi
+def _perfect_matching_exists(costs: np.ndarray, threshold: float) -> bool:
+    """True when the threshold graph on the augmented cost matrix has a
+    perfect matching.
+
+    The graph is bipartite and square, with an edge ``(i, j)`` exactly when
+    ``costs[i, j] <= threshold``; a perfect matching is detected with
+    ``scipy.sparse.csgraph.maximum_bipartite_matching``.
+    """
+    from scipy.sparse import csr_matrix
+    from scipy.sparse.csgraph import maximum_bipartite_matching
+
+    graph = csr_matrix(costs <= threshold)
+    matching = maximum_bipartite_matching(graph, perm_type="row")
+    return bool(np.all(matching >= 0))
+
+
+def bottleneck_exact(d1, d2) -> float:
+    """Primary implementation: exact bottleneck with diagonal copies.
+
+    Binary search over the unique entries of the augmented cost matrix
+    produced by :func:`_bruteforce_cost_matrix`, with feasibility at each
+    candidate threshold tested by
+    ``scipy.sparse.csgraph.maximum_bipartite_matching`` on the threshold graph.
+    The optimum of the bottleneck matching problem is always one of the
+    augmented cost entries, so the search returns the exact value. The result
+    is invariant to the order of the input points and is total on finite
+    diagrams. The empty-diagram and identical-diagram short circuits and the
+    declared numerical-zero snap are applied exactly as in the other backends.
+    """
+    a = as_diagram(d1)
+    b = as_diagram(d2)
+    n, m = a.shape[0], b.shape[0]
+    if n == 0 and m == 0:
+        return 0.0
+    if _identical(a, b):
+        return 0.0
+    costs = _bruteforce_cost_matrix(a, b)
+    candidates = np.unique(costs)
+    low = 0
+    high = int(candidates.shape[0]) - 1
+    while low < high:
+        middle = (low + high) // 2
+        if _perfect_matching_exists(costs, float(candidates[middle])):
+            high = middle
+        else:
+            low = middle + 1
+    return _snap(float(candidates[low]))
+
+
+bottleneck_linf = bottleneck_exact
 
 
 def wasserstein2_linf(d1, d2) -> float:

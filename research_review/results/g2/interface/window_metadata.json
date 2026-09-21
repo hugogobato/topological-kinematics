@@ -1,0 +1,651 @@
+{
+  "environment": {
+    "gudhi": "3.12.0",
+    "numpy": "2.4.3",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "gate_dependency": {
+    "conditional_on": "G1",
+    "g1_decision_packet": "research_review/results/phase1/decision_packet_G1.md",
+    "g1_recorded_status_at_run_time": "unresolved (pending items present)",
+    "labeling": "All WP-2.1 outputs are conditional on G1 and do not constitute a G2 decision.",
+    "pending_marker_count": 25,
+    "work_package": "WP-2.1"
+  },
+  "windows": {
+    "pooled_diagnostics": {
+      "A_return_1000_sigma0": {
+        "claim_scope": "separate trailing-window observation map; never mixed with the frame-level claim",
+        "degree": 0,
+        "floor_e": 0.0,
+        "frame_level_baseline": {
+          "L": 3.3680767995005483,
+          "R": 0.0,
+          "eta": 0.0,
+          "n_diagrams": 129
+        },
+        "metric": "bottleneck_linf",
+        "pooled_length3_stride2": {
+          "L": 2.1755444145463376,
+          "R": 0.0,
+          "eta": 0.0,
+          "n_windows": 64,
+          "pooled_shape_per_window": [
+            192,
+            2
+          ]
+        }
+      },
+      "B_jump_1000_sigma50": {
+        "claim_scope": "separate trailing-window observation map; never mixed with the frame-level claim",
+        "degree": 0,
+        "floor_e": 0.0,
+        "frame_level_baseline": {
+          "L": 5.499848996790329,
+          "R": 0.4226714502280034,
+          "eta": 0.07685146455378526,
+          "n_diagrams": 129
+        },
+        "metric": "bottleneck_linf",
+        "pooled_length3_stride2": {
+          "L": 1.686766946845937,
+          "R": 0.4238006645672295,
+          "eta": 0.25125027814879153,
+          "n_windows": 64,
+          "pooled_shape_per_window": [
+            32,
+            32
+          ]
+        }
+      }
+    },
+    "trajectories": {
+      "A_return_1000_sigma0": {
+        "family": "A",
+        "master_grid": "u = j / 128, j = 0..128",
+        "n_frames": 129,
+        "verdict": "PASS",
+        "windows": [
+          {
+            "expected_output_count": 129,
+            "first_window_end_frame": 0,
+            "first_window_end_time": 0.0,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 1,
+            "output_count": 129,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              129,
+              64,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 64,
+              "shape_per_window": [
+                64,
+                2
+              ]
+            },
+            "stride": 1,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 65,
+            "first_window_end_frame": 0,
+            "first_window_end_time": 0.0,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 1,
+            "output_count": 65,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              65,
+              64,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 64,
+              "shape_per_window": [
+                64,
+                2
+              ]
+            },
+            "stride": 2,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 33,
+            "first_window_end_frame": 0,
+            "first_window_end_time": 0.0,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 1,
+            "output_count": 33,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              33,
+              64,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 64,
+              "shape_per_window": [
+                64,
+                2
+              ]
+            },
+            "stride": 4,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 127,
+            "first_window_end_frame": 2,
+            "first_window_end_time": 0.015625,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 3,
+            "output_count": 127,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              127,
+              192,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 192,
+              "shape_per_window": [
+                192,
+                2
+              ]
+            },
+            "stride": 1,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 64,
+            "first_window_end_frame": 2,
+            "first_window_end_time": 0.015625,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 3,
+            "output_count": 64,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              64,
+              192,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 192,
+              "shape_per_window": [
+                192,
+                2
+              ]
+            },
+            "stride": 2,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 32,
+            "first_window_end_frame": 2,
+            "first_window_end_time": 0.015625,
+            "input_frame_support": {
+              "end_frame": 126,
+              "end_time": 0.984375,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 2
+            },
+            "last_window_end_frame": 126,
+            "last_window_end_time": 0.984375,
+            "length": 3,
+            "output_count": 32,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              32,
+              192,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 192,
+              "shape_per_window": [
+                192,
+                2
+              ]
+            },
+            "stride": 4,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 125,
+            "first_window_end_frame": 4,
+            "first_window_end_time": 0.03125,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 5,
+            "output_count": 125,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              125,
+              320,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 320,
+              "shape_per_window": [
+                320,
+                2
+              ]
+            },
+            "stride": 1,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 63,
+            "first_window_end_frame": 4,
+            "first_window_end_time": 0.03125,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 5,
+            "output_count": 63,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              63,
+              320,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 320,
+              "shape_per_window": [
+                320,
+                2
+              ]
+            },
+            "stride": 2,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 32,
+            "first_window_end_frame": 4,
+            "first_window_end_time": 0.03125,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 5,
+            "output_count": 32,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              32,
+              320,
+              2
+            ],
+            "pooled_cardinality": {
+              "kind": "points_concatenated",
+              "n_points_per_window": 320,
+              "shape_per_window": [
+                320,
+                2
+              ]
+            },
+            "stride": 4,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          }
+        ]
+      },
+      "B_jump_1000_sigma50": {
+        "family": "B",
+        "master_grid": "u = j / 128, j = 0..128",
+        "n_frames": 129,
+        "verdict": "PASS",
+        "windows": [
+          {
+            "expected_output_count": 129,
+            "first_window_end_frame": 0,
+            "first_window_end_time": 0.0,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 1,
+            "output_count": 129,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              129,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 1,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 65,
+            "first_window_end_frame": 0,
+            "first_window_end_time": 0.0,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 1,
+            "output_count": 65,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              65,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 2,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 33,
+            "first_window_end_frame": 0,
+            "first_window_end_time": 0.0,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 1,
+            "output_count": 33,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              33,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 4,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 127,
+            "first_window_end_frame": 2,
+            "first_window_end_time": 0.015625,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 3,
+            "output_count": 127,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              127,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 1,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 64,
+            "first_window_end_frame": 2,
+            "first_window_end_time": 0.015625,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 3,
+            "output_count": 64,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              64,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 2,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 32,
+            "first_window_end_frame": 2,
+            "first_window_end_time": 0.015625,
+            "input_frame_support": {
+              "end_frame": 126,
+              "end_time": 0.984375,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 2
+            },
+            "last_window_end_frame": 126,
+            "last_window_end_time": 0.984375,
+            "length": 3,
+            "output_count": 32,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              32,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 4,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 125,
+            "first_window_end_frame": 4,
+            "first_window_end_time": 0.03125,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 5,
+            "output_count": 125,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              125,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 1,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 63,
+            "first_window_end_frame": 4,
+            "first_window_end_time": 0.03125,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 5,
+            "output_count": 63,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              63,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 2,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          },
+          {
+            "expected_output_count": 32,
+            "first_window_end_frame": 4,
+            "first_window_end_time": 0.03125,
+            "input_frame_support": {
+              "end_frame": 128,
+              "end_time": 1.0,
+              "start_frame": 0,
+              "start_time": 0.0,
+              "unused_tail_frames": 0
+            },
+            "last_window_end_frame": 128,
+            "last_window_end_time": 1.0,
+            "length": 5,
+            "output_count": 32,
+            "output_count_matches_formula": true,
+            "pooled_array_shape": [
+              32,
+              32,
+              32
+            ],
+            "pooled_cardinality": {
+              "kind": "field_averaged",
+              "shape_per_window": [
+                32,
+                32
+              ]
+            },
+            "stride": 4,
+            "window_index_convention": "trailing window ending at frame j; end indices ends = arange(length - 1, n_frames, stride)"
+          }
+        ]
+      }
+    },
+    "verdict": "PASS"
+  },
+  "work_package": "WP-2.1"
+}

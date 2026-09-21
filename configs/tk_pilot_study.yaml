@@ -1,0 +1,64 @@
+master_grid:
+  n: 128
+strides: [1, 2, 4]
+sigmas: [0.0, 0.05]
+classes: [return, ramp, jump]
+families: [A, B]
+seed_namespaces:
+  train: [1000, 1019]
+  validation: [2000, 2009]
+  test_exploratory: [3000, 3019]
+  test_confirmatory_start: 10000
+degrees:
+  primary: 0
+  secondary: 1
+degree_families:
+  0: [A, B]
+  1: [A]
+metric: bottleneck_linf
+representations:
+  - compact
+  - speed_history
+  - complete_distances
+  - recurrence_summary
+  - raw_geometry_flat
+  - raw_geometry_summary
+  - moments_flat
+  - moments_summary
+  - moment_signature
+  - moment_signature_time
+learner_grids:
+  logistic:
+    C: [0.01, 0.1, 1.0, 10.0]
+  svm_rbf:
+    C: [0.01, 0.1, 1.0, 10.0]
+    gamma_scale: [0.1, 1.0, 10.0]
+bootstrap:
+  n_resamples: 2000
+  seed: 20260907
+decision:
+  superiority_upper: -0.05
+  noninferiority_upper: 0.02
+  parsimony_ratio: 4.0
+  family_deterioration: 0.05
+  target_half_width: 0.01
+noise_floor:
+  sigma_calibration: 0.05
+  percentile: 95.0
+  angle_factor: 2.0
+  efficiency_factor: 2.0
+learner_seed: 20260907
+smoke_seed: 11
+cache_dir: research_review/results/cache
+controls:
+  smoke: true
+  exploratory: false
+  confirmatory: false
+  matched_family: A
+confirmatory:
+  n_clusters: 200
+  route: superiority
+  incumbent: complete_distances
+  eligible_comparators: null
+  shard_index: 0
+  n_shards: 1

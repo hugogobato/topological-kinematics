@@ -1,0 +1,367 @@
+{
+  "work_package": "WP-2.2",
+  "gate_label": "conditional_on_G1: WP-2.2 executed after the coordinator's G1 record and before the G2 decision; scientific pass condition is stable definitions only; no predictive value is claimed",
+  "command": "/usr/bin/python3 scripts/run_wp22_diagnostics.py --workers 2",
+  "started_at": "2026-09-21T00:04:31-0300",
+  "finished_at": "2026-09-21T00:10:53-0300",
+  "wall_seconds": 342.61745600399445,
+  "workers": 2,
+  "grid": {
+    "families": [
+      "A",
+      "B"
+    ],
+    "classes": [
+      "return",
+      "ramp",
+      "jump",
+      "static"
+    ],
+    "seeds": [
+      11,
+      1000,
+      1001
+    ],
+    "sigmas": [
+      0.0,
+      0.05
+    ],
+    "strides": [
+      1,
+      2,
+      4
+    ],
+    "degrees": [
+      0,
+      1
+    ]
+  },
+  "metric_backends": {
+    "gudhi_default": "frozen primary call: tk_pilot.bottleneck_linf, gudhi default e, canonicalized inputs; order-dependent and defective",
+    "exact_scipy": "corrected candidate: independent SciPy exact solver, validated against the project brute-force reference, persim, and an order-invariance test"
+  },
+  "repo_cache": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/cache",
+  "tmp_cache": "/tmp/opencode/wp22_cache",
+  "out_dir": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics",
+  "cached_trajectory_ids": [
+    "A_jump_1000_sigma0",
+    "A_jump_1000_sigma50",
+    "A_jump_1001_sigma0",
+    "A_jump_1001_sigma50",
+    "A_jump_11_sigma0",
+    "A_jump_11_sigma50",
+    "A_ramp_1000_sigma0",
+    "A_ramp_1000_sigma50",
+    "A_ramp_1001_sigma0",
+    "A_ramp_1001_sigma50",
+    "A_ramp_11_sigma0",
+    "A_ramp_11_sigma50",
+    "A_return_1000_sigma0",
+    "A_return_1000_sigma50",
+    "A_return_1001_sigma0",
+    "A_return_1001_sigma50",
+    "A_return_11_sigma0",
+    "A_return_11_sigma50",
+    "A_static_1000_sigma0",
+    "A_static_1000_sigma50",
+    "A_static_1001_sigma0",
+    "A_static_1001_sigma50",
+    "A_static_11_sigma0",
+    "A_static_11_sigma50",
+    "B_jump_1000_sigma0",
+    "B_jump_1000_sigma50",
+    "B_jump_1001_sigma0",
+    "B_jump_1001_sigma50",
+    "B_jump_11_sigma0",
+    "B_jump_11_sigma50",
+    "B_ramp_1000_sigma0",
+    "B_ramp_1000_sigma50",
+    "B_ramp_1001_sigma0",
+    "B_ramp_1001_sigma50",
+    "B_ramp_11_sigma0",
+    "B_ramp_11_sigma50",
+    "B_return_1000_sigma0",
+    "B_return_1000_sigma50",
+    "B_return_1001_sigma0",
+    "B_return_1001_sigma50",
+    "B_return_11_sigma0",
+    "B_return_11_sigma50",
+    "B_static_1000_sigma0",
+    "B_static_1000_sigma50",
+    "B_static_1001_sigma0",
+    "B_static_1001_sigma50",
+    "B_static_11_sigma0",
+    "B_static_11_sigma50"
+  ],
+  "fresh_trajectory_ids": [],
+  "trajectory_cache_hits": 48,
+  "diagram_cache_hits": 48,
+  "extraction_seconds_total": 3.066957505965547,
+  "metric_seconds_total": {
+    "gudhi_default": 393.84041250895825,
+    "exact_scipy": 226.89646957394143
+  },
+  "floors": {
+    "gudhi_default": {
+      "A|0|1": 0.055153732833621016,
+      "A|0|2": 0.06467399107753946,
+      "A|0|4": 0.05785205792112252,
+      "A|1|1": 0.1045617016282595,
+      "A|1|2": 0.11098942010746575,
+      "A|1|4": 0.10801281900487454,
+      "B|0|1": 0.05344460778252064,
+      "B|0|2": 0.052177047198146705,
+      "B|0|4": 0.04142585927858325,
+      "B|1|1": 0.05650591423074903,
+      "B|1|2": 0.05717450186806192,
+      "B|1|4": 0.06082530705673119
+    },
+    "exact_scipy": {
+      "A|0|1": 0.055153732833621016,
+      "A|0|2": 0.06467399107753946,
+      "A|0|4": 0.05785205792112252,
+      "A|1|1": 0.1045617016282595,
+      "A|1|2": 0.11098942010746575,
+      "A|1|4": 0.10801281900487454,
+      "B|0|1": 0.05344460778252064,
+      "B|0|2": 0.052177047198146705,
+      "B|0|4": 0.04142585927858325,
+      "B|1|1": 0.05650591423074903,
+      "B|1|2": 0.05717450186806192,
+      "B|1|4": 0.06082530705673119
+    }
+  },
+  "verdicts": {
+    "gudhi_default": "pass",
+    "exact_scipy": "pass"
+  },
+  "n_feature_rows": 288,
+  "solver_validation": {
+    "verdict": "pass",
+    "description": "independent SciPy exact solver against the project brute-force reference, persim, exhaustive enumeration, and an order-invariance test; gudhi defects quantified separately",
+    "comparisons": {
+      "scipy_vs_project_bruteforce": 80,
+      "scipy_vs_gudhi_default": 80,
+      "scipy_vs_gudhi_e0": 80
+    },
+    "mismatches": {
+      "project_bruteforce": 0,
+      "gudhi_default": 0,
+      "gudhi_e0": 0
+    },
+    "max_abs_difference": {
+      "project_bruteforce": 0.0,
+      "gudhi_default": 0.0,
+      "gudhi_e0": 1.1102230246251565e-16
+    },
+    "order_invariance": {
+      "comparisons": 30,
+      "mismatches": 0,
+      "max_abs_difference": 0.0
+    },
+    "gudhi_order_sensitivity": {
+      "default_canonical_mismatches": 2,
+      "default_shuffled_mismatches": 2,
+      "e0_canonical_mismatches": 1,
+      "e0_shuffled_mismatches": 2,
+      "pairs_wrong_in_all_four_tests": 1,
+      "witness": {
+        "diagram_a": [
+          [
+            0.5649379679218175,
+            0.8859625423557974
+          ],
+          [
+            0.3328420761268649,
+            1.0046039216594465
+          ],
+          [
+            0.5823101209138964,
+            1.2044611831166603
+          ],
+          [
+            0.39153755359604436,
+            1.0230226649348044
+          ]
+        ],
+        "diagram_b": [
+          [
+            0.11869142275472266,
+            0.9584997235165631
+          ],
+          [
+            0.12213669672757577,
+            0.3077607545405331
+          ],
+          [
+            0.04531101063553622,
+            0.49532288645891787
+          ],
+          [
+            0.17035264352228385,
+            0.3417164877000588
+          ]
+        ],
+        "scipy_exact": 0.31574255566938003,
+        "gudhi_default_canonical": 0.4199041503809202,
+        "gudhi_e0_canonical": 0.5092810352005286,
+        "gudhi_default_shuffled": 0.4199041503809202,
+        "gudhi_e0_shuffled": 0.5092810352005286
+      },
+      "n_pairs": 60
+    },
+    "exhaustive_verification": {
+      "n": 4,
+      "m": 4,
+      "scipy_exact": 0.31574255566938003,
+      "exhaustive_enumeration": 0.31574255566938003,
+      "gudhi_e0_canonical": 0.5092810352005286,
+      "agreement": true
+    },
+    "persim_comparisons": 8,
+    "persim_mismatches": 0,
+    "persim_max_abs_difference": 0.0,
+    "real_diagram_pairs_comparisons": 12,
+    "real_diagram_pairs_mismatches": 0,
+    "real_diagram_pairs_max_abs_difference": 0.0
+  },
+  "cross_backend": {
+    "n_pairs_compared": 33600,
+    "n_above_tolerance": 0,
+    "max_abs_difference": 0.0,
+    "by_degree": {
+      "0": {
+        "n_pairs_compared": 16800,
+        "n_above_tolerance": 0,
+        "max_abs_difference": 0.0
+      },
+      "1": {
+        "n_pairs_compared": 16800,
+        "n_above_tolerance": 0,
+        "max_abs_difference": 0.0
+      }
+    }
+  },
+  "minimal_witness": {
+    "diagram_a": [
+      [
+        0.625095466604667,
+        1.4463238849874331
+      ],
+      [
+        0.8972138009695755,
+        1.6942832297216217
+      ],
+      [
+        0.7756856902451935,
+        1.2436206430889143
+      ]
+    ],
+    "diagram_b": [
+      [
+        0.22520718999059186,
+        0.5282396168099054
+      ],
+      [
+        0.30016628491122543,
+        0.5785918970119988
+      ],
+      [
+        0.8735534453962619,
+        1.1284230330503866
+      ],
+      [
+        0.005265304565574724,
+        0.4503416104482213
+      ]
+    ],
+    "scipy_exact": 0.3985347143760231,
+    "project_bruteforce": 0.3985347143760231,
+    "persim": 0.3985347143760231,
+    "gudhi_default": 0.3985347143760231,
+    "gudhi_exact_e0": 0.6650287460769155,
+    "gudhi_default_canonical": 0.41061420919138303,
+    "gudhi_e0_canonical": 0.6650287460769155,
+    "abs_diff": 0.2664940317008924,
+    "certificate_matching": [
+      {
+        "i": 0,
+        "j": 2,
+        "kind": "point_to_point",
+        "cost": 0.31790085193704654
+      },
+      {
+        "i": 1,
+        "j": 4,
+        "kind": "a_to_diagonal",
+        "cost": 0.3985347143760231
+      },
+      {
+        "i": 2,
+        "j": 5,
+        "kind": "a_to_diagonal",
+        "cost": 0.2339674764218604
+      },
+      {
+        "i": 3,
+        "j": 0,
+        "kind": "b_to_diagonal",
+        "cost": 0.15151621340965676
+      },
+      {
+        "i": 4,
+        "j": 1,
+        "kind": "b_to_diagonal",
+        "cost": 0.13921280605038666
+      },
+      {
+        "i": 5,
+        "j": 3,
+        "kind": "b_to_diagonal",
+        "cost": 0.2225381529413233
+      },
+      {
+        "i": 6,
+        "j": 6,
+        "kind": "diagonal_to_diagonal",
+        "cost": 0.0
+      }
+    ],
+    "search": "random 3-point and 4-point diagrams, numpy default_rng(7)"
+  },
+  "peak_ram_bytes": {
+    "parent": 324370432,
+    "children_max": 91209728,
+    "reported_max": 324370432
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.3",
+    "gudhi": "3.12.0",
+    "pandas": "3.0.1",
+    "matplotlib": "3.10.8"
+  },
+  "artifacts": [
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/cell_summary.csv",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/checks.json",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/edge_case_report.md",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/feature_table.csv",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/feature_table_exact_metric.csv",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/exact_reference/fig_angle_valid_fraction_vs_stride.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/exact_reference/fig_edge_case_counts.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/exact_reference/fig_features_vs_sigma.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/exact_reference/fig_features_vs_stride_sigma0.05.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/exact_reference/fig_features_vs_stride_sigma0.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/exact_reference/fig_noise_floor_sensitivity.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/fig_metric_backend_discrepancy.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/frozen_primary/fig_angle_valid_fraction_vs_stride.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/frozen_primary/fig_edge_case_counts.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/frozen_primary/fig_features_vs_sigma.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/frozen_primary/fig_features_vs_stride_sigma0.05.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/frozen_primary/fig_features_vs_stride_sigma0.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/figures/frozen_primary/fig_noise_floor_sensitivity.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/metric_backend_audit.md",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/metric_backend_witness.json",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagnostics/stability_report.md"
+  ]
+}

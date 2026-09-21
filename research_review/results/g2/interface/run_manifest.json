@@ -1,0 +1,43 @@
+{
+  "artifacts": [
+    "determinism.json",
+    "resampling.csv",
+    "resampling_details.json",
+    "window_metadata.json",
+    "interface_report.md"
+  ],
+  "command": "python3 scripts/run_wp21_interface.py",
+  "environment": {
+    "gudhi": "3.12.0",
+    "numpy": "2.4.3",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "gate_dependency": {
+    "conditional_on": "G1",
+    "g1_decision_packet": "research_review/results/phase1/decision_packet_G1.md",
+    "g1_recorded_status_at_run_time": "unresolved (pending items present)",
+    "labeling": "All WP-2.1 outputs are conditional on G1 and do not constitute a G2 decision.",
+    "pending_marker_count": 25,
+    "work_package": "WP-2.1"
+  },
+  "peak_ram_bytes": 224522240,
+  "peak_ram_mib": 214.12109375,
+  "seeds": [
+    1000,
+    1001,
+    1002
+  ],
+  "timings": {
+    "determinism_seconds": 14.132178166997619,
+    "resampling_seconds": 80.47017516600317,
+    "windows_seconds": 446.172068054002
+  },
+  "trajectories": [
+    "A_return_1000_sigma0",
+    "B_jump_1000_sigma50"
+  ],
+  "wall_time_seconds": 541.0201992020011,
+  "work_package": "WP-2.1",
+  "worker_processes": 1
+}

@@ -1,0 +1,212 @@
+{
+  "check_verdicts": {
+    "check1_static": "PASS",
+    "check2_ramp": "PASS",
+    "check3_topology": "RESIDUAL",
+    "check4_null": "RESIDUAL",
+    "check5_sampling": "PASS",
+    "check6_translation": "PASS"
+  },
+  "checks": {
+    "check1_static": {
+      "calibration": {
+        "A": 0.05715000939234162,
+        "B": 0.053609107683668646
+      },
+      "id": "check1_static",
+      "sigma0_nonzero_cases": 0,
+      "tables": [
+        "reports/tables/static_controls.csv",
+        "reports/tables/static_adjacent_distances.csv"
+      ],
+      "title": "Static controls and sigma = 0 exact-zero rule",
+      "verdict": "PASS"
+    },
+    "check2_ramp": {
+      "id": "check2_ramp",
+      "stride_subsample_exact": {
+        "A_11": true,
+        "A_12": true,
+        "B_11": true,
+        "B_12": true
+      },
+      "tables": [
+        "reports/tables/ramp_response.csv",
+        "reports/tables/ramp_fits.csv",
+        "reports/tables/ramp_transitions.csv"
+      ],
+      "title": "Smooth ramp deformation response",
+      "verdict": "PASS"
+    },
+    "check3_topology": {
+      "id": "check3_topology",
+      "tables": [
+        "reports/tables/class_cardinality.csv",
+        "reports/tables/class_transitions.csv"
+      ],
+      "title": "Topology-changing class programs",
+      "verdict": "RESIDUAL"
+    },
+    "check4_null": {
+      "calibration": {
+        "A": 0.05715000939234162,
+        "B": 0.053609107683668646
+      },
+      "calibration_max": {
+        "A": 0.07147555231803865,
+        "B": 0.08400613287125236
+      },
+      "id": "check4_null",
+      "leave_one_out": {
+        "A_sigma100_exclude13": 0.09025982023617765,
+        "A_sigma100_exclude14": 0.08808064611943042,
+        "A_sigma50_exclude13": 0.05712553028700439,
+        "A_sigma50_exclude14": 0.056136540233292,
+        "B_sigma100_exclude13": 0.10907089786617775,
+        "B_sigma100_exclude14": 0.09997498398159153,
+        "B_sigma50_exclude13": 0.04819199646233052,
+        "B_sigma50_exclude14": 0.06194146997758769
+      },
+      "tables": [
+        "reports/tables/null_summary.csv",
+        "reports/tables/null_adjacent_distances.csv"
+      ],
+      "title": "Noisy raw null processes",
+      "verdict": "RESIDUAL"
+    },
+    "check5_sampling": {
+      "id": "check5_sampling",
+      "tables": [
+        "reports/tables/sampling_resolution.csv",
+        "reports/tables/sampling_summary.csv"
+      ],
+      "title": "Sampling and filtration-resolution sensitivity",
+      "verdict": "PASS"
+    },
+    "check6_translation": {
+      "id": "check6_translation",
+      "tables": [
+        "reports/tables/translation_controls.csv",
+        "reports/tables/translation_summary.csv"
+      ],
+      "title": "Rigid translation invariance",
+      "verdict": "PASS"
+    }
+  },
+  "command": "/usr/bin/python3 scripts/run_wp31_ladder.py --out research_review/results/g2 --workers 3",
+  "conditional_on_gate": "G1",
+  "cwd": "/home/hugo_souto/Stuff/Research/Topological_Kinematics",
+  "environment": {
+    "packages": {
+      "gudhi": "3.12.0",
+      "joblib": "1.5.3",
+      "matplotlib": "3.10.8",
+      "numpy": "2.4.3",
+      "pandas": "3.0.1",
+      "persim": "0.3.8",
+      "pyarrow": "24.0.0",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.1"
+    },
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+  },
+  "errors": [],
+  "finished_utc": "2026-09-21T02:54:16.078231+00:00",
+  "g1_status": {
+    "gate": "G1",
+    "outputs_are_conditional": true,
+    "packet": "research_review/results/phase1/decision_packet_G1.md",
+    "pending_marker_count": 25,
+    "sha256": "8989feaeafe17c633255505e01e96cf15d65f990e5dfc1bbbd5c8189c41dc528",
+    "status_at_runtime": "template_with_pending_items"
+  },
+  "gate": "G2",
+  "geometry_replication": {
+    "A": true,
+    "B": true
+  },
+  "hash_mismatches": [],
+  "inputs": {
+    "configs/tk_pilot.yaml": "1862b1bb58c4ddede8946782e6d2f55d6a4e87b752ad163a03560baaaa297091",
+    "research_review/Pilot_Experiment_Specification.md": "491c91e074219ded7a84a1dc3fae957d61805ad291cd8b0822b000fc94c9c202",
+    "research_review/Topological_Kinematics_Research_Plan.md": "8fd06530e2c26e81eb6d6e257dd9522b12a3c92300dbc86177327bf59ff38a2a",
+    "research_review/results/phase1/decision_packet_G1.md": "8989feaeafe17c633255505e01e96cf15d65f990e5dfc1bbbd5c8189c41dc528",
+    "research_review/results/phase1/implementation_contract.md": "c8f48782514974b55a6e3fb1d747824ad408dd15927e09df70d48e07e688bf3d",
+    "scripts/run_wp31_ladder.py": "b17fb9b7f97195ee74ed520d4ad31f2701343e37f180e0c48e54ac34be28f254",
+    "src/tk_pilot/diagram_metrics.py": "0f28f01f4b3013f4ea399ba064bb1042c8d81b8aa1a8eeb6dcdd6f46de128596",
+    "src/tk_pilot/features.py": "44be21c2518d47202565c2197aa22f4e26c945f283bce15dcf54645832bed555",
+    "src/tk_pilot/generators.py": "1bc14dfca766573c704e4edda622c00fcac5b55f584bae0c3bc447f65a78ab00",
+    "src/tk_pilot/path_diagnostics.py": "a67eb36041d0724ac8d859ec715928542b90a1af7614bbf2fcef9ca752c5b37f",
+    "src/tk_pilot/persistence.py": "5ec7b5296185fab3997ac0abd049a4db5c7a00862fb93468c12fae1ff8b3c333"
+  },
+  "missing_artifacts": 0,
+  "n_errors": 0,
+  "n_jobs": 70,
+  "outputs": {
+    "checksum_files": [
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/A/11/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/A/12/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/A/13/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/A/14/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/B/11/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/B/12/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/B/13/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams/B/14/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/A/11/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/A/12/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/A/13/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/A/14/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/B/11/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/B/12/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/B/13/SHA256SUMS",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls/B/14/SHA256SUMS"
+    ],
+    "diagrams": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/diagrams",
+    "figures": [
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/figures/fig_check1_static.png",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/figures/fig_check2_ramp.png",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/figures/fig_check3_topology.png",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/figures/fig_check4_null.png",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/figures/fig_check5_sampling.png",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/figures/fig_check6_translation.png"
+    ],
+    "raw_controls": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/raw_controls",
+    "report": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/raw_correctness_report.md",
+    "reports": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports",
+    "tables": [
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/static_controls.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/static_adjacent_distances.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/ramp_response.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/ramp_fits.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/ramp_transitions.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/class_cardinality.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/class_transitions.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/null_summary.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/null_adjacent_distances.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/sampling_resolution.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/sampling_summary.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/translation_controls.csv",
+      "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2/reports/tables/translation_summary.csv"
+    ]
+  },
+  "overall_verdict": "RESIDUAL",
+  "peak_ram_bytes": {
+    "children": 142516224,
+    "main": 219742208
+  },
+  "phase_times": {
+    "check1": 22.413275377999526,
+    "check2": 0.027905307993933093,
+    "check3": 0.03419758300151443,
+    "check4": 45.3306324580044,
+    "check5": 3.0478061670000898,
+    "check6": 3.668638948998705,
+    "figures": 10.359447758004535,
+    "jobs": 157.0300473410025
+  },
+  "started_utc": "2026-09-21T02:49:48.779753+00:00",
+  "wall_seconds": 242.21012276699912,
+  "work_package": "WP-3.1",
+  "workers": 3
+}

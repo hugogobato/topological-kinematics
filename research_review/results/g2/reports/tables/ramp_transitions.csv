@@ -1,0 +1,5 @@
+family,seed,class_scope,expected_z,measured_low_z,measured_high_z,offset,flag,criterion,verdict
+A,11,ramp,1.84501777331949,2.02245832060291,2.02245832060291,0.177440547283413,death_coordinate_switch,z_switch equals 2r plus the intra-circle merge scale,PASS
+A,12,ramp,1.8795281046246,2.05390142532582,2.05390142532582,0.174373320701216,death_coordinate_switch,z_switch equals 2r plus the intra-circle merge scale,PASS
+B,11,ramp,0.84525673460345,0.921461478951161,0.954484427451897,0.109227692848447,finite_H0_onset,first frame with finite H0 cardinality above zero,PASS
+B,12,ramp,0.899354341917266,0.977872518371425,1.00681907964725,0.107464737729982,finite_H0_onset,first frame with finite H0 cardinality above zero,PASS

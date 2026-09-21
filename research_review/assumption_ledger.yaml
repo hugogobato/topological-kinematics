@@ -96,7 +96,25 @@ diagram_metric:
     point_cost: "||p - q||_inf = max(|Delta b|, |Delta d|)"
     diagonal: "infinite multiplicity; the cost of matching a point p = (b, d) to the diagonal is (d - b)/2"
     empty_diagram: "a valid operand"
-    implementation: "gudhi.bottleneck_distance (gudhi 3.12.0)"
+    implementation: "tk_pilot.diagram_metrics.bottleneck_exact (exact augmented-matching binary search; scipy 1.17.1 maximum_bipartite_matching)"
+    amendment_g2:
+      date: "2026-09-21"
+      defect: >-
+        The previous primary implementation, gudhi.bottleneck_distance (gudhi 3.12.0) with the
+        default e=None, is order dependent and incorrect on some real pilot diagrams even when the
+        exact e=0.0 algorithm is requested. The deviations reach tens of thousandths and break
+        the triangle inequality on the WP-2.2 diagnostics grid.
+      witness: >-
+        research_review/results/g2/diagnostics/metric_backend_witness.json (3 versus 4 points):
+        the exact value is 0.3985347143760231, confirmed by the project brute-force reference,
+        persim.bottleneck, and an independent SciPy binary-search solver; on the canonical order
+        gudhi e=None returns 0.41061420919138303 and gudhi e=0.0 returns 0.6650287460769155.
+      gudhi_status: >-
+        bottleneck_gudhi is retained for audit and legacy comparison only and must not be used as
+        a primary backend. The mathematical definition and the numerical-zero policy are unchanged;
+        bottleneck_exact applies the same snap and empty-diagram and identical-diagram short
+        circuits. Cached runner distances computed with the gudhi backend were invalidated and
+        regenerated under research_review/results/cache/runner_distances/.
     independent_reference: >-
       Brute-force exact bottleneck inside the project package, enumerating matchings that include
       diagonal copies; used for diagram pairs with at most 7 points in total.

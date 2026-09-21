@@ -5,7 +5,7 @@
   "config_path": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/configs/tk_pilot.yaml",
   "config_sha256": "37d8df5bcf6007225ef0bd7e99edf68225015e34d5c0f015c237743bffb47d89",
   "config_source": "file",
-  "created_utc": "2026-09-21T01:24:56Z",
+  "created_utc": "2026-09-21T02:49:28Z",
   "figures": [
     "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/phase1/smoke/figures/fig_stride_curves_degree0.png",
     "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/phase1/smoke/figures/fig_confusion_compact_degree0.png"
@@ -63,7 +63,7 @@
   "metrics_file": "metrics.parquet",
   "n_rows": 340,
   "n_trajectories": 46,
-  "peak_ram_bytes": 190959616,
+  "peak_ram_bytes": 208039936,
   "preprocessing_file": "preprocessing.npz",
   "run_id": "smoke-37d8df5bcf60",
   "selection_table_file": "selection_table.parquet",
@@ -84,6 +84,6 @@
     "sklearn": "1.8.0",
     "yaml": "6.0.1"
   },
-  "wall_seconds": 168.709434270997,
+  "wall_seconds": 724.725420720999,
   "workers": 4
 }

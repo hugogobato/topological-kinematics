@@ -215,3 +215,17 @@ Stability theory. No stability, convergence, differentiability, or Lipschitz the
 ## 8. Conflicts found
 
 None. Two layered statements were checked and are consistent rather than conflicting: (i) `q_t` is mathematically defined when `a + b > 0`, while WP-2.2 additionally gates reporting on a noise-calibrated scale floor, which is explicit in section 3.5; (ii) the freeze defines the speed at the interval midpoint and the plan's regular-grid formula uses `dt`, and the two agree on a regular grid, which is explicit in section 3.3.
+
+## G2 amendment (2026-09-21): primary metric backend
+
+This section amends the implementation mapping of section 5 only. The mathematical definition of `d` in section 5, every formula in section 3, and all edge-case policies in section 4 are unchanged. The amendment replaces the library implementation of the primary metric and records the evidence; it does not change the estimand, the observation map, the tuple definitions, or the numerical-zero policy 13.
+
+Defect. The original primary call `gudhi.bottleneck_distance` from gudhi 3.12.0 (frozen with the default `e=None`, which selects the approximate path) is order dependent and incorrect on some inputs. WP-2.2 found 28 distance pairs differing beyond `1e-12` on the diagnostics grid with maximum absolute difference 0.0537103, 6 triangle-inequality violating triples with worst excess 0.0390185, and 2 triangle-excess range violations with worst `q = -0.12`. The defect is not a rounding band, and it is not repaired by requesting gudhi's exact algorithm with `e=0.0` or by canonicalizing the input order.
+
+Witness. The minimal witness pair (3 and 4 points) is stored in `research_review/results/g2/diagnostics/metric_backend_witness.json`. The exact value is 0.3985347143760231, confirmed independently by the project brute-force reference, `persim.bottleneck`, and an independent SciPy binary-search solver. On the canonical order, gudhi `e=None` returns 0.41061420919138303 and gudhi `e=0.0` returns 0.6650287460769155.
+
+Replacement. The primary implementation is now `tk_pilot.diagram_metrics.bottleneck_exact`, an exact solver that binary searches the unique entries of the augmented cost matrix produced by `_bruteforce_cost_matrix` and tests feasibility with `scipy.sparse.csgraph.maximum_bipartite_matching` on the threshold graph. The public alias `bottleneck_linf` points to it, so every existing caller keeps its name and unchanged mathematical meaning. `bottleneck_gudhi` and `bottleneck_persim` are retained for audit and legacy comparison only; `bottleneck_gudhi` must not be used as a primary backend.
+
+Numerical zero. Policy 13 is unchanged: a computed distance at or below `NUMERICAL_ZERO = 1e-12` is returned as exactly `0.0`, and `bottleneck_exact` applies the same snap and the same empty-diagram and identical-diagram short circuits as the other backends. The legacy gudhi backend keeps its documented denormal behavior for non-identical zero-distance pairs.
+
+Artifacts. Cached runner distance matrices under `research_review/results/cache/runner_distances/` were invalidated by the defect and regenerated with the exact backend; the smoke stage, WP-2.1, WP-2.2, and WP-3.1 outputs were regenerated afterwards. Diagram caches were not invalidated because the persistence extraction path does not call the metric. Regression coverage for the witness pair, order invariance, the triangle inequality, and brute-force agreement is in `tests/test_metric_exact.py`.

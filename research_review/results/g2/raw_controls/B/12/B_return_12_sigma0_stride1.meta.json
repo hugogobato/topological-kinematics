@@ -1,0 +1,38 @@
+{
+  "conditional_gate": "G1",
+  "family": "B",
+  "frame_shape": [
+    129,
+    32,
+    32
+  ],
+  "hashes": {
+    "sha256_frames": "471e7472c2e0cf31789a624df47549aa36c1a92373b3e1fb056994ac1b976a28",
+    "sha256_npz": "a7b6a22410147ee63d441b05450cf8493b82563ee3a2757e50f82b3270d87d27",
+    "sha256_timestamps": "d7b1fd07f63d583f1f173a3755b697395a6662671d57068e8d3a0b1cfabde520",
+    "sha256_z": "0fece419250a49029d8bb2ec0bf020832f6e5695ec813bcefc9500edac9c2a18"
+  },
+  "job": {
+    "check": "check3_topology",
+    "family": "B",
+    "kind": "standard",
+    "label": "return",
+    "out_dir": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g2",
+    "run_id": "B_return_12_sigma0_stride1",
+    "seed": 12,
+    "sigma": 0.0,
+    "stride": 1
+  },
+  "latent": {
+    "A1": 0.9142223907121592,
+    "A2": 1.0942032213753623,
+    "a": 0.24726452428935086,
+    "b": 0.8075640370980626,
+    "m": 0.5274142806937068,
+    "w": 0.4352851965463948
+  },
+  "n_frames": 129,
+  "run_id": "B_return_12_sigma0_stride1",
+  "seed": 12,
+  "work_package": "WP-3.1"
+}

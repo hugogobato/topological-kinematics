@@ -2673,6 +2673,10 @@ def _run_exploratory(
     split_clusters = _truncate_split_clusters(
         split_clusters, args.max_trajectories, len(families), len(classes)
     )
+    degree_families = {
+        int(key): [str(family) for family in value]
+        for key, value in dict(cfg.get("degree_families", {})).items()
+    }
     floors, moment_scalings, calibration_metadata = _run_calibration(
         cfg, train_seeds, families, degrees, cfg["strides"], cache_dir, workers
     )
@@ -2683,8 +2687,12 @@ def _run_exploratory(
     manifest_rows: list[dict[str, Any]] = []
     n_trajectories = 0
     for degree in degrees:
+        pass_cfg = cfg
+        if degree in degree_families:
+            pass_cfg = dict(cfg)
+            pass_cfg["families"] = degree_families[degree]
         pass_result = _run_degree_pass(
-            cfg,
+            pass_cfg,
             degree,
             split_clusters,
             "exploratory",

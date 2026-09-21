@@ -1,0 +1,93 @@
+{
+  "work_package": "WP-2.2",
+  "gate_label": "conditional_on_G1: WP-2.2 executed after the coordinator's G1 record and before the G2 decision; scientific pass condition is stable definitions only; no predictive value is claimed",
+  "description": "minimal pair (3 and 4 points) exposing the order dependence of the frozen gudhi call and the difference between the frozen backend and the independent exact solver",
+  "witness": {
+    "diagram_a": [
+      [
+        0.625095466604667,
+        1.4463238849874331
+      ],
+      [
+        0.8972138009695755,
+        1.6942832297216217
+      ],
+      [
+        0.7756856902451935,
+        1.2436206430889143
+      ]
+    ],
+    "diagram_b": [
+      [
+        0.22520718999059186,
+        0.5282396168099054
+      ],
+      [
+        0.30016628491122543,
+        0.5785918970119988
+      ],
+      [
+        0.8735534453962619,
+        1.1284230330503866
+      ],
+      [
+        0.005265304565574724,
+        0.4503416104482213
+      ]
+    ],
+    "scipy_exact": 0.3985347143760231,
+    "project_bruteforce": 0.3985347143760231,
+    "persim": 0.3985347143760231,
+    "gudhi_default": 0.3985347143760231,
+    "gudhi_exact_e0": 0.6650287460769155,
+    "gudhi_default_canonical": 0.41061420919138303,
+    "gudhi_e0_canonical": 0.6650287460769155,
+    "abs_diff": 0.2664940317008924,
+    "certificate_matching": [
+      {
+        "i": 0,
+        "j": 2,
+        "kind": "point_to_point",
+        "cost": 0.31790085193704654
+      },
+      {
+        "i": 1,
+        "j": 4,
+        "kind": "a_to_diagonal",
+        "cost": 0.3985347143760231
+      },
+      {
+        "i": 2,
+        "j": 5,
+        "kind": "a_to_diagonal",
+        "cost": 0.2339674764218604
+      },
+      {
+        "i": 3,
+        "j": 0,
+        "kind": "b_to_diagonal",
+        "cost": 0.15151621340965676
+      },
+      {
+        "i": 4,
+        "j": 1,
+        "kind": "b_to_diagonal",
+        "cost": 0.13921280605038666
+      },
+      {
+        "i": 5,
+        "j": 3,
+        "kind": "b_to_diagonal",
+        "cost": 0.2225381529413233
+      },
+      {
+        "i": 6,
+        "j": 6,
+        "kind": "diagonal_to_diagonal",
+        "cost": 0.0
+      }
+    ],
+    "search": "random 3-point and 4-point diagrams, numpy default_rng(7)"
+  },
+  "gudhi_version": "3.12.0"
+}

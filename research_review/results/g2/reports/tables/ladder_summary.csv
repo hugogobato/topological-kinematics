@@ -1,0 +1,7 @@
+check_id,title,verdict,tables
+check1_static,Static controls and sigma = 0 exact-zero rule,PASS,reports/tables/static_controls.csv;reports/tables/static_adjacent_distances.csv
+check2_ramp,Smooth ramp deformation response,PASS,reports/tables/ramp_response.csv;reports/tables/ramp_fits.csv;reports/tables/ramp_transitions.csv
+check3_topology,Topology-changing class programs,RESIDUAL,reports/tables/class_cardinality.csv;reports/tables/class_transitions.csv
+check4_null,Noisy raw null processes,RESIDUAL,reports/tables/null_summary.csv;reports/tables/null_adjacent_distances.csv
+check5_sampling,Sampling and filtration-resolution sensitivity,PASS,reports/tables/sampling_resolution.csv;reports/tables/sampling_summary.csv
+check6_translation,Rigid translation invariance,PASS,reports/tables/translation_controls.csv;reports/tables/translation_summary.csv
