@@ -1,0 +1,41 @@
+[     0.0s] WP-3.3 run start; controls=['static_null', 'matched_ordering', 'time_reparam', 'raw_preserving', 'coarse_sampling', 'adversarial_matrix']
+[     0.0s] evaluator validation: {'A_max_abs_frame_error': 0.0, 'B_max_abs_frame_error': 0.0}
+[     0.0s] control1 static null: start
+[     1.0s] control1 A sigma=0.0: e95=0, above=0/1920, verdict=PASS
+[    97.5s] control1 A sigma=0.05: e95=0.0573754, above=96/1920, verdict=PASS
+[    98.2s] control1 B sigma=0.0: e95=0, above=0/1920, verdict=PASS
+[   238.9s] control1 B sigma=0.05: e95=0.0547087, above=91/1920, verdict=RESIDUAL
+[   240.1s] control1 static null: verdict=RESIDUAL
+[   240.1s] static_null: finished in 240.1 s
+[   240.1s] control2 matched ordering: start
+[   243.6s] control2 frozen family A sigma=0.0: separation 20/20, matched 0
+[   251.4s] control2 frozen family A sigma=0.05: separation 20/20, matched 0
+[   251.5s] control2 auxiliary family B sigma=0: separation 5/5
+[   252.9s] control2 matched ordering: verdict=PASS
+[   252.9s] matched_ordering: finished in 12.7 s
+[   252.9s] control3 time reparameterization: start
+[   462.6s] control3 time reparameterization: verdict=PASS
+[   462.6s] time_reparam: finished in 209.8 s
+[   462.6s] control4 raw-label-preserving transformations: start
+[   466.0s] control4 sigma=0.0: completed 5 seeds
+[   490.0s] control4 sigma=0.05: completed 5 seeds
+[   490.7s] control4 raw-preserving: verdict=PASS
+[   490.7s] raw_preserving: finished in 28.1 s
+[   490.7s] control5 very coarse sampling: start
+[   632.8s] control5 A sigma=0.0 stride=8: balanced_error=0.067, verdict=PASS
+[   632.8s] control5 A sigma=0.0 stride=16: balanced_error=0.100, verdict=PASS
+[   632.8s] control5 A sigma=0.05 stride=8: balanced_error=0.067, verdict=PASS
+[   632.8s] control5 A sigma=0.05 stride=16: balanced_error=0.100, verdict=PASS
+[   632.8s] control5 B sigma=0.0 stride=8: balanced_error=0.000, verdict=PASS
+[   632.8s] control5 B sigma=0.0 stride=16: balanced_error=0.000, verdict=PASS
+[   632.8s] control5 B sigma=0.05 stride=8: balanced_error=0.000, verdict=PASS
+[   632.8s] control5 B sigma=0.05 stride=16: balanced_error=0.033, verdict=PASS
+[   636.5s] control5 coarse sampling: verdict=PASS
+[   636.5s] coarse_sampling: finished in 145.8 s
+[   636.5s] control6 adversarial full-matrix-sufficient: start
+[   638.6s] control6 A sigma=0.0: completed 5 seeds and 2 injections
+[   661.7s] control6 A sigma=0.05: completed 5 seeds and 2 injections
+[   661.9s] control6 B sigma=0.0: completed 5 seeds and 2 injections
+[   720.3s] control6 B sigma=0.05: completed 5 seeds and 2 injections
+[   721.7s] control6 adversarial: verdict=RESIDUAL
+[   721.7s] adversarial_matrix: finished in 85.2 s

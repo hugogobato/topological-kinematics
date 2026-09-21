@@ -1,0 +1,81 @@
+schema_version: "1.0"
+artifact: g3_claims_matrix
+file: research_review/results/g3/claims_matrix.yaml
+project: Topological_Kinematics
+stage: WP-3.4 simulation gate
+date: "2026-09-21"
+scope: >-
+  Offline fixed-length trajectory classification on the two frozen synthetic
+  families, degree H0 primary, exploratory grid of 20/10/20 base seeds per
+  (family, class), sigma in {0, 0.05}, strides 1, 2, 4. The confirmatory stage
+  was not opened because the predeclared route was unresolved (PIVOT).
+overall_status: PIVOT
+overall_reason: >-
+  Every one of the twelve exploratory cells has zero macro balanced error for
+  both the compact diagnostic representation and the validation-selected
+  incumbent raw_geometry_flat. The paired delta interval is [0, 0], so the
+  compact representation is noninferior but neither superior nor materially
+  more parsimonious; the cheapest eligible comparator is cheaper than the
+  compact representation (worst-case dimension ratio 0.615, worst-case cost
+  ratio 0.054 against the fourfold threshold). The pilot specification maps
+  this to PIVOT: a new protocol with untouched test seeds is required.
+claims:
+  - id: C1
+    claim: A finite diagram sequence is a metric-valued discrete path
+    status: GO
+    evidence: G0 decision record and witness suite; unchanged by Phase 3
+  - id: C2
+    claim: nu, L, R, eta are meaningful summaries
+    status: GO as operational definitions
+    evidence: WP-2.2 stability checks under the amended exact metric; no decision value established
+  - id: C3
+    claim: Inter-frame persistence-diagram speed is new
+    status: WITHDRAWN
+    evidence: Kramar et al. Eq. (16), printed p. 10
+  - id: C4
+    claim: A trajectory of diagrams is new
+    status: WITHDRAWN
+    evidence: vineyards and dynamic-topology literature
+  - id: C5
+    claim: Scalar speed-change a_t is useful
+    status: INDETERMINATE under this formulation
+    evidence: >-
+      speed_history validation error 0.0139 against compact 0.0028 and raw
+      geometry 0.0000; the ceiling effect prevents a decision. WP-3.3 shows the
+      comparison-angle channel separates matched-speed orderings 20/20 where
+      speed summaries cannot, which is a candidate hypothesis for a new protocol.
+  - id: C6
+    claim: theta_t identifies turning or direction
+    status: UNSUPPORTED
+    evidence: >-
+      no direction claim is made; WP-3.3 reports the comparison angle and
+      triangle shape as order-sensitive diagnostics only, always with the turn
+      companion and never as a turning direction
+  - id: C7
+    claim: Diagnostics identify latent physical causes
+    status: NOT IDENTIFIED
+    evidence: labels are latent-control labels; no causal identification is claimed
+  - id: C8
+    claim: The collection is domain independent
+    status: NOT ESTABLISHED
+    evidence: >-
+      two families were run and both are at ceiling, so no differential
+      portability evidence exists; the portability hypothesis remains open
+  - id: C9
+    claim: The collection improves a real decision
+    status: UNPROVEN
+    evidence: no application was recruited; only a simulation GO unlocks WP-4.1
+  - id: C10
+    claim: A new calculus or acceleration theory follows
+    status: NO
+    evidence: theory remains dormant; no evidence-earned target was produced
+artifacts:
+  exploratory_metrics: research_review/results/g3/exploratory/metrics.parquet
+  exploratory_report: research_review/results/g3/exploratory/exploratory_report.md
+  exploratory_analysis: research_review/results/g3/exploratory/analysis_degree0.json
+  route_recommendation: research_review/results/g3/exploratory/route_recommendation.json
+  split_manifest: research_review/results/g3/splits/exploratory_split_manifest.csv
+  nulls_report: research_review/results/g3/reports/wp33_nulls_report.md
+  raw_correctness_report: research_review/results/g2/reports/raw_correctness_report.md
+  g2_decision: research_review/results/g2/G2_decision.md
+  g1_decision: research_review/results/phase1/G1_decision.md

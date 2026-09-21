@@ -1,0 +1,5 @@
+group,variant,degree,max_distance,argmax_frame,max_tolerance,filtration_range,n_frames_checked,all_within_tolerance,verdict
+rotation_degree0,rotation,0,0.0,,2.7023140041521063e-07,2.7023140041521065,330,true,PASS
+rotation_degree1,rotation,1,0.0,,2.7023140041521063e-07,2.7023140041521065,330,true,PASS
+translation_degree0,translation,0,0.0,,2.7023140041521063e-07,2.7023140041521065,330,true,PASS
+translation_degree1,translation,1,0.0,,2.7023140041521063e-07,2.7023140041521065,330,true,PASS

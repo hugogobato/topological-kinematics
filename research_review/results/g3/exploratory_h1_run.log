@@ -1,0 +1,7 @@
+supervisor: starting H1 run at Mon Sep 21 05:33:25 -03 2026
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 14 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/hugo_souto/.local/lib/python3.12/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 3 leaked folder objects to clean up at shutdown
+  warnings.warn(
+supervisor: H1 run exited with 124 at Mon Sep 21 06:01:10 -03 2026
+supervisor: starting H1 run at Mon Sep 21 06:01:15 -03 2026

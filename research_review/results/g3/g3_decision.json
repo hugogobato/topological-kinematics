@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "artifact": "g3_decision",
+  "date": "2026-09-21",
+  "stage": "WP-3.4 simulation gate",
+  "status": "PIVOT",
+  "confirmatory_authorized": false,
+  "confirmatory_seeds_opened": false,
+  "route": null,
+  "reason": "all twelve exploratory cells at zero macro balanced error for both the compact representation and raw_geometry_flat; delta interval [0, 0]; parsimony ratio 0.615 below the fourfold threshold; the predeclared rule returns PIVOT and requires a new protocol with untouched test seeds",
+  "exploratory_metrics_sha256": "cf1123dceb46fa591ca20cef5f9d290ef3ab98412a0ee7f78d669eda4a604790",
+  "untouched_confirmatory_seed_start": 10000,
+  "artifacts": {
+    "gate_memo": "research_review/results/g3/gate_memo.md",
+    "claims_matrix": "research_review/results/g3/claims_matrix.yaml",
+    "metrics": "research_review/results/g3/metrics.parquet",
+    "figures": "research_review/results/g3/figures/",
+    "nulls_report": "research_review/results/g3/reports/wp33_nulls_report.md"
+  }
+}

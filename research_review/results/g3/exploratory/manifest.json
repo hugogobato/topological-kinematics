@@ -1,0 +1,92 @@
+{
+  "cache_dir": "research_review/results/cache",
+  "calibration_file": "calibration.json",
+  "config_file_sha256": "5be540956c00ecc26c024d1712914f607e200ccaf216f11b73efe6466e095b39",
+  "config_path": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/configs/tk_pilot_study.yaml",
+  "config_sha256": "777492e6d431ca1d0b3b43146aa94c61e9081068a96245ac36618a6004ca12ff",
+  "config_source": "file",
+  "created_utc": "2026-09-21T07:19:10Z",
+  "figures": [
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g3/exploratory/figures/fig_stride_curves_degree0.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g3/exploratory/figures/fig_confusion_compact_degree0.png"
+  ],
+  "grid": {
+    "classes": [
+      "return",
+      "ramp",
+      "jump"
+    ],
+    "degrees": [
+      0
+    ],
+    "families": [
+      "A",
+      "B"
+    ],
+    "metric": "bottleneck_linf",
+    "representations": [
+      "compact",
+      "speed_history",
+      "complete_distances",
+      "recurrence_summary",
+      "raw_geometry_flat",
+      "raw_geometry_summary",
+      "moments_flat",
+      "moments_summary",
+      "moment_signature",
+      "moment_signature_time"
+    ],
+    "seed_namespaces": {
+      "test_confirmatory_start": 10000,
+      "test_exploratory": [
+        3000,
+        3019
+      ],
+      "train": [
+        1000,
+        1019
+      ],
+      "validation": [
+        2000,
+        2009
+      ]
+    },
+    "sigmas": [
+      0.0,
+      0.05
+    ],
+    "stage": "exploratory",
+    "strides": [
+      1,
+      2,
+      4
+    ]
+  },
+  "metrics_file": "metrics.parquet",
+  "n_rows": 10800,
+  "peak_ram_bytes": 292454400,
+  "preprocessing_file": "preprocessing.npz",
+  "recommendation_file": "route_recommendation.json",
+  "report_file": "exploratory_report.md",
+  "run_id": "exploratory-777492e6d431",
+  "selection_table_file": "selection_table.parquet",
+  "split_manifest_file": "split_manifest.csv",
+  "stage": "exploratory",
+  "summary_file": "summary.json",
+  "table_format": "parquet",
+  "versions": {
+    "gudhi": "3.12.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.3",
+    "pandas": "3.0.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "pyarrow": "24.0.0",
+    "python": "3.12.3",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "yaml": "6.0.1"
+  },
+  "wall_seconds": 839.740882938997,
+  "workers": 8
+}

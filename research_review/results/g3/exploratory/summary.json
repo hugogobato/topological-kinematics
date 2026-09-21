@@ -1,0 +1,989 @@
+{
+  "analyses": [
+    {
+      "costs": [
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.995298906227173,
+          "end_to_end_cost_val": 4.5675832864993735,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 13.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.07335919399702107,
+          "prediction_seconds": 6.2664777740590375e-06,
+          "representation": "compact"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.995304900639672,
+          "end_to_end_cost_val": 4.567585914441022,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 80.66666666666667,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.09731821450380569,
+          "prediction_seconds": 1.2260890273157403e-05,
+          "representation": "speed_history"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.995322633848021,
+          "end_to_end_cost_val": 4.567594943265996,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 3621.3333333333335,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.5367220583351203,
+          "prediction_seconds": 2.9994098622410095e-05,
+          "representation": "complete_distances"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.9953040481341,
+          "end_to_end_cost_val": 4.567596929241013,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 9.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.10177832616561015,
+          "prediction_seconds": 1.1408384701402004e-05,
+          "representation": "recurrence_summary"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 2.0007498931451058,
+          "end_to_end_cost_val": 2.2315364002444364,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 378.3333333333333,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.182633353084384,
+          "prediction_seconds": 1.3034354166544893e-05,
+          "representation": "raw_geometry_flat"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 2.000748200993692,
+          "end_to_end_cost_val": 2.23153586509165,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 10.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.1017036233303467,
+          "prediction_seconds": 1.134220275263134e-05,
+          "representation": "raw_geometry_summary"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.9926433475883027,
+          "end_to_end_cost_val": 4.276447153831396,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 454.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.22247166808908028,
+          "prediction_seconds": 1.4933129174702726e-05,
+          "representation": "moments_flat"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.9926338077646917,
+          "end_to_end_cost_val": 4.276445985625893,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 12.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.11186586875313272,
+          "prediction_seconds": 5.393305562190815e-06,
+          "representation": "moments_summary"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.99263483559387,
+          "end_to_end_cost_val": 4.276445441956377,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 42.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.10211523308316828,
+          "prediction_seconds": 6.421134740877379e-06,
+          "representation": "moment_signature"
+        },
+        {
+          "distance_seconds": 0.002057713616583593,
+          "end_to_end_cost_test": 3.992645196766079,
+          "end_to_end_cost_val": 4.276468252142492,
+          "extraction_seconds": 2.064476485295715,
+          "feature_dim": 56.0,
+          "feature_seconds": 2.012863525430546,
+          "fit_seconds": 0.10877017799915241,
+          "prediction_seconds": 1.678230695082069e-05,
+          "representation": "moment_signature_time"
+        }
+      ],
+      "decision_parsimony": {
+        "checks": {
+          "family_ok": true,
+          "family_upper": {
+            "A": 0.0,
+            "B": 0.0
+          },
+          "half_width": 0.0,
+          "noninferiority": true,
+          "other_route_met": false,
+          "parsimony": false,
+          "precision_ok": true,
+          "route_met": false,
+          "superiority": false
+        },
+        "delta_ci": {
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        "family_bounds": {
+          "A": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "delta": 0.0,
+            "family": "A",
+            "n_clusters": 60
+          },
+          "B": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "delta": 0.0,
+            "family": "B",
+            "n_clusters": 60
+          }
+        },
+        "parsimony_ratio": 0.6153846153846154,
+        "reasons": [
+          "the compact representation is noninferior but neither frozen route's advantage is established",
+          "noninferiority margin met (upper endpoint below 0.02)"
+        ],
+        "route": "parsimony",
+        "status": "PIVOT"
+      },
+      "decision_superiority": {
+        "checks": {
+          "family_ok": true,
+          "family_upper": {
+            "A": 0.0,
+            "B": 0.0
+          },
+          "half_width": 0.0,
+          "noninferiority": true,
+          "other_route_met": false,
+          "parsimony": false,
+          "precision_ok": true,
+          "route_met": false,
+          "superiority": false
+        },
+        "delta_ci": {
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        "family_bounds": {
+          "A": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "delta": 0.0,
+            "family": "A",
+            "n_clusters": 60
+          },
+          "B": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "delta": 0.0,
+            "family": "B",
+            "n_clusters": 60
+          }
+        },
+        "parsimony_ratio": 0.6153846153846154,
+        "reasons": [
+          "the compact representation is noninferior but neither frozen route's advantage is established",
+          "noninferiority margin met (upper endpoint below 0.02)"
+        ],
+        "route": "superiority",
+        "status": "PIVOT"
+      },
+      "degree": 0,
+      "delta": {
+        "candidate": "compact",
+        "cell_delta": {
+          "A|0.05|1|0": 0.0,
+          "A|0.05|2|0": 0.0,
+          "A|0.05|4|0": 0.0,
+          "A|0.0|1|0": 0.0,
+          "A|0.0|2|0": 0.0,
+          "A|0.0|4|0": 0.0,
+          "B|0.05|1|0": 0.0,
+          "B|0.05|2|0": 0.0,
+          "B|0.05|4|0": 0.0,
+          "B|0.0|1|0": 0.0,
+          "B|0.0|2|0": 0.0,
+          "B|0.0|4|0": 0.0
+        },
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "half_width": 0.0,
+        "n_cells": 12,
+        "n_clusters": 120,
+        "n_resamples": 2000,
+        "point": 0.0,
+        "reference": "raw_geometry_flat",
+        "seed": 20260907
+      },
+      "eligible_comparators": [
+        "raw_geometry_flat",
+        "moments_summary",
+        "moments_flat",
+        "complete_distances",
+        "raw_geometry_summary",
+        "moment_signature_time",
+        "speed_history"
+      ],
+      "family_bounds": {
+        "A": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "delta": 0.0,
+          "family": "A",
+          "n_clusters": 60
+        },
+        "B": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "delta": 0.0,
+          "family": "B",
+          "n_clusters": 60
+        }
+      },
+      "incumbent": "raw_geometry_flat",
+      "incumbent_val_error": 0.0,
+      "parsimony": {
+        "cells": [
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 4.822030410101191,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.24378590032684883,
+            "degree": 0,
+            "dimension_ratio": 0.9230769230769231,
+            "family": "A",
+            "sigma": 0.0,
+            "stride": 1
+          },
+          {
+            "cheapest_comparator": "raw_geometry_flat",
+            "compact_cost": 4.220795380996666,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.14830749702194856,
+            "degree": 0,
+            "dimension_ratio": 0.9230769230769231,
+            "family": "A",
+            "sigma": 0.0,
+            "stride": 2
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 3.8370487361356935,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.08436375146415999,
+            "degree": 0,
+            "dimension_ratio": 0.9230769230769231,
+            "family": "A",
+            "sigma": 0.0,
+            "stride": 4
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 6.1072061035639,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.42491620813652525,
+            "degree": 0,
+            "dimension_ratio": 0.9230769230769231,
+            "family": "A",
+            "sigma": 0.05,
+            "stride": 1
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 4.789941607034295,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.2650156889635912,
+            "degree": 0,
+            "dimension_ratio": 0.9230769230769231,
+            "family": "A",
+            "sigma": 0.05,
+            "stride": 2
+          },
+          {
+            "cheapest_comparator": "raw_geometry_flat",
+            "compact_cost": 4.150060290846886,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.1669652839492483,
+            "degree": 0,
+            "dimension_ratio": 0.9230769230769231,
+            "family": "A",
+            "sigma": 0.05,
+            "stride": 4
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 0.5910631810304039,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.18576906015539585,
+            "degree": 0,
+            "dimension_ratio": 0.6153846153846154,
+            "family": "B",
+            "sigma": 0.0,
+            "stride": 1
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 0.5152752254016377,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.0930501804404686,
+            "degree": 0,
+            "dimension_ratio": 0.6153846153846154,
+            "family": "B",
+            "sigma": 0.0,
+            "stride": 2
+          },
+          {
+            "cheapest_comparator": "raw_geometry_flat",
+            "compact_cost": 0.49135127011395524,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.05403697245976716,
+            "degree": 0,
+            "dimension_ratio": 0.6153846153846154,
+            "family": "B",
+            "sigma": 0.0,
+            "stride": 4
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 9.87610921914905,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.967365181412404,
+            "degree": 0,
+            "dimension_ratio": 0.6153846153846154,
+            "family": "B",
+            "sigma": 0.05,
+            "stride": 1
+          },
+          {
+            "cheapest_comparator": "raw_geometry_flat",
+            "compact_cost": 5.666227481564662,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.9065819066556899,
+            "degree": 0,
+            "dimension_ratio": 0.6153846153846154,
+            "family": "B",
+            "sigma": 0.05,
+            "stride": 2
+          },
+          {
+            "cheapest_comparator": "raw_geometry_summary",
+            "compact_cost": 2.876477968787731,
+            "compact_feature_dim": 13.0,
+            "cost_ratio": 0.8521893414674477,
+            "degree": 0,
+            "dimension_ratio": 0.6153846153846154,
+            "family": "B",
+            "sigma": 0.05,
+            "stride": 4
+          }
+        ],
+        "eligible": [
+          "raw_geometry_flat",
+          "moments_summary",
+          "moments_flat",
+          "complete_distances",
+          "raw_geometry_summary",
+          "moment_signature_time",
+          "speed_history"
+        ],
+        "parsimony_ratio": 0.6153846153846154,
+        "worst_cost_ratio": 0.05403697245976716,
+        "worst_dimension_ratio": 0.6153846153846154
+      },
+      "per_cell": [
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "A",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.0,
+          "stride": 1
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "A",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.0,
+          "stride": 2
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "A",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.0,
+          "stride": 4
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "A",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.05,
+          "stride": 1
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "A",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.05,
+          "stride": 2
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "A",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.05,
+          "stride": 4
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "B",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.0,
+          "stride": 1
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "B",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.0,
+          "stride": 2
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "B",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.0,
+          "stride": 4
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "B",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.05,
+          "stride": 1
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "B",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.05,
+          "stride": 2
+        },
+        {
+          "compact_error": 0.0,
+          "degree": 0,
+          "delta": 0.0,
+          "family": "B",
+          "incumbent_error": 0.0,
+          "n_trajectories": 60,
+          "sigma": 0.05,
+          "stride": 4
+        }
+      ],
+      "recommended_route": null,
+      "size_recommendation": {
+        "n_clusters": 200,
+        "note": "projected half-width reaches the target at this size",
+        "required_clusters": 0.0,
+        "resolvable": true
+      },
+      "status": "ok",
+      "test_equal_weight": {
+        "compact": 0.0,
+        "complete_distances": 0.004166666666666667,
+        "moment_signature": 0.012499999999999999,
+        "moment_signature_time": 0.004166666666666667,
+        "moments_flat": 0.006944444444444444,
+        "moments_summary": 0.005555555555555556,
+        "raw_geometry_flat": 0.0,
+        "raw_geometry_summary": 0.0,
+        "recurrence_summary": 0.04583333333333333,
+        "speed_history": 0.015277777777777777
+      },
+      "validation_equal_weight": {
+        "compact": 0.002777777777777778,
+        "complete_distances": 0.0,
+        "moment_signature": 0.022222222222222227,
+        "moment_signature_time": 0.011111111111111112,
+        "moments_flat": 0.0,
+        "moments_summary": 0.0,
+        "raw_geometry_flat": 0.0,
+        "raw_geometry_summary": 0.008333333333333333,
+        "recurrence_summary": 0.024999999999999998,
+        "speed_history": 0.013888888888888888
+      },
+      "validation_ranking": [
+        {
+          "contract_order": 4,
+          "end_to_end_cost_val": 2.2315364002444364,
+          "feature_dim": 378.3333333333333,
+          "rank": 1,
+          "representation": "raw_geometry_flat",
+          "val_error": 0.0
+        },
+        {
+          "contract_order": 7,
+          "end_to_end_cost_val": 4.276445985625893,
+          "feature_dim": 12.0,
+          "rank": 2,
+          "representation": "moments_summary",
+          "val_error": 0.0
+        },
+        {
+          "contract_order": 6,
+          "end_to_end_cost_val": 4.276447153831396,
+          "feature_dim": 454.0,
+          "rank": 3,
+          "representation": "moments_flat",
+          "val_error": 0.0
+        },
+        {
+          "contract_order": 2,
+          "end_to_end_cost_val": 4.567594943265996,
+          "feature_dim": 3621.3333333333335,
+          "rank": 4,
+          "representation": "complete_distances",
+          "val_error": 0.0
+        },
+        {
+          "contract_order": 0,
+          "end_to_end_cost_val": 4.5675832864993735,
+          "feature_dim": 13.0,
+          "rank": 5,
+          "representation": "compact",
+          "val_error": 0.002777777777777778
+        },
+        {
+          "contract_order": 5,
+          "end_to_end_cost_val": 2.23153586509165,
+          "feature_dim": 10.0,
+          "rank": 6,
+          "representation": "raw_geometry_summary",
+          "val_error": 0.008333333333333333
+        },
+        {
+          "contract_order": 9,
+          "end_to_end_cost_val": 4.276468252142492,
+          "feature_dim": 56.0,
+          "rank": 7,
+          "representation": "moment_signature_time",
+          "val_error": 0.011111111111111112
+        },
+        {
+          "contract_order": 1,
+          "end_to_end_cost_val": 4.567585914441022,
+          "feature_dim": 80.66666666666667,
+          "rank": 8,
+          "representation": "speed_history",
+          "val_error": 0.013888888888888888
+        },
+        {
+          "contract_order": 8,
+          "end_to_end_cost_val": 4.276445441956377,
+          "feature_dim": 42.0,
+          "rank": 9,
+          "representation": "moment_signature",
+          "val_error": 0.022222222222222227
+        },
+        {
+          "contract_order": 3,
+          "end_to_end_cost_val": 4.567596929241013,
+          "feature_dim": 9.0,
+          "rank": 10,
+          "representation": "recurrence_summary",
+          "val_error": 0.024999999999999998
+        }
+      ],
+      "validity": [
+        {
+          "coverage": 0.5,
+          "representation": "compact",
+          "valid_fraction": 0.20118766516192646
+        },
+        {
+          "coverage": 0.5,
+          "representation": "speed_history",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "complete_distances",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "recurrence_summary",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "raw_geometry_flat",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "raw_geometry_summary",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "moments_flat",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "moments_summary",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "moment_signature",
+          "valid_fraction": 1.0
+        },
+        {
+          "coverage": 0.5,
+          "representation": "moment_signature_time",
+          "valid_fraction": 1.0
+        }
+      ]
+    }
+  ],
+  "calibration": {
+    "cells": {
+      "A|0|1": 0.05736927659072073,
+      "A|0|2": 0.05645054827776607,
+      "A|0|4": 0.05688597022583105,
+      "B|0|1": 0.05433079276512659,
+      "B|0|2": 0.055157882547632486,
+      "B|0|4": 0.054257779879696155
+    },
+    "degrees": [
+      0
+    ],
+    "families": [
+      "A",
+      "B"
+    ],
+    "metric": "bottleneck_linf",
+    "moment_scaling_cells": {
+      "A|0|1": {
+        "mean": [
+          11.50994324501776,
+          0.0,
+          0.0,
+          2.357910610289592,
+          0.0,
+          0.5213264535516473
+        ],
+        "std": [
+          0.6023607984770454,
+          1.0,
+          1.0,
+          0.2317109849796704,
+          1.0,
+          0.07480075385399099
+        ]
+      },
+      "A|0|2": {
+        "mean": [
+          11.509243345420334,
+          0.0,
+          0.0,
+          2.358384690457126,
+          0.0,
+          0.5217493073763058
+        ],
+        "std": [
+          0.5902852473118962,
+          1.0,
+          1.0,
+          0.22876788186908667,
+          1.0,
+          0.07432936172624557
+        ]
+      },
+      "A|0|4": {
+        "mean": [
+          11.504061168017099,
+          0.0,
+          0.0,
+          2.357232323353905,
+          0.0,
+          0.5214071986634718
+        ],
+        "std": [
+          0.59505134504164,
+          1.0,
+          1.0,
+          0.2293453982482786,
+          1.0,
+          0.07434879607751495
+        ]
+      },
+      "B|0|1": {
+        "mean": [
+          5.00972633457258,
+          -0.45387436740877346,
+          0.046103444702394365,
+          0.349833820291464,
+          -0.0363686015861303,
+          0.030441413361457965
+        ],
+        "std": [
+          0.3437862776264165,
+          0.04326511841110093,
+          0.006327919203816391,
+          0.039617461354464,
+          0.005624436541061938,
+          0.0052681435669099256
+        ]
+      },
+      "B|0|2": {
+        "mean": [
+          5.002497958401131,
+          -0.45372787345688215,
+          0.04618229385468307,
+          0.3499212304420289,
+          -0.03644379872941736,
+          0.03051496810335237
+        ],
+        "std": [
+          0.3506725829310124,
+          0.044089201908389546,
+          0.00647246034686874,
+          0.04051655374655627,
+          0.005760311553168314,
+          0.005411940585195674
+        ]
+      },
+      "B|0|4": {
+        "mean": [
+          4.995475225786734,
+          -0.45218232154990756,
+          0.045918612313185045,
+          0.34888800576963735,
+          -0.03623720099863209,
+          0.030360230754997743
+        ],
+        "std": [
+          0.3451755000337417,
+          0.0440715803663578,
+          0.006518224073970754,
+          0.040497603687378904,
+          0.005789747029190685,
+          0.005434111233520828
+        ]
+      }
+    },
+    "moment_scaling_population": "training-split static-noise trajectories at sigma = 0.05, the same predeclared per-cell population as the noise floor",
+    "n_distances": {
+      "A|0|1": 2560,
+      "A|0|2": 1280,
+      "A|0|4": 640,
+      "B|0|1": 2560,
+      "B|0|2": 1280,
+      "B|0|4": 640
+    },
+    "percentile": 95.0,
+    "seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019
+    ],
+    "sigma": 0.05,
+    "sigma_zero_policy": "at sigma = 0 the floor is exactly 0 and only exact-zero abstention applies",
+    "strides": [
+      1,
+      2,
+      4
+    ]
+  },
+  "calibration_file": "calibration.json",
+  "degrees": [
+    0
+  ],
+  "figures": [
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g3/exploratory/figures/fig_stride_curves_degree0.png",
+    "/home/hugo_souto/Stuff/Research/Topological_Kinematics/research_review/results/g3/exploratory/figures/fig_confusion_compact_degree0.png"
+  ],
+  "grid": {
+    "classes": [
+      "return",
+      "ramp",
+      "jump"
+    ],
+    "degrees": [
+      0
+    ],
+    "families": [
+      "A",
+      "B"
+    ],
+    "metric": "bottleneck_linf",
+    "representations": [
+      "compact",
+      "speed_history",
+      "complete_distances",
+      "recurrence_summary",
+      "raw_geometry_flat",
+      "raw_geometry_summary",
+      "moments_flat",
+      "moments_summary",
+      "moment_signature",
+      "moment_signature_time"
+    ],
+    "seed_namespaces": {
+      "test_confirmatory_start": 10000,
+      "test_exploratory": [
+        3000,
+        3019
+      ],
+      "train": [
+        1000,
+        1019
+      ],
+      "validation": [
+        2000,
+        2009
+      ]
+    },
+    "sigmas": [
+      0.0,
+      0.05
+    ],
+    "stage": "exploratory",
+    "strides": [
+      1,
+      2,
+      4
+    ]
+  },
+  "metrics_file": "metrics.parquet",
+  "n_control_rows": 0,
+  "n_master_trajectories_per_degree": 600,
+  "n_ok_rows": 10800,
+  "n_rows": 10800,
+  "n_trajectory_jobs": 600,
+  "notes": [
+    "degree H0 is the primary channel; H1 is a predeclared secondary channel reported separately",
+    "the eligible comparator set and route are recommendations until the route freeze record is written"
+  ],
+  "peak_ram_bytes": 292454400,
+  "preprocessing_file": "preprocessing.npz",
+  "recommendation": {
+    "degrees": [
+      0
+    ],
+    "note": "recommendation only; freeze the route, incumbent, eligible comparator set, and test size in the route freeze record before opening confirmatory seeds",
+    "per_degree": {
+      "0": {
+        "eligible_comparators": [
+          "raw_geometry_flat",
+          "moments_summary",
+          "moments_flat",
+          "complete_distances",
+          "raw_geometry_summary",
+          "moment_signature_time",
+          "speed_history"
+        ],
+        "incumbent": "raw_geometry_flat",
+        "parsimony_ratio": 0.6153846153846154,
+        "parsimony_status": "PIVOT",
+        "recommended_route": null,
+        "size_recommendation": {
+          "n_clusters": 200,
+          "note": "projected half-width reaches the target at this size",
+          "required_clusters": 0.0,
+          "resolvable": true
+        },
+        "superiority_status": "PIVOT"
+      }
+    },
+    "run_id": "exploratory-777492e6d431",
+    "suggested_confirmatory_block": {
+      "eligible_comparators": [
+        "raw_geometry_flat",
+        "moments_summary",
+        "moments_flat",
+        "complete_distances",
+        "raw_geometry_summary",
+        "moment_signature_time",
+        "speed_history"
+      ],
+      "incumbent": "raw_geometry_flat",
+      "n_clusters": 200,
+      "n_shards": 1,
+      "route": "superiority",
+      "shard_index": 0
+    }
+  },
+  "recommendation_file": "route_recommendation.json",
+  "report_file": "exploratory_report.md",
+  "run_id": "exploratory-777492e6d431",
+  "selection_table_file": "selection_table.parquet",
+  "split_manifest_file": "split_manifest.csv",
+  "stage": "exploratory",
+  "table_format": "parquet",
+  "wall_seconds": 839.740882938997,
+  "workers": 8
+}

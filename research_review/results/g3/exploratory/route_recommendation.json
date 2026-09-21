@@ -1,0 +1,47 @@
+{
+  "degrees": [
+    0
+  ],
+  "note": "recommendation only; freeze the route, incumbent, eligible comparator set, and test size in the route freeze record before opening confirmatory seeds",
+  "per_degree": {
+    "0": {
+      "eligible_comparators": [
+        "raw_geometry_flat",
+        "moments_summary",
+        "moments_flat",
+        "complete_distances",
+        "raw_geometry_summary",
+        "moment_signature_time",
+        "speed_history"
+      ],
+      "incumbent": "raw_geometry_flat",
+      "parsimony_ratio": 0.6153846153846154,
+      "parsimony_status": "PIVOT",
+      "recommended_route": null,
+      "size_recommendation": {
+        "n_clusters": 200,
+        "note": "projected half-width reaches the target at this size",
+        "required_clusters": 0.0,
+        "resolvable": true
+      },
+      "superiority_status": "PIVOT"
+    }
+  },
+  "run_id": "exploratory-777492e6d431",
+  "suggested_confirmatory_block": {
+    "eligible_comparators": [
+      "raw_geometry_flat",
+      "moments_summary",
+      "moments_flat",
+      "complete_distances",
+      "raw_geometry_summary",
+      "moment_signature_time",
+      "speed_history"
+    ],
+    "incumbent": "raw_geometry_flat",
+    "n_clusters": 200,
+    "n_shards": 1,
+    "route": "superiority",
+    "shard_index": 0
+  }
+}

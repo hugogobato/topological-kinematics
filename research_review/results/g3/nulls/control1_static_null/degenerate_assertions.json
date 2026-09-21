@@ -1,0 +1,30 @@
+{
+  "A_sigma0": {
+    "L_zero_all": true,
+    "angles_unresolved_all": true,
+    "efficiency_flag_false_all": true,
+    "eta_none_all": true,
+    "max_abs_adjacent": 0.0,
+    "n_evaluation_trajectories": 15,
+    "n_nonzero_adjacent_trajectories": 0,
+    "speed_change_zero_all": true,
+    "triangle_excess_unresolved_all": true,
+    "unique_h0_diagrams": 1,
+    "unique_h1_diagrams": 1,
+    "verdict": "PASS"
+  },
+  "B_sigma0": {
+    "L_zero_all": true,
+    "angles_unresolved_all": true,
+    "efficiency_flag_false_all": true,
+    "eta_none_all": true,
+    "max_abs_adjacent": 0.0,
+    "n_evaluation_trajectories": 15,
+    "n_nonzero_adjacent_trajectories": 0,
+    "speed_change_zero_all": true,
+    "triangle_excess_unresolved_all": true,
+    "unique_h0_diagrams": 1,
+    "unique_h1_diagrams": 1,
+    "verdict": "PASS"
+  }
+}

@@ -1,0 +1,5 @@
+group,family,warp,n_trajectories,exact_same_states_all,exact_resampled_all,fresh_step_checks_exact_all,preserved_angles_exact_all,n_qualified_intervals,max_abs_relative_deviation_qualified,median_abs_relative_deviation_qualified,n_low_u_intervals,max_abs_relative_deviation_low_u,n_resampled_qualified_intervals,max_abs_resampled_relative_deviation,derivative_law_ok,verdict
+A_piecewise_fast_slow,A,piecewise_fast_slow,20,true,true,true,true,1927,1.4358884451818692e-14,7.105427357601002e-15,130,0.0,1407,1.432187701766452e-14,true,PASS
+A_u_pow_1p5,A,u_pow_1p5,20,true,true,true,true,1927,5.717389818436087e-05,2.2862656017766425e-06,130,0.060660171779821415,1714,0.00024682246956320977,true,PASS
+B_piecewise_fast_slow,B,piecewise_fast_slow,20,true,true,true,true,1836,1.4358884451818692e-14,7.105427357601002e-15,130,0.0,1380,1.432187701766452e-14,true,PASS
+B_u_pow_1p5,B,u_pow_1p5,20,true,true,true,true,1836,5.717389818436087e-05,2.0958275197913785e-06,130,0.060660171779821415,1619,0.00024682246956320977,true,PASS

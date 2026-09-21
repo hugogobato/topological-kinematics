@@ -1,0 +1,4 @@
+group,n_seeds,structural_ok,separation_hits,separation_required,angle_or_shape_separated,matched_hits_within_1e-9,matched_L_hits,matched_R_hits,matched_eta_hits,matched_speed_hits,median_max_angle_diff,max_max_angle_diff
+A_sigma0,20,true,20,16,true,0,0,20,20,0,1.4012848189917593,1.99825317420842
+A_sigma50,20,true,20,16,true,0,0,20,0,0,0.609637665258715,1.6843868750696642
+B_sigma0,5,true,5,4,true,0,0,5,5,0,1.4857328124022149,1.5186200073613967

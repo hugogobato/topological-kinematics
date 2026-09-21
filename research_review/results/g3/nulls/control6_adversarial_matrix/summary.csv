@@ -1,0 +1,9 @@
+family,sigma,injection_z,injection_primary,n_trajectories,full_detected_injected,compact_detected_injected,full_attributed,compact_attributed,full_false_detections_on_null,compact_false_detections_on_null,full_localization_ok,compact_localization_ok,median_full_ratio,full_dim,compact_dim,full_distance_calls,compact_distance_calls,max_reconstruction_error
+A,0.0,3.0,true,5,5,5,5,5,0,0,5,5,,136,12,136,31,0.0
+A,0.0,1.5,false,5,5,5,5,5,0,0,5,5,,136,12,136,31,0.0
+A,0.05,3.0,true,5,5,5,5,5,5,3,5,5,6.746941127111757,136,12,136,31,0.0
+A,0.05,1.5,false,5,5,3,1,1,5,3,1,1,1.0,136,12,136,31,0.0
+B,0.0,3.0,true,5,5,5,5,5,0,0,5,5,,136,12,136,31,0.0
+B,0.0,1.5,false,5,5,5,5,5,0,0,5,5,,136,12,136,31,0.0
+B,0.05,3.0,true,5,5,5,5,5,4,2,5,5,8.110047710939952,136,12,136,31,0.0
+B,0.05,1.5,false,5,5,5,5,5,4,2,5,5,4.951780813578822,136,12,136,31,0.0

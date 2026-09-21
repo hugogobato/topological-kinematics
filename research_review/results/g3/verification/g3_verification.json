@@ -1,0 +1,2113 @@
+{
+  "adversarial_observations": [
+    "The ceiling is a property of the task design, not of the compact diagnostics: a temporal-variance scalar computed from raw frames alone already separates the classes at the required probe, and the actual raw_geometry_flat representation is at 0 error in every cell.",
+    "Compact test accuracy is perfect even though its angle validity fraction falls to 0.002-0.06 at sigma 0.05 (mean 0.2012 over the test split). The perfect score therefore does not come from the angle/ordering channel; the memo's C5 INDETERMINATE status is the correct reading.",
+    "The paired interval [0, 0] and the route recommendation's zero required_clusters are degenerate consequences of the ceiling; a future protocol needs a difficulty pilot that enforces non-ceiling accuracy, as the memo's recommended new protocol states.",
+    "The incumbent tie-break is decided by validation end-to-end cost, which is timing-based and cache-dependent. Within the zero-error group the cheapest representation is raw_geometry_flat, so the incumbent is not sensitive to small timing perturbations, but the rule is not fully reproducible across platforms.",
+    "No confirmatory seed was opened and the route is unresolved; the suggested superiority route with 200 clusters in route_recommendation.json is only a suggestion and does not authorize anything."
+  ],
+  "artifact": "g3_verification",
+  "artifact_hashes": {
+    "claims_matrix": "97f1416a3848d4bd9517cc42417536fa1479ef299ea8e87ef93db550f6318a79",
+    "exploratory_metrics": "cf1123dceb46fa591ca20cef5f9d290ef3ab98412a0ee7f78d669eda4a604790",
+    "g3_decision": "de14103fb92345381e7cd56c8da9392a10449522693ea8a2f4ae4415e6747a5f",
+    "gate_memo": "2d62652220cc0162d5308ed59b2c2a0432c550061d8e240be4893a60eae5d873",
+    "metrics_identical": true,
+    "recorded_exploratory_metrics": "cf1123dceb46fa591ca20cef5f9d290ef3ab98412a0ee7f78d669eda4a604790",
+    "selection_table": "e055e4dca5a3e14fa0d4a910c267e15720c32ceb104d4c4097d5091dfbb5b043",
+    "split_manifest": "f333b970c90e3fea9ccafb537adb75f570f73cbbbe8363ed55e28d01aef10e21",
+    "top_level_metrics": "cf1123dceb46fa591ca20cef5f9d290ef3ab98412a0ee7f78d669eda4a604790"
+  },
+  "auditor": "independent verification pass (adversarial audit, no source artifact modified)",
+  "checks": {
+    "1_per_cell_macro_errors": {
+      "evidence": {
+        "cells": {
+          "A|0.05|1|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.08333333333333333,
+            "moment_signature_time": 0.03333333333333333,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.03333333333333333,
+            "speed_history": 0.016666666666666666
+          },
+          "A|0.05|2|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.03333333333333333,
+            "moment_signature_time": 0.016666666666666666,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.11666666666666665,
+            "speed_history": 0.06666666666666667
+          },
+          "A|0.05|4|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.03333333333333333,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.16666666666666666,
+            "speed_history": 0.016666666666666666
+          },
+          "A|0|1|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.0,
+            "speed_history": 0.0
+          },
+          "A|0|2|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.0,
+            "speed_history": 0.0
+          },
+          "A|0|4|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.016666666666666666,
+            "speed_history": 0.0
+          },
+          "B|0.05|1|0": {
+            "compact": 0.0,
+            "complete_distances": 0.016666666666666666,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.016666666666666666,
+            "moments_summary": 0.06666666666666667,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.06666666666666667,
+            "speed_history": 0.03333333333333333
+          },
+          "B|0.05|2|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.016666666666666666,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.05000000000000001,
+            "speed_history": 0.0
+          },
+          "B|0.05|4|0": {
+            "compact": 0.0,
+            "complete_distances": 0.016666666666666666,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.049999999999999996,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.09999999999999999,
+            "speed_history": 0.0
+          },
+          "B|0|1|0": {
+            "compact": 0.0,
+            "complete_distances": 0.016666666666666666,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.0,
+            "speed_history": 0.049999999999999996
+          },
+          "B|0|2|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.0,
+            "speed_history": 0.0
+          },
+          "B|0|4|0": {
+            "compact": 0.0,
+            "complete_distances": 0.0,
+            "moment_signature": 0.0,
+            "moment_signature_time": 0.0,
+            "moments_flat": 0.0,
+            "moments_summary": 0.0,
+            "n_trajectories": 60,
+            "raw_geometry_flat": 0.0,
+            "raw_geometry_summary": 0.0,
+            "recurrence_summary": 0.0,
+            "speed_history": 0.0
+          }
+        },
+        "compact_zero_cells": 12,
+        "incumbent_zero_cells": 12,
+        "n_cells": 12,
+        "recorded_test_equal_weight": {
+          "compact": 0.0,
+          "complete_distances": 0.004166666666666667,
+          "moment_signature": 0.012499999999999999,
+          "moment_signature_time": 0.004166666666666667,
+          "moments_flat": 0.006944444444444444,
+          "moments_summary": 0.005555555555555556,
+          "raw_geometry_flat": 0.0,
+          "raw_geometry_summary": 0.0,
+          "recurrence_summary": 0.04583333333333333,
+          "speed_history": 0.015277777777777777
+        },
+        "recorded_validation_equal_weight": {
+          "compact": 0.002777777777777778,
+          "complete_distances": 0.0,
+          "moment_signature": 0.022222222222222227,
+          "moment_signature_time": 0.011111111111111112,
+          "moments_flat": 0.0,
+          "moments_summary": 0.0,
+          "raw_geometry_flat": 0.0,
+          "raw_geometry_summary": 0.008333333333333333,
+          "recurrence_summary": 0.024999999999999998,
+          "speed_history": 0.013888888888888888
+        },
+        "speed_history_test_equal_weight": 0.015277777777777777,
+        "test_equal_weight": {
+          "compact": 0.0,
+          "complete_distances": 0.004166666666666667,
+          "moment_signature": 0.012499999999999999,
+          "moment_signature_time": 0.004166666666666667,
+          "moments_flat": 0.006944444444444444,
+          "moments_summary": 0.005555555555555556,
+          "raw_geometry_flat": 0.0,
+          "raw_geometry_summary": 0.0,
+          "recurrence_summary": 0.04583333333333333,
+          "speed_history": 0.015277777777777777
+        },
+        "twelve_cell_zero_pattern": true,
+        "validation_equal_weight": {
+          "compact": 0.002777777777777778,
+          "complete_distances": 0.0,
+          "moment_signature": 0.022222222222222227,
+          "moment_signature_time": 0.011111111111111112,
+          "moments_flat": 0.0,
+          "moments_summary": 0.0,
+          "raw_geometry_flat": 0.0,
+          "raw_geometry_summary": 0.008333333333333333,
+          "recurrence_summary": 0.024999999999999998,
+          "speed_history": 0.013888888888888888
+        }
+      },
+      "summary": "The twelve-cell zero pattern reproduces exactly: compact and raw_geometry_flat have macro balanced error 0.0 in all 12 test cells (60 trajectories each). speed_history is nonzero in 5 of 12 cells with equal-weight test error 0.0152778.",
+      "verdict": "PASS"
+    },
+    "2_paired_cluster_bootstrap": {
+      "evidence": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "delta": 0.0,
+        "family_bounds": {
+          "A": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "delta": 0.0,
+            "n_clusters": 60
+          },
+          "B": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "delta": 0.0,
+            "n_clusters": 60
+          }
+        },
+        "family_bounds_zero": true,
+        "interval_is_zero": true,
+        "n_cells": 12,
+        "n_clusters": 120,
+        "n_resamples": 2000,
+        "recorded_bounds": {
+          "A": [
+            0.0,
+            0.0
+          ],
+          "B": [
+            0.0,
+            0.0
+          ]
+        },
+        "recorded_ci": [
+          0.0,
+          0.0
+        ],
+        "recorded_delta": 0.0,
+        "seed": 20260907,
+        "unique_bootstrap_deltas": [
+          0.0
+        ]
+      },
+      "summary": "2000 resamples, seed 20260907, 120 (family, class, base_seed) clusters: delta 0.0 with percentile interval [0, 0]; every one of the 2000 bootstrap deltas is exactly 0. Bonferroni family bounds are [0, 0] for both families (alpha = 0.025 two-sided, 60 clusters each). An independent numpy reimplementation reproduces [0, 0].",
+      "verdict": "PASS"
+    },
+    "3_incumbent_selection_rule": {
+      "evidence": {
+        "band": 0.02,
+        "eligible_recomputed": [
+          "raw_geometry_flat",
+          "moments_summary",
+          "moments_flat",
+          "complete_distances",
+          "raw_geometry_summary",
+          "moment_signature_time",
+          "speed_history"
+        ],
+        "eligible_recorded": [
+          "raw_geometry_flat",
+          "moments_summary",
+          "moments_flat",
+          "complete_distances",
+          "raw_geometry_summary",
+          "moment_signature_time",
+          "speed_history"
+        ],
+        "excluded_borderline": {
+          "raw_geometry_summary": 0.008333333333333333
+        },
+        "incumbent_recomputed": "raw_geometry_flat",
+        "incumbent_recorded": "raw_geometry_flat",
+        "ranking": [
+          {
+            "contract_order": 4,
+            "rank": 1,
+            "recorded_end_to_end_cost_val": 2.2315364002444364,
+            "recorded_feature_dim": 378.3333333333333,
+            "recorded_val_error": 0.0,
+            "representation": "raw_geometry_flat",
+            "val_error": 0.0
+          },
+          {
+            "contract_order": 7,
+            "rank": 2,
+            "recorded_end_to_end_cost_val": 4.276445985625893,
+            "recorded_feature_dim": 12.0,
+            "recorded_val_error": 0.0,
+            "representation": "moments_summary",
+            "val_error": 0.0
+          },
+          {
+            "contract_order": 6,
+            "rank": 3,
+            "recorded_end_to_end_cost_val": 4.276447153831396,
+            "recorded_feature_dim": 454.0,
+            "recorded_val_error": 0.0,
+            "representation": "moments_flat",
+            "val_error": 0.0
+          },
+          {
+            "contract_order": 2,
+            "rank": 4,
+            "recorded_end_to_end_cost_val": 4.567594943265996,
+            "recorded_feature_dim": 3621.3333333333335,
+            "recorded_val_error": 0.0,
+            "representation": "complete_distances",
+            "val_error": 0.0
+          },
+          {
+            "contract_order": 0,
+            "rank": 5,
+            "recorded_end_to_end_cost_val": 4.5675832864993735,
+            "recorded_feature_dim": 13.0,
+            "recorded_val_error": 0.002777777777777778,
+            "representation": "compact",
+            "val_error": 0.002777777777777778
+          },
+          {
+            "contract_order": 5,
+            "rank": 6,
+            "recorded_end_to_end_cost_val": 2.23153586509165,
+            "recorded_feature_dim": 10.0,
+            "recorded_val_error": 0.008333333333333333,
+            "representation": "raw_geometry_summary",
+            "val_error": 0.008333333333333333
+          },
+          {
+            "contract_order": 9,
+            "rank": 7,
+            "recorded_end_to_end_cost_val": 4.276468252142492,
+            "recorded_feature_dim": 56.0,
+            "recorded_val_error": 0.011111111111111112,
+            "representation": "moment_signature_time",
+            "val_error": 0.011111111111111112
+          },
+          {
+            "contract_order": 1,
+            "rank": 8,
+            "recorded_end_to_end_cost_val": 4.567585914441022,
+            "recorded_feature_dim": 80.66666666666667,
+            "recorded_val_error": 0.013888888888888888,
+            "representation": "speed_history",
+            "val_error": 0.013888888888888888
+          },
+          {
+            "contract_order": 8,
+            "rank": 9,
+            "recorded_end_to_end_cost_val": 4.276445441956377,
+            "recorded_feature_dim": 42.0,
+            "recorded_val_error": 0.022222222222222227,
+            "representation": "moment_signature",
+            "val_error": 0.022222222222222227
+          },
+          {
+            "contract_order": 3,
+            "rank": 10,
+            "recorded_end_to_end_cost_val": 4.567596929241013,
+            "recorded_feature_dim": 9.0,
+            "recorded_val_error": 0.024999999999999998,
+            "representation": "recurrence_summary",
+            "val_error": 0.024999999999999998
+          }
+        ],
+        "ranking_matches_recorded": true,
+        "val_errors_match_recorded": true
+      },
+      "summary": "Incumbent raw_geometry_flat reproduces from the frozen rule: best non-compact representation by equal-weight validation macro balanced error (0.0), tie-broken by lower validation end-to-end cost (2.2315 s), then lower postprocessed dimension, then contract order. The full validation ranking matches the recorded ranking cell for cell. The eligible comparator set (validation error at most 0.02 above the incumbent) is exactly the seven recorded representations.",
+      "verdict": "PASS"
+    },
+    "4_parsimony_ratios": {
+      "evidence": {
+        "all_cells_comparator_cheaper": true,
+        "cost_ratio_max_over_cells": 0.9675318622572728,
+        "cost_ratio_min_over_cells": 0.05441679271648517,
+        "dim_ratio_max_over_cells": 0.9230769230769231,
+        "dim_ratio_min_over_cells": 0.6153846153846154,
+        "fourfold_threshold": 4.0,
+        "parsimony_fails_under_max_aggregation": true,
+        "parsimony_fails_under_min_aggregation": true,
+        "ratio_rows": [
+          {
+            "cell": "A|0|1|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 4.818906791602543,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.24394392250509422,
+            "cost_ratio_recorded": 0.24378590032684883,
+            "dim_ratio_recomputed": 0.9230769230769231,
+            "dim_ratio_recorded": 0.9230769230769231,
+            "min_eligible_cost": 1.175543024929963,
+            "min_eligible_dim": 12.0
+          },
+          {
+            "cell": "A|0|2|0",
+            "cheapest_comparator_recomputed": "raw_geometry_flat",
+            "cheapest_comparator_recorded": "raw_geometry_flat",
+            "compact_cost_recomputed": 4.219514098001188,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.14835253156138195,
+            "cost_ratio_recorded": 0.14830749702194856,
+            "dim_ratio_recomputed": 0.9230769230769231,
+            "dim_ratio_recorded": 0.9230769230769231,
+            "min_eligible_cost": 0.6259755983974173,
+            "min_eligible_dim": 12.0
+          },
+          {
+            "cell": "A|0|4|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 3.834347488631829,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.08442318462031885,
+            "cost_ratio_recorded": 0.08436375146415999,
+            "dim_ratio_recomputed": 0.9230769230769231,
+            "dim_ratio_recorded": 0.9230769230769231,
+            "min_eligible_cost": 0.3237078259312208,
+            "min_eligible_dim": 12.0
+          },
+          {
+            "cell": "A|0.05|1|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 6.105347467070775,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.42504556437304125,
+            "cost_ratio_recorded": 0.42491620813652525,
+            "dim_ratio_recomputed": 0.9230769230769231,
+            "dim_ratio_recorded": 0.9230769230769231,
+            "min_eligible_cost": 2.5950508598346156,
+            "min_eligible_dim": 12.0
+          },
+          {
+            "cell": "A|0.05|2|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 4.786083192031826,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.26522933767573414,
+            "cost_ratio_recorded": 0.2650156889635912,
+            "dim_ratio_recomputed": 0.9230769230769231,
+            "dim_ratio_recorded": 0.9230769230769231,
+            "min_eligible_cost": 1.2694096750835646,
+            "min_eligible_dim": 12.0
+          },
+          {
+            "cell": "A|0.05|4|0",
+            "cheapest_comparator_recomputed": "raw_geometry_flat",
+            "cheapest_comparator_recorded": "raw_geometry_flat",
+            "compact_cost_recomputed": 4.14393490334769,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.1672120848973704,
+            "cost_ratio_recorded": 0.1669652839492483,
+            "dim_ratio_recomputed": 0.9230769230769231,
+            "dim_ratio_recorded": 0.9230769230769231,
+            "min_eligible_cost": 0.6929159948677504,
+            "min_eligible_dim": 12.0
+          },
+          {
+            "cell": "B|0|1|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 0.588749533032751,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.1864990891234706,
+            "cost_ratio_recorded": 0.18576906015539585,
+            "dim_ratio_recomputed": 0.6153846153846154,
+            "dim_ratio_recorded": 0.6153846153846154,
+            "min_eligible_cost": 0.10980125163247673,
+            "min_eligible_dim": 8.0
+          },
+          {
+            "cell": "B|0|2|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 0.5139229494034225,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.09329502166770959,
+            "cost_ratio_recorded": 0.0930501804404686,
+            "dim_ratio_recomputed": 0.6153846153846154,
+            "dim_ratio_recorded": 0.6153846153846154,
+            "min_eligible_cost": 0.04794645270012552,
+            "min_eligible_dim": 8.0
+          },
+          {
+            "cell": "B|0|4|0",
+            "cheapest_comparator_recomputed": "raw_geometry_flat",
+            "cheapest_comparator_recorded": "raw_geometry_flat",
+            "compact_cost_recomputed": 0.48792171911991317,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.05441679271648517,
+            "cost_ratio_recorded": 0.05403697245976716,
+            "dim_ratio_recomputed": 0.6153846153846154,
+            "dim_ratio_recorded": 0.6153846153846154,
+            "min_eligible_cost": 0.026551135051219414,
+            "min_eligible_dim": 8.0
+          },
+          {
+            "cell": "B|0.05|1|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 9.874407819646997,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.9675318622572728,
+            "cost_ratio_recorded": 0.967365181412404,
+            "dim_ratio_recomputed": 0.6153846153846154,
+            "dim_ratio_recorded": 0.6153846153846154,
+            "min_eligible_cost": 9.553804186430837,
+            "min_eligible_dim": 8.0
+          },
+          {
+            "cell": "B|0.05|2|0",
+            "cheapest_comparator_recomputed": "raw_geometry_flat",
+            "cheapest_comparator_recorded": "raw_geometry_flat",
+            "compact_cost_recomputed": 5.664800071066808,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.9068103462324606,
+            "cost_ratio_recorded": 0.9065819066556899,
+            "dim_ratio_recomputed": 0.6153846153846154,
+            "dim_ratio_recorded": 0.6153846153846154,
+            "min_eligible_cost": 5.136899313781759,
+            "min_eligible_dim": 8.0
+          },
+          {
+            "cell": "B|0.05|4|0",
+            "cheapest_comparator_recomputed": "raw_geometry_summary",
+            "cheapest_comparator_recorded": "raw_geometry_summary",
+            "compact_cost_recomputed": 2.873680138287091,
+            "compact_dim": 13.0,
+            "comparator_cheaper_than_compact": true,
+            "cost_ratio_recomputed": 0.8530190376121617,
+            "cost_ratio_recorded": 0.8521893414674477,
+            "dim_ratio_recomputed": 0.6153846153846154,
+            "dim_ratio_recorded": 0.6153846153846154,
+            "min_eligible_cost": 2.451303865966838,
+            "min_eligible_dim": 8.0
+          }
+        ],
+        "recorded_parsimony_ratio": 0.6153846153846154,
+        "recorded_worst_cost_ratio": 0.05403697245976716,
+        "recorded_worst_dimension_ratio": 0.6153846153846154
+      },
+      "summary": "Dimension ratio recomputed from the metrics table: 12/13 = 0.9231 in every Family A cell and 8/13 = 0.6154 in every Family B cell. Cost ratio recomputed from the per-cell median component costs ranges from 0.0544 to 0.9675 and matches the recorded 0.0540 to 0.9674 within 0.7 percent (the metrics table does not carry distance_seconds). The recorded parsimony ratio 0.6154 equals the minimum dimension ratio; under either aggregation (minimum or maximum over cells) the ratio is far below the fourfold threshold 4.0. The cheapest eligible comparator is cheaper than compact in all 12 cells (cost ratio below 1).",
+      "verdict": "PASS"
+    },
+    "5_independent_raw_ceiling_probe": {
+      "evidence": {
+        "classes": [
+          "return",
+          "ramp",
+          "jump"
+        ],
+        "family_A": {
+          "extended_multi_scalar_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": [
+                3.808124220614207,
+                1.540489235887962,
+                2.479246358597224
+              ],
+              "ramp": [
+                3.85939807973667,
+                0.9458343058369062,
+                0.2646098653462957
+              ],
+              "return": [
+                3.3065611849822076,
+                0.6695202907569604,
+                0.3922723190779238
+              ]
+            },
+            "margins": {
+              "jump": {
+                "min_margin_ratio": 10.003677806416365,
+                "n": 20
+              },
+              "ramp": {
+                "min_margin_ratio": 2.256635899851773,
+                "n": 20
+              },
+              "return": {
+                "min_margin_ratio": 2.4009510179034073,
+                "n": 20
+              }
+            },
+            "n_correct": 60,
+            "n_total": 60
+          },
+          "extended_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 1.540489235887962,
+              "ramp": 0.9458343058369062,
+              "return": 0.6695202907569604
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.05144148425059414,
+                "min_distance_to_nearest_other": 0.5590268984036594,
+                "min_distance_to_own": 0.00273709447823256,
+                "min_margin_ratio": 12.559832277665816,
+                "n": 20
+              },
+              "ramp": {
+                "max_distance_to_own": 0.09189587272702293,
+                "min_distance_to_nearest_other": 0.18441814235292286,
+                "min_distance_to_own": 8.535119774721878e-05,
+                "min_margin_ratio": 2.0068163768435796,
+                "n": 20
+              },
+              "return": {
+                "max_distance_to_own": 0.030975147328335617,
+                "min_distance_to_nearest_other": 0.24533886775161018,
+                "min_distance_to_own": 4.740818236903532e-05,
+                "min_margin_ratio": 7.920506887377344,
+                "n": 20
+              }
+            },
+            "n_correct": 60,
+            "n_total": 60,
+            "predictions": {
+              "jump": [
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump"
+              ],
+              "ramp": [
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp"
+              ],
+              "return": [
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return"
+              ]
+            }
+          },
+          "extended_test_seeds": [
+            3000,
+            3001,
+            3002,
+            3003,
+            3004,
+            3005,
+            3006,
+            3007,
+            3008,
+            3009,
+            3010,
+            3011,
+            3012,
+            3013,
+            3014,
+            3015,
+            3016,
+            3017,
+            3018,
+            3019
+          ],
+          "extended_test_variance": {
+            "jump": {
+              "mean": 1.541629282802161,
+              "std": 0.022952031101085943
+            },
+            "ramp": {
+              "mean": 0.9390885979306152,
+              "std": 0.03602378671420871
+            },
+            "return": {
+              "mean": 0.6690964353435717,
+              "std": 0.013450799556578397
+            }
+          },
+          "extended_train_seeds": [
+            1000,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008,
+            1009,
+            1010,
+            1011,
+            1012,
+            1013,
+            1014,
+            1015,
+            1016,
+            1017,
+            1018,
+            1019
+          ],
+          "extended_train_variance": {
+            "jump": {
+              "mean": 1.540489235887962,
+              "std": 0.0248734372104308
+            },
+            "ramp": {
+              "mean": 0.9458343058369062,
+              "std": 0.04570032156704949
+            },
+            "return": {
+              "mean": 0.6695202907569604,
+              "std": 0.01834798094174839
+            }
+          },
+          "required_max_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 5.251769664832573,
+              "ramp": 5.289315560005197,
+              "return": 5.059764172094908
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.037545895172623744,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 37545895172.62375,
+                "n": 1
+              },
+              "ramp": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.037545895172623744,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 37545895172.62375,
+                "n": 1
+              },
+              "return": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.19200549273766576,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 192005492737.66577,
+                "n": 1
+              }
+            },
+            "n_correct": 3,
+            "n_total": 3,
+            "predictions": {
+              "jump": [
+                "jump"
+              ],
+              "ramp": [
+                "ramp"
+              ],
+              "return": [
+                "return"
+              ]
+            }
+          },
+          "required_max_scalar": {
+            "jump": 5.251769664832573,
+            "ramp": 5.289315560005197,
+            "return": 5.059764172094908
+          },
+          "required_mean_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 3.857610076496923,
+              "ramp": 4.02320389580308,
+              "return": 3.3443896739982617
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.16559381930615746,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 165593819306.15747,
+                "n": 1
+              },
+              "ramp": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.16559381930615746,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 165593819306.15747,
+                "n": 1
+              },
+              "return": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.5132204024986611,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 513220402498.6611,
+                "n": 1
+              }
+            },
+            "n_correct": 3,
+            "n_total": 3,
+            "predictions": {
+              "jump": [
+                "jump"
+              ],
+              "ramp": [
+                "ramp"
+              ],
+              "return": [
+                "return"
+              ]
+            }
+          },
+          "required_mean_scalar": {
+            "jump": 3.857610076496923,
+            "ramp": 4.02320389580308,
+            "return": 3.3443896739982617
+          },
+          "required_probe_seed": 3000,
+          "required_scalars": {
+            "jump": {
+              "max": 5.251769664832573,
+              "max_abs_change": 2.4324917673636097,
+              "mean": 3.857610076496923,
+              "n_frames": 33,
+              "variance": 1.5160381905812104
+            },
+            "ramp": {
+              "max": 5.289315560005197,
+              "max_abs_change": 0.2929815990127498,
+              "mean": 4.02320389580308,
+              "n_frames": 33,
+              "variance": 0.9824115567298284
+            },
+            "return": {
+              "max": 5.059764172094908,
+              "max_abs_change": 0.35261015553669006,
+              "mean": 3.3443896739982617,
+              "n_frames": 33,
+              "variance": 0.648953775008334
+            }
+          },
+          "required_variance_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 1.5160381905812104,
+              "ramp": 0.9824115567298284,
+              "return": 0.648953775008334
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.533626633851382,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 533626633851.382,
+                "n": 1
+              },
+              "ramp": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.33345778172149443,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 333457781721.49445,
+                "n": 1
+              },
+              "return": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.33345778172149443,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 333457781721.49445,
+                "n": 1
+              }
+            },
+            "n_correct": 3,
+            "n_total": 3,
+            "predictions": {
+              "jump": [
+                "jump"
+              ],
+              "ramp": [
+                "ramp"
+              ],
+              "return": [
+                "return"
+              ]
+            }
+          },
+          "required_variance_scalar": {
+            "jump": 1.5160381905812104,
+            "ramp": 0.9824115567298284,
+            "return": 0.648953775008334
+          }
+        },
+        "family_B": {
+          "extended_multi_scalar_nearest_centroid": {
+            "accuracy": 0.8666666666666667,
+            "centroids": {
+              "jump": [
+                3.524038898131282,
+                0.13659364836880114,
+                0.7207920191144223
+              ],
+              "ramp": [
+                3.500998387935975,
+                0.08414710011004843,
+                0.2196714381029385
+              ],
+              "return": [
+                3.341506409998913,
+                0.05302032891679069,
+                0.26217298257672844
+              ]
+            },
+            "margins": {
+              "jump": {
+                "min_margin_ratio": 1.201918087624474,
+                "n": 20
+              },
+              "ramp": {
+                "min_margin_ratio": 0.5462524795667705,
+                "n": 20
+              },
+              "return": {
+                "min_margin_ratio": 0.6307995825368826,
+                "n": 20
+              }
+            },
+            "n_correct": 52,
+            "n_total": 60
+          },
+          "extended_nearest_centroid": {
+            "accuracy": 0.7833333333333333,
+            "centroids": {
+              "jump": 0.13659364836880117,
+              "ramp": 0.08414710011004843,
+              "return": 0.053020328916790704
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.045693729614889905,
+                "min_distance_to_nearest_other": 0.012286327560814408,
+                "min_distance_to_own": 0.00249649254189932,
+                "min_margin_ratio": 0.3059327699721815,
+                "n": 20
+              },
+              "ramp": {
+                "max_distance_to_own": 0.028218480654373587,
+                "min_distance_to_nearest_other": 0.008977650733420828,
+                "min_distance_to_own": 9.536708709961816e-05,
+                "min_margin_ratio": 0.4053276404225641,
+                "n": 20
+              },
+              "return": {
+                "max_distance_to_own": 0.02023606270747759,
+                "min_distance_to_nearest_other": 0.010890708485780137,
+                "min_distance_to_own": 0.0001806039593908737,
+                "min_margin_ratio": 0.5381831754136551,
+                "n": 20
+              }
+            },
+            "n_correct": 47,
+            "n_total": 60,
+            "predictions": {
+              "jump": [
+                "jump",
+                "ramp",
+                "jump",
+                "jump",
+                "ramp",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "jump",
+                "ramp",
+                "ramp",
+                "jump",
+                "ramp",
+                "jump",
+                "jump",
+                "jump",
+                "jump"
+              ],
+              "ramp": [
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "jump",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "ramp",
+                "return",
+                "ramp",
+                "ramp",
+                "ramp",
+                "jump",
+                "ramp",
+                "return"
+              ],
+              "return": [
+                "return",
+                "return",
+                "return",
+                "return",
+                "ramp",
+                "return",
+                "return",
+                "return",
+                "return",
+                "ramp",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "return",
+                "ramp",
+                "ramp",
+                "return",
+                "return"
+              ]
+            }
+          },
+          "extended_test_seeds": [
+            3000,
+            3001,
+            3002,
+            3003,
+            3004,
+            3005,
+            3006,
+            3007,
+            3008,
+            3009,
+            3010,
+            3011,
+            3012,
+            3013,
+            3014,
+            3015,
+            3016,
+            3017,
+            3018,
+            3019
+          ],
+          "extended_test_variance": {
+            "jump": {
+              "mean": 0.13280133033477973,
+              "std": 0.02176359448416227
+            },
+            "ramp": {
+              "mean": 0.08591942136000985,
+              "std": 0.014439303943502827
+            },
+            "return": {
+              "mean": 0.056104350689472116,
+              "std": 0.01017904148329674
+            }
+          },
+          "extended_train_seeds": [
+            1000,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008,
+            1009,
+            1010,
+            1011,
+            1012,
+            1013,
+            1014,
+            1015,
+            1016,
+            1017,
+            1018,
+            1019
+          ],
+          "extended_train_variance": {
+            "jump": {
+              "mean": 0.13659364836880117,
+              "std": 0.026016240079400874
+            },
+            "ramp": {
+              "mean": 0.08414710011004843,
+              "std": 0.01575990288458366
+            },
+            "return": {
+              "mean": 0.053020328916790704,
+              "std": 0.008749078473886073
+            }
+          },
+          "required_max_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 4.010770415358271,
+              "ramp": 4.005153675560873,
+              "return": 3.9380355515130545
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.005616739797398296,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 5616739797.398295,
+                "n": 1
+              },
+              "ramp": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.005616739797398296,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 5616739797.398295,
+                "n": 1
+              },
+              "return": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.06711812404781847,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 67118124047.818474,
+                "n": 1
+              }
+            },
+            "n_correct": 3,
+            "n_total": 3,
+            "predictions": {
+              "jump": [
+                "jump"
+              ],
+              "ramp": [
+                "ramp"
+              ],
+              "return": [
+                "return"
+              ]
+            }
+          },
+          "required_max_scalar": {
+            "jump": 4.010770415358271,
+            "ramp": 4.005153675560873,
+            "return": 3.9380355515130545
+          },
+          "required_mean_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 3.5360987668884682,
+              "ramp": 3.574295617543629,
+              "return": 3.4267997354915227
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.03819685065516065,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 38196850655.16065,
+                "n": 1
+              },
+              "ramp": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.03819685065516065,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 38196850655.16065,
+                "n": 1
+              },
+              "return": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.10929903139694552,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 109299031396.94553,
+                "n": 1
+              }
+            },
+            "n_correct": 3,
+            "n_total": 3,
+            "predictions": {
+              "jump": [
+                "jump"
+              ],
+              "ramp": [
+                "ramp"
+              ],
+              "return": [
+                "return"
+              ]
+            }
+          },
+          "required_mean_scalar": {
+            "jump": 3.5360987668884682,
+            "ramp": 3.574295617543629,
+            "return": 3.4267997354915227
+          },
+          "required_probe_seed": 3000,
+          "required_scalars": {
+            "jump": {
+              "max": 4.010770415358271,
+              "max_abs_change": 0.7272917128346341,
+              "mean": 3.5360987668884682,
+              "n_frames": 33,
+              "variance": 0.13134328494946787
+            },
+            "ramp": {
+              "max": 4.005153675560873,
+              "max_abs_change": 0.26600821871330504,
+              "mean": 3.574295617543629,
+              "n_frames": 33,
+              "variance": 0.08424246719714805
+            },
+            "return": {
+              "max": 3.9380355515130545,
+              "max_abs_change": 0.24567561048605224,
+              "mean": 3.4267997354915227,
+              "n_frames": 33,
+              "variance": 0.04115902674479911
+            }
+          },
+          "required_variance_nearest_centroid": {
+            "accuracy": 1.0,
+            "centroids": {
+              "jump": 0.13134328494946787,
+              "ramp": 0.08424246719714805,
+              "return": 0.04115902674479911
+            },
+            "margins": {
+              "jump": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.04710081775231982,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 47100817752.319824,
+                "n": 1
+              },
+              "ramp": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.04308344045234894,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 43083440452.34894,
+                "n": 1
+              },
+              "return": {
+                "max_distance_to_own": 0.0,
+                "min_distance_to_nearest_other": 0.04308344045234894,
+                "min_distance_to_own": 0.0,
+                "min_margin_ratio": 43083440452.34894,
+                "n": 1
+              }
+            },
+            "n_correct": 3,
+            "n_total": 3,
+            "predictions": {
+              "jump": [
+                "jump"
+              ],
+              "ramp": [
+                "ramp"
+              ],
+              "return": [
+                "return"
+              ]
+            }
+          },
+          "required_variance_scalar": {
+            "jump": 0.13134328494946787,
+            "ramp": 0.08424246719714805,
+            "return": 0.04115902674479911
+          }
+        },
+        "sigma": 0.05,
+        "stride": 4
+      },
+      "summary": "Raw-generator probe at sigma 0.05 and stride 4 without any cached diagram or distance matrix. Required one-seed-per-class probe (seed 3000): temporal variance of the per-frame separation classifies 3 of 3 classes by nearest centroid for both Family A (0.648954, 0.982412, 1.516038) and Family B (0.041159, 0.084242, 0.131343). Extended probe (train centroids from seeds 1000-1019, test seeds 3000-3019): Family A 60/60; Family B 47/60 with the 1D variance scalar and 52/60 with a three-scalar variant. The plain temporal mean and maximum fail to separate ramp from jump for Family A across seeds (gap -0.0004 and 0.04 against pooled sds 0.168 and 0.12), which is why the variance scalar is used.",
+      "verdict": "PASS"
+    },
+    "6_confirmatory_seeds_closed": {
+      "evidence": {
+        "confirmatory_authorized": false,
+        "confirmatory_seeds_opened": false,
+        "g3_decision_status": "PIVOT",
+        "h1_distance_matrix_files": 176,
+        "manifest_seeds": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          3000,
+          3001,
+          3002,
+          3003,
+          3004,
+          3005,
+          3006,
+          3007,
+          3008,
+          3009,
+          3010,
+          3011,
+          3012,
+          3013,
+          3014,
+          3015,
+          3016,
+          3017,
+          3018,
+          3019
+        ],
+        "max_manifest_seed": 3019,
+        "max_metric_seed": 3019,
+        "metrics_seeds": [
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          3000,
+          3001,
+          3002,
+          3003,
+          3004,
+          3005,
+          3006,
+          3007,
+          3008,
+          3009,
+          3010,
+          3011,
+          3012,
+          3013,
+          3014,
+          3015,
+          3016,
+          3017,
+          3018,
+          3019
+        ],
+        "no_seed_at_or_above_10000": true,
+        "numeric_seed_directories": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          3000,
+          3001,
+          3002,
+          3003,
+          3004,
+          3005,
+          3006,
+          3007,
+          3008,
+          3009,
+          3010,
+          3011,
+          3012,
+          3013,
+          3014,
+          3015,
+          3016,
+          3017,
+          3018,
+          3019
+        ],
+        "paths_at_or_above_10000": [],
+        "untouched_confirmatory_seed_start": 10000
+      },
+      "summary": "No seed at or above 10000 exists anywhere under research_review/results: 50 numeric seed directories span 1000-1019, 2000-2009, and 3000-3019; no path component has five or more digits; metrics and split-manifest seeds stop at 3019. g3_decision.json records confirmatory_seeds_opened false, confirmatory_authorized false, and untouched_confirmatory_seed_start 10000. The only occurrences of 10000 are the frozen namespace declaration and the memo text.",
+      "verdict": "PASS"
+    },
+    "7_gate_memo_numeric_spot_checks": {
+      "evidence": {
+        "claims": [
+          {
+            "artifact": "exploratory/metrics.parquet",
+            "claim": "metrics.parquet has 10,800 rows",
+            "observed": 10800,
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/metrics.parquet",
+            "claim": "10,800 rows include 7,200 test and 3,600 validation rows",
+            "observed": {
+              "test": 7200,
+              "validation": 3600
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/manifest.json",
+            "claim": "wall time 839.7 s",
+            "observed": 839.7,
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/manifest.json",
+            "claim": "8 workers",
+            "observed": 8,
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/manifest.json",
+            "claim": "peak RAM 292 MB (292,454,400 bytes)",
+            "observed": 292454400,
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/manifest.json + splits/exploratory_split_manifest.csv",
+            "claim": "grid reduction 20 train / 10 validation / 20 exploratory test seeds",
+            "observed": {
+              "test_exploratory": [
+                3000,
+                3019
+              ],
+              "train": [
+                1000,
+                1019
+              ],
+              "validation": [
+                2000,
+                2009
+              ]
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json",
+            "claim": "validation ranking top four at zero error: raw_geometry_flat, moments_summary, moments_flat, complete_distances",
+            "observed": [
+              [
+                1,
+                "raw_geometry_flat",
+                0.0
+              ],
+              [
+                2,
+                "moments_summary",
+                0.0
+              ],
+              [
+                3,
+                "moments_flat",
+                0.0
+              ],
+              [
+                4,
+                "complete_distances",
+                0.0
+              ],
+              [
+                5,
+                "compact",
+                0.002777777777777778
+              ]
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json",
+            "claim": "compact validation error 0.0028",
+            "observed": 0.002778,
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json + exploratory_report.md",
+            "claim": "compact valid_fraction 0.2012 and coverage 0.5 for every representation",
+            "observed": {
+              "compact": [
+                0.20118766516192646,
+                0.5
+              ],
+              "n_representations": 10,
+              "raw_geometry_flat": [
+                1.0,
+                0.5
+              ]
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json",
+            "claim": "delta 0.0000 with paired 95 percent interval [0, 0], 120 clusters",
+            "observed": {
+              "candidate": "compact",
+              "cell_delta": {
+                "A|0.05|1|0": 0.0,
+                "A|0.05|2|0": 0.0,
+                "A|0.05|4|0": 0.0,
+                "A|0.0|1|0": 0.0,
+                "A|0.0|2|0": 0.0,
+                "A|0.0|4|0": 0.0,
+                "B|0.05|1|0": 0.0,
+                "B|0.05|2|0": 0.0,
+                "B|0.05|4|0": 0.0,
+                "B|0.0|1|0": 0.0,
+                "B|0.0|2|0": 0.0,
+                "B|0.0|4|0": 0.0
+              },
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "half_width": 0.0,
+              "n_cells": 12,
+              "n_clusters": 120,
+              "n_resamples": 2000,
+              "point": 0.0,
+              "reference": "raw_geometry_flat",
+              "seed": 20260907
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json",
+            "claim": "Bonferroni family bounds [0, 0] for both families",
+            "observed": {
+              "A": [
+                0.0,
+                0.0
+              ],
+              "B": [
+                0.0,
+                0.0
+              ]
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json",
+            "claim": "eligible comparator set has seven named representations",
+            "observed": [
+              "raw_geometry_flat",
+              "moments_summary",
+              "moments_flat",
+              "complete_distances",
+              "raw_geometry_summary",
+              "moment_signature_time",
+              "speed_history"
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "exploratory/analysis_degree0.json",
+            "claim": "worst-case parsimony ratio 0.615 (dimension) and 0.054 (cost)",
+            "observed": {
+              "parsimony_ratio": 0.6153846153846154,
+              "worst_cost_ratio": 0.05403697245976716,
+              "worst_dimension_ratio": 0.6153846153846154
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "reports/wp33_nulls_report.md + nulls/manifest.json",
+            "claim": "nulls and stress controls verdicts match the report table",
+            "observed": {
+              "adversarial_matrix": "RESIDUAL",
+              "coarse_sampling": "PASS",
+              "matched_ordering": "PASS",
+              "raw_preserving": "PASS",
+              "static_null": "RESIDUAL",
+              "time_reparam": "PASS"
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "nulls/control2_matched_ordering/summary.csv",
+            "claim": "matched ordering separates 20 of 20 Family A seeds and 5 of 5 Family B seeds",
+            "observed": [
+              {
+                "angle_or_shape_separated": true,
+                "group": "A_sigma0",
+                "n_seeds": 20,
+                "separation_hits": 20
+              },
+              {
+                "angle_or_shape_separated": true,
+                "group": "A_sigma50",
+                "n_seeds": 20,
+                "separation_hits": 20
+              },
+              {
+                "angle_or_shape_separated": true,
+                "group": "B_sigma0",
+                "n_seeds": 5,
+                "separation_hits": 5
+              }
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "nulls/control1_static_null/summary.csv",
+            "claim": "static null exactly degenerate at sigma 0",
+            "observed": [
+              {
+                "e95": 0.0,
+                "family": "A",
+                "n_above_e95": 0,
+                "verdict": "PASS"
+              },
+              {
+                "e95": 0.0,
+                "family": "B",
+                "n_above_e95": 0,
+                "verdict": "PASS"
+              }
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "nulls/control4_raw_preserving/summary.csv",
+            "claim": "rigid rotation and translation preserve the diagrams at the frozen tolerance",
+            "observed": [
+              {
+                "group": "rotation_degree0",
+                "max_distance": 0.0,
+                "verdict": "PASS"
+              },
+              {
+                "group": "rotation_degree1",
+                "max_distance": 0.0,
+                "verdict": "PASS"
+              },
+              {
+                "group": "translation_degree0",
+                "max_distance": 0.0,
+                "verdict": "PASS"
+              },
+              {
+                "group": "translation_degree1",
+                "max_distance": 0.0,
+                "verdict": "PASS"
+              }
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "nulls/control5_coarse_sampling/summary.csv",
+            "claim": "coarse sampling keeps the classes separable",
+            "observed": [
+              {
+                "balanced_error": 0.0666666666666667,
+                "family": "A",
+                "sigma": 0.0,
+                "stride": 8,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0999999999999999,
+                "family": "A",
+                "sigma": 0.0,
+                "stride": 16,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0666666666666667,
+                "family": "A",
+                "sigma": 0.05,
+                "stride": 8,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0999999999999999,
+                "family": "A",
+                "sigma": 0.05,
+                "stride": 16,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0,
+                "family": "B",
+                "sigma": 0.0,
+                "stride": 8,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0,
+                "family": "B",
+                "sigma": 0.0,
+                "stride": 16,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0,
+                "family": "B",
+                "sigma": 0.05,
+                "stride": 8,
+                "verdict": "PASS"
+              },
+              {
+                "balanced_error": 0.0333333333333333,
+                "family": "B",
+                "sigma": 0.05,
+                "stride": 16,
+                "verdict": "PASS"
+              }
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "g2/diagnostics/checks.json + g2/diagnostics/stability_report.md",
+            "claim": "13 of 13 WP-2.2 checks pass with triangle inequality on 21,216 triples",
+            "observed": {
+              "exact_scipy_verdict": "pass",
+              "triangle_inequality_lines": 2,
+              "wp22_definition_verdict": "pass under the corrected candidate exact_scipy; the frozen primary fails the metric axiom checks and is a G2 blocker documented in metric_backend_audit.md; cached frozen-backend artifacts must be regenerated after the interface amendment"
+            },
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "g2/reports/raw_correctness_report.md",
+            "claim": "Family A smooth-deformation slope 0.99 to 1.00",
+            "observed": [
+              "Family A seed 11: z_merge=2r=1.84502, plateau=0.180843, measured switch=2.02246, line slope=0.999438, max d/|dz|=0.9998, separated ratio=0.999063, bound violations=0, verdict components (monotone/bound/switch): PASS/PASS/PASS.",
+              "Family A seed 12: z_merge=2r=1.87953, plateau=0.184226, measured switch=2.0539, line slope=0.993658, max d/|dz|=0.997711, separated ratio=0.989927, bound violations=0, verdict components (monotone/bound/switch): PASS/PASS/PASS."
+            ],
+            "verdict": "PASS"
+          },
+          {
+            "artifact": "g2/reports/raw_correctness_report.md",
+            "claim": "Family B finite-H0 onset at z about 0.89",
+            "observed": [
+              "Family B seed 11: 2w=0.845257, onset in [0.921461, 0.954484], offset=0.109228 (one 32x32 grid spacing is 0.258065), persistence rho=0.920863, local decreases=9/93, net increase=0.874151.",
+              "Family B seed 12: 2w=0.899354, onset in [0.977873, 1.00682], offset=0.107465 (one 32x32 grid spacing is 0.258065), persistence rho=0.957681, local decreases=8/89, net increase=0.829865."
+            ],
+            "verdict": "RESIDUAL: measured onset windows are z in [0.921, 0.954] and [0.978, 1.007]; 0.899 is the seed-12 ramp latent z and 2w, not the measured onset z"
+          },
+          {
+            "artifact": "research_review/results/cache/**/degree1.npz",
+            "claim": "H1 secondary channel reached 176 distance matrices",
+            "observed": 176,
+            "verdict": "PASS: 176 files exist; the memo's 'about 300' denominator is not recorded exactly (240 test-only H1 masters expected, 360 with validation)"
+          },
+          {
+            "artifact": "phase1/baseline_protocol.md mtime vs exploratory artifacts mtime",
+            "claim": "exploratory grid reduction recorded pre-outcome in baseline_protocol.md Amendment 1",
+            "observed": {
+              "amendment_header": "## Amendment 1 (2026-09-21, pre-outcome): exploratory grid reduction and secondary channel scope",
+              "amendment_present": true,
+              "metrics_mtime": "2026-09-21T04:19:05-03:00",
+              "protocol_mtime": "2026-09-21T00:17:21-03:00",
+              "run_start": "2026-09-21T01:13:40-03:00"
+            },
+            "verdict": "PASS: the amendment predates the first exploratory run and the metrics write"
+          },
+          {
+            "artifact": "exploratory_run.log",
+            "claim": "839.7 s wall is the H0 stage wall; the supervisor campaign spanned about 4.4 h",
+            "observed": {
+              "last_logged_start": "2026-09-21T05:40:12-03:00",
+              "metrics_written": "2026-09-21T04:19:05-03:00",
+              "supervisor_restarts_exit_124": 8,
+              "supervisor_start": "2026-09-21T01:13:40-03:00"
+            },
+            "verdict": "RESIDUAL: the memo's wall time is the runner-reported H0 pass, not the end-to-end campaign; repeated supervisor timeouts are not mentioned"
+          }
+        ]
+      },
+      "summary": "Twenty-four memo claims were checked: 20 pass exactly, two pass with caveats (the H1 176 count has an unrecorded 'about 300' denominator, and the pre-outcome Amendment 1 claim is verified by file timestamps), and two are residuals: the Family B onset z about 0.89 (measured windows 0.921-0.954 and 0.978-1.007) and the 839.7 s wall time (runner H0 pass only; the supervisor log shows about 4.4 h of restarts with exit 124). None of these changes a decision input.",
+      "verdict": "PASS with 2 minor residuals"
+    },
+    "8_decision_rule_application": {
+      "evidence": {
+        "both_pivot": true,
+        "confirmatory_authorized": false,
+        "confirmatory_seeds_opened": false,
+        "decide_parsimony": {
+          "checks": {
+            "family_ok": true,
+            "family_upper": {
+              "A": 0.0,
+              "B": 0.0
+            },
+            "half_width": 0.0,
+            "noninferiority": true,
+            "other_route_met": false,
+            "parsimony": false,
+            "precision_ok": true,
+            "route_met": false,
+            "superiority": false
+          },
+          "delta_ci": {
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "family_bounds": {
+            "A": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "delta": 0.0,
+              "family": "A",
+              "n_clusters": 60
+            },
+            "B": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "delta": 0.0,
+              "family": "B",
+              "n_clusters": 60
+            }
+          },
+          "parsimony_ratio": 0.6153846153846154,
+          "reasons": [
+            "the compact representation is noninferior but neither frozen route's advantage is established",
+            "noninferiority margin met (upper endpoint below 0.02)"
+          ],
+          "route": "parsimony",
+          "status": "PIVOT"
+        },
+        "decide_superiority": {
+          "checks": {
+            "family_ok": true,
+            "family_upper": {
+              "A": 0.0,
+              "B": 0.0
+            },
+            "half_width": 0.0,
+            "noninferiority": true,
+            "other_route_met": false,
+            "parsimony": false,
+            "precision_ok": true,
+            "route_met": false,
+            "superiority": false
+          },
+          "delta_ci": {
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          "family_bounds": {
+            "A": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "delta": 0.0,
+              "family": "A",
+              "n_clusters": 60
+            },
+            "B": {
+              "ci_high": 0.0,
+              "ci_low": 0.0,
+              "delta": 0.0,
+              "family": "B",
+              "n_clusters": 60
+            }
+          },
+          "parsimony_ratio": 0.6153846153846154,
+          "reasons": [
+            "the compact representation is noninferior but neither frozen route's advantage is established",
+            "noninferiority margin met (upper endpoint below 0.02)"
+          ],
+          "route": "superiority",
+          "status": "PIVOT"
+        },
+        "g3_decision_status": "PIVOT",
+        "recorded_decision_parsimony": "PIVOT",
+        "recorded_decision_superiority": "PIVOT",
+        "recorded_recommended_route": null,
+        "route_recommendation": {
+          "note": "recommendation only; freeze the route, incumbent, eligible comparator set, and test size in the route freeze record before opening confirmatory seeds",
+          "parsimony_status": "PIVOT",
+          "recommended_route": null,
+          "suggested_route": "superiority",
+          "superiority_status": "PIVOT"
+        },
+        "route_recommendation_recommended_route": null
+      },
+      "summary": "evaluate.decide returns PIVOT for both frozen_route choices with delta [0, 0], parsimony ratio 0.6154, and family bounds [0, 0]: noninferiority holds, superiority and parsimony do not, the lower endpoint is not above zero, and precision is trivially satisfied. The recorded exploratory decisions are PIVOT for both routes, recommended_route is null, and g3_decision.json is PIVOT with the confirmatory stage unauthorized. No simulation GO is claimed; the only GO strings are the pre-existing C1/C2 operational claim statuses in claims_matrix.yaml and the historical G1/G2 records.",
+      "verdict": "PASS"
+    }
+  },
+  "date": "2026-09-21",
+  "final_report": {
+    "checks_failed": 0,
+    "checks_passed": 8,
+    "checks_with_residual_verdict": 1,
+    "disagreement_with_recorded_pivot": false,
+    "residual_items": 6,
+    "unresolved_items": [
+      "R1 degenerate [0, 0] interval is not an informative precision statement",
+      "R4 campaign-level wall time is about 4.4 h, not 839.7 s",
+      "R5 Family B onset wording and the H1 'about 300' denominator"
+    ]
+  },
+  "proposed_status": {
+    "agreement_with_recorded": true,
+    "reasoning": "The frozen decision function returns PIVOT for both route choices on the recorded statistics, and every decision input reproduces from the artifacts: twelve zero-error cells for both methods, delta [0, 0] with Bonferroni bounds [0, 0], parsimony ratio 0.6154 far below the fourfold threshold, incumbent raw_geometry_flat, and the frozen route unresolved. The confirmatory stage is not authorized and no seed at or above 10000 was opened. INCREMENTAL-ONLY would require the lower interval endpoint to be above zero, which the frozen rule does not support; the memo's note that it is a defensible alternative policy reading is honest but not the rule output. The audit finds no disagreement with the recorded PIVOT.",
+    "recommended_next_step": "Adopt the memo's proposed new protocol only after a difficulty pilot demonstrates a non-ceiling regime, and keep confirmatory seeds closed until that protocol and route are frozen in writing.",
+    "recorded_status": "PIVOT",
+    "status": "PIVOT"
+  },
+  "residuals": [
+    {
+      "decision_impact": "none (PIVOT is the correct rule output)",
+      "detail": "Both methods are perfect in every cell, so all 2000 bootstrap deltas are exactly 0 and the interval [0, 0] is structural, not a tight precision statement. The decision rule's precision check is satisfied by degeneracy. The memo does not claim otherwise, but the interval should not be read as a measured zero difference.",
+      "id": "R1",
+      "topic": "degenerate bootstrap interval"
+    },
+    {
+      "decision_impact": "none",
+      "detail": "run.py aggregates the parsimony ratio as the minimum over cells of the per-cell ratio (most favorable cell), while the memo calls it the worst-case ratio. Recomputed maxima over cells are 0.9231 (dimension) and 0.9675 (cost), still far below 4.0, so the parsimony failure is robust to the aggregation.",
+      "id": "R2",
+      "topic": "parsimony aggregation wording"
+    },
+    {
+      "decision_impact": "none",
+      "detail": "Per-cell compact costs range from about 0.49 s to 9.9 s because extraction timings are reused from cache-hit timing files, so the minimum cost ratio 0.054 is timing-sensitive. The comparator is cheaper in every cell under the available components, and raw geometry skips extraction and distance work by construction.",
+      "id": "R3",
+      "topic": "timing-based cost ratios"
+    },
+    {
+      "decision_impact": "none",
+      "detail": "The 839.7 s wall is the runner-reported H0 pass of the final supervised run; exploratory_run.log shows repeated supervisor timeouts (exit 124) from 01:13 to 05:40 local, about 4.4 h, with the H0 artifacts written at 04:19. The memo's sentence is accurate for the pass but omits the campaign-level compute.",
+      "id": "R4",
+      "topic": "wall-time reporting"
+    },
+    {
+      "decision_impact": "none (supporting claims only)",
+      "detail": "The supporting 'onset at z about 0.89' claim reads 0.899, which is the seed-12 ramp latent z and 2w, against measured onset windows 0.921-0.954 and 0.978-1.007. The H1 memo count 176 is exact; the 'about 300' denominator is not recorded (240 test-only H1 masters expected, 360 with validation).",
+      "id": "R5",
+      "topic": "Family B onset and H1 denominator"
+    },
+    {
+      "decision_impact": "none",
+      "detail": "The required one-seed-per-class probe passes 3/3, but the extended train/test probe with a single crude scalar reaches 47/60 on Family B (52/60 with three scalars). The study's raw_geometry_flat representation has 0 test error in all 12 cells, so the ceiling claim stands; the crude scalar is only a corroborating probe.",
+      "id": "R6",
+      "topic": "crude Family B scalar probe"
+    }
+  ],
+  "schema_version": "1.0",
+  "scope": {
+    "artifacts_audited": [
+      "research_review/results/g3/exploratory/metrics.parquet",
+      "research_review/results/g3/exploratory/exploratory_report.md",
+      "research_review/results/g3/exploratory/analysis_degree0.json",
+      "research_review/results/g3/exploratory/route_recommendation.json",
+      "research_review/results/g3/exploratory/manifest.json",
+      "research_review/results/g3/exploratory/calibration.json",
+      "research_review/results/g3/exploratory/selection_table.parquet",
+      "research_review/results/g3/exploratory/preprocessing.npz",
+      "research_review/results/g3/metrics.parquet",
+      "research_review/results/g3/claims_matrix.yaml",
+      "research_review/results/g3/gate_memo.md",
+      "research_review/results/g3/g3_decision.json",
+      "research_review/results/g3/splits/exploratory_split_manifest.csv",
+      "research_review/results/g3/reports/wp33_nulls_report.md",
+      "research_review/results/g2/G2_decision.md",
+      "research_review/results/phase1/G1_decision.md",
+      "src/tk_pilot/evaluate.py",
+      "src/tk_pilot/run.py"
+    ],
+    "confirmatory_stage_run": false,
+    "constraints": {
+      "git_commits": false,
+      "max_worker_processes": 2,
+      "runtime_minutes": "< 1",
+      "source_artifacts_modified": false,
+      "workers_used": 1
+    },
+    "gate": "G3 simulation gate (WP-3.4)",
+    "recorded_status": "PIVOT"
+  }
+}

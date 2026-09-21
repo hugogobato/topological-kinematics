@@ -1,0 +1,5 @@
+family,sigma,e95,n_calibration_trajectories,n_evaluation_trajectories,n_intervals,n_above_e95,expected_above,binom_bound_99,binom_p,exceedance_rate,n_seed_trend_p01,n_seed_trend_fail,n_seed_runs_p01,n_seed_cluster_p01,max_run,verdict,notes
+A,0.0,0.0,5,15,1920,0,96.0,119.0,1.0,0.0,0,0,0,0,0,PASS,exact-zero rule and compact degeneracy
+A,0.05,0.057375390242124326,5,15,1920,96,96.0,119.0,0.514620883416752,0.05,1,0,3,0,2,PASS,e95=0.0573754; pooled exceedance rate=0.0500; seeds with trend fail (p<0.001 and |rho|>0.5)=0; seeds with cluster permutation p<0.01=0
+B,0.0,0.0,5,15,1920,0,96.0,119.0,1.0,0.0,0,0,0,0,0,PASS,exact-zero rule and compact degeneracy
+B,0.05,0.054708738634047294,5,15,1920,91,96.0,119.0,0.7140869350426488,0.04739583333333333,0,0,9,1,5,RESIDUAL,e95=0.0547087; pooled exceedance rate=0.0474; seeds with trend fail (p<0.001 and |rho|>0.5)=0; seeds with cluster permutation p<0.01=1
