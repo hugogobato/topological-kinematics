@@ -70,7 +70,13 @@ def completeness(merged: pd.DataFrame, freeze: dict, families: list[str]) -> dic
             (str(row["class"]), int(row["base_seed"]))
             for _, row in subset.iterrows()
         }
-        expected = int(freeze["n_clusters"])
+        by_family = freeze.get("n_clusters_by_family") or {}
+        expected = int(
+            by_family.get(
+                family,
+                freeze.get("n_clusters_per_family", freeze["n_clusters"]),
+            )
+        )
         report[family] = {
             "n_clusters": len(clusters),
             "expected_clusters": expected,
