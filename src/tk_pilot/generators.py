@@ -42,6 +42,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import shutil
+import uuid
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -487,43 +490,81 @@ def save_trajectory(traj: Trajectory, cache_dir: str | Path) -> Path:
 
     Writes ``trajectory.npz`` (``frames``, ``timestamps``, ``z``, and a JSON
     copy of ``latent``), ``meta.json``, and ``SHA256SUMS``. Returns the
-    per-trajectory cache directory.
+    per-trajectory cache directory. Writes are staged in a unique temporary
+    directory and committed with an atomic rename, so concurrent workers can
+    never observe a partially written cache. An existing valid cache is reused;
+    an existing corrupt cache is removed and replaced.
     """
     directory = _cache_directory(
         traj.family, traj.label, traj.base_seed, traj.sigma, traj.stride, cache_dir
     )
-    directory.mkdir(parents=True, exist_ok=True)
-    frames = _validated_frames(traj.family, traj.frames)
-    timestamps = np.ascontiguousarray(traj.timestamps, dtype=np.float64)
-    z = np.ascontiguousarray(traj.z, dtype=np.float64)
-    if timestamps.shape != (frames.shape[0],) or z.shape != (frames.shape[0],):
-        raise ValueError("timestamps and z must match the number of frames")
-    npz_path = directory / TRAJECTORY_NPZ
-    np.savez_compressed(
-        npz_path,
-        frames=frames,
-        timestamps=timestamps,
-        z=z,
-        latent_json=json.dumps(traj.latent, sort_keys=True),
+    if directory.exists():
+        try:
+            load_trajectory(
+                traj.family,
+                traj.label,
+                traj.base_seed,
+                traj.sigma,
+                traj.stride,
+                cache_dir,
+            )
+            return directory
+        except Exception:
+            shutil.rmtree(directory, ignore_errors=True)
+    directory.parent.mkdir(parents=True, exist_ok=True)
+    staging = directory.parent / (
+        f".{directory.name}.tmp-{os.getpid()}-{uuid.uuid4().hex[:8]}"
     )
-    meta = {
-        "trajectory_id": str(traj.trajectory_id),
-        "family": str(traj.family),
-        "label": str(traj.label),
-        "base_seed": int(traj.base_seed),
-        "sigma": float(traj.sigma),
-        "stride": int(traj.stride),
-        "frame_count": int(frames.shape[0]),
-        "latent": traj.latent,
-        "sha256_frames": _sha256_bytes(frames.tobytes()),
-        "sha256_timestamps": _sha256_bytes(timestamps.tobytes()),
-        "sha256_z": _sha256_bytes(z.tobytes()),
-        "sha256_npz": _sha256_file(npz_path),
-    }
-    (directory / META_JSON).write_text(
-        json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
-    _write_sha256sums(directory, (TRAJECTORY_NPZ, META_JSON))
+    staging.mkdir(parents=False, exist_ok=False)
+    try:
+        frames = _validated_frames(traj.family, traj.frames)
+        timestamps = np.ascontiguousarray(traj.timestamps, dtype=np.float64)
+        z = np.ascontiguousarray(traj.z, dtype=np.float64)
+        if timestamps.shape != (frames.shape[0],) or z.shape != (frames.shape[0],):
+            raise ValueError("timestamps and z must match the number of frames")
+        npz_path = staging / TRAJECTORY_NPZ
+        np.savez_compressed(
+            npz_path,
+            frames=frames,
+            timestamps=timestamps,
+            z=z,
+            latent_json=json.dumps(traj.latent, sort_keys=True),
+        )
+        meta = {
+            "trajectory_id": str(traj.trajectory_id),
+            "family": str(traj.family),
+            "label": str(traj.label),
+            "base_seed": int(traj.base_seed),
+            "sigma": float(traj.sigma),
+            "stride": int(traj.stride),
+            "frame_count": int(frames.shape[0]),
+            "latent": traj.latent,
+            "sha256_frames": _sha256_bytes(frames.tobytes()),
+            "sha256_timestamps": _sha256_bytes(timestamps.tobytes()),
+            "sha256_z": _sha256_bytes(z.tobytes()),
+            "sha256_npz": _sha256_file(npz_path),
+        }
+        (staging / META_JSON).write_text(
+            json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        _write_sha256sums(staging, (TRAJECTORY_NPZ, META_JSON))
+        try:
+            os.rename(staging, directory)
+        except OSError:
+            shutil.rmtree(staging, ignore_errors=True)
+            if not directory.exists():
+                raise
+            load_trajectory(
+                traj.family,
+                traj.label,
+                traj.base_seed,
+                traj.sigma,
+                traj.stride,
+                cache_dir,
+            )
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
     return directory
 
 

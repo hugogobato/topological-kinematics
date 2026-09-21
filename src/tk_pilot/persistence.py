@@ -29,6 +29,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import shutil
+import uuid
 from pathlib import Path
 from typing import TYPE_CHECKING, Sequence
 
@@ -206,47 +209,71 @@ def _verify_sha256sums(directory: Path) -> None:
 def save_diagram_cache(traj: Trajectory, cache_dir) -> Path:
     """Compute and persist diagrams, essential counts, metadata, and checksums.
 
-    Returns the per-trajectory cache directory.
+    Returns the per-trajectory cache directory. Writes are staged in a unique
+    temporary directory and committed with an atomic rename, so concurrent
+    workers can never observe a partially written cache. An existing valid cache
+    is reused; an existing corrupt cache is removed and replaced.
     """
     import gudhi
 
     directory = _cache_path(traj, cache_dir)
-    directory.mkdir(parents=True, exist_ok=True)
-    frames = np.asarray(traj.frames)
-    timestamps = np.asarray(traj.timestamps, dtype=float)
-    n_frames = int(frames.shape[0])
-    if timestamps.shape != (n_frames,):
-        raise ValueError(
-            f"timestamps shape {timestamps.shape} does not match {n_frames} frames"
-        )
-    diagrams, essential = _trajectory_finite_and_essential(
-        frames, traj.family, _DEFAULT_DEGREES
+    if directory.exists():
+        try:
+            load_diagram_cache(traj, cache_dir)
+            return directory
+        except Exception:
+            shutil.rmtree(directory, ignore_errors=True)
+    directory.parent.mkdir(parents=True, exist_ok=True)
+    staging = directory.parent / (
+        f".{directory.name}.tmp-{os.getpid()}-{uuid.uuid4().hex[:8]}"
     )
-    diagram_arrays: dict[str, np.ndarray] = {}
-    essential_arrays: dict[str, np.ndarray] = {}
-    for degree in _DEFAULT_DEGREES:
-        for index in range(n_frames):
-            diagram_arrays[f"d{degree}_{index:03d}"] = diagrams[degree][index]
-            essential_arrays[f"e{degree}_{index:03d}"] = np.asarray(
-                essential[degree][index], dtype=np.int64
+    staging.mkdir(parents=False, exist_ok=False)
+    try:
+        frames = np.asarray(traj.frames)
+        timestamps = np.asarray(traj.timestamps, dtype=float)
+        n_frames = int(frames.shape[0])
+        if timestamps.shape != (n_frames,):
+            raise ValueError(
+                f"timestamps shape {timestamps.shape} does not match {n_frames} frames"
             )
-    np.savez(directory / "diagrams.npz", **diagram_arrays)
-    np.savez(directory / "essential.npz", **essential_arrays)
-    meta = {
-        "family": str(traj.family),
-        "label": str(traj.label),
-        "base_seed": int(traj.base_seed),
-        "sigma": float(traj.sigma),
-        "stride": int(traj.stride),
-        "frame_count": n_frames,
-        "timestamps": [float(value) for value in timestamps],
-        "degrees": [int(degree) for degree in _DEFAULT_DEGREES],
-        "gudhi_version": gudhi.__version__,
-    }
-    (directory / "meta.json").write_text(
-        json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
-    _write_sha256sums(directory)
+        diagrams, essential = _trajectory_finite_and_essential(
+            frames, traj.family, _DEFAULT_DEGREES
+        )
+        diagram_arrays: dict[str, np.ndarray] = {}
+        essential_arrays: dict[str, np.ndarray] = {}
+        for degree in _DEFAULT_DEGREES:
+            for index in range(n_frames):
+                diagram_arrays[f"d{degree}_{index:03d}"] = diagrams[degree][index]
+                essential_arrays[f"e{degree}_{index:03d}"] = np.asarray(
+                    essential[degree][index], dtype=np.int64
+                )
+        np.savez(staging / "diagrams.npz", **diagram_arrays)
+        np.savez(staging / "essential.npz", **essential_arrays)
+        meta = {
+            "family": str(traj.family),
+            "label": str(traj.label),
+            "base_seed": int(traj.base_seed),
+            "sigma": float(traj.sigma),
+            "stride": int(traj.stride),
+            "frame_count": n_frames,
+            "timestamps": [float(value) for value in timestamps],
+            "degrees": [int(degree) for degree in _DEFAULT_DEGREES],
+            "gudhi_version": gudhi.__version__,
+        }
+        (staging / "meta.json").write_text(
+            json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        _write_sha256sums(staging)
+        try:
+            os.rename(staging, directory)
+        except OSError:
+            shutil.rmtree(staging, ignore_errors=True)
+            if not directory.exists():
+                raise
+            load_diagram_cache(traj, cache_dir)
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
     return directory
 
 

@@ -473,7 +473,7 @@ def _load_trajectory(generators, family, label, base_seed, sigma, stride, cache_
                 Path(cache_dir),
             )
             return traj, True
-        except FileNotFoundError:
+        except Exception:
             pass
     traj = generators.build_trajectory(
         family, label, int(base_seed), float(sigma), int(stride)
@@ -498,7 +498,7 @@ def _load_control(generators, control, family, base_seed, sigma, stride, cache_d
                 Path(cache_dir),
             )
             return traj, True
-        except FileNotFoundError:
+        except Exception:
             pass
     traj = generators.build_control(
         control, family, int(base_seed), float(sigma), int(stride)
@@ -535,7 +535,7 @@ def _diagrams_for(persistence, traj, degrees, cache_dir):
             available = cached.get("diagrams", {})
             if all(degree in available for degree in wanted):
                 return {degree: available[degree] for degree in wanted}, True
-        except FileNotFoundError:
+        except Exception:
             pass
     if hasattr(persistence, "save_diagram_cache") and hasattr(
         persistence, "load_diagram_cache"
@@ -546,7 +546,7 @@ def _diagrams_for(persistence, traj, degrees, cache_dir):
             available = cached.get("diagrams", {})
             if all(degree in available for degree in wanted):
                 return {degree: available[degree] for degree in wanted}, False
-        except (FileNotFoundError, ValueError, OSError):
+        except Exception:
             pass
     if not hasattr(persistence, "trajectory_diagrams"):
         raise AttributeError(

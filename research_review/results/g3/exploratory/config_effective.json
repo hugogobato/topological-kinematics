@@ -1,0 +1,130 @@
+{
+  "config": {
+    "bootstrap": {
+      "n_resamples": 2000,
+      "seed": 20260907
+    },
+    "cache_dir": "research_review/results/cache",
+    "classes": [
+      "return",
+      "ramp",
+      "jump"
+    ],
+    "confirmatory": {
+      "eligible_comparators": null,
+      "incumbent": "complete_distances",
+      "n_clusters": 200,
+      "n_shards": 1,
+      "route": "superiority",
+      "shard_index": 0
+    },
+    "controls": {
+      "confirmatory": false,
+      "exploratory": false,
+      "matched_family": "A",
+      "smoke": true
+    },
+    "decision": {
+      "family_deterioration": 0.05,
+      "noninferiority_upper": 0.02,
+      "parsimony_ratio": 4.0,
+      "superiority_upper": -0.05,
+      "target_half_width": 0.01
+    },
+    "degree_families": {
+      "0": [
+        "A",
+        "B"
+      ],
+      "1": [
+        "A"
+      ]
+    },
+    "degrees": {
+      "primary": 0,
+      "secondary": 1
+    },
+    "families": [
+      "A",
+      "B"
+    ],
+    "learner_grids": {
+      "logistic": {
+        "C": [
+          0.01,
+          0.1,
+          1.0,
+          10.0
+        ]
+      },
+      "svm_rbf": {
+        "C": [
+          0.01,
+          0.1,
+          1.0,
+          10.0
+        ],
+        "gamma_scale": [
+          0.1,
+          1.0,
+          10.0
+        ]
+      }
+    },
+    "learner_seed": 20260907,
+    "master_grid": {
+      "n": 128
+    },
+    "metric": "bottleneck_linf",
+    "noise_floor": {
+      "angle_factor": 2.0,
+      "efficiency_factor": 2.0,
+      "percentile": 95.0,
+      "sigma_calibration": 0.05
+    },
+    "representations": [
+      "compact",
+      "speed_history",
+      "complete_distances",
+      "recurrence_summary",
+      "raw_geometry_flat",
+      "raw_geometry_summary",
+      "moments_flat",
+      "moments_summary",
+      "moment_signature",
+      "moment_signature_time"
+    ],
+    "seed_namespaces": {
+      "test_confirmatory_start": 10000,
+      "test_exploratory": [
+        3000,
+        3019
+      ],
+      "train": [
+        1000,
+        1019
+      ],
+      "validation": [
+        2000,
+        2009
+      ]
+    },
+    "sigmas": [
+      0.0,
+      0.05
+    ],
+    "smoke_seed": 11,
+    "strides": [
+      1,
+      2,
+      4
+    ]
+  },
+  "provenance": {
+    "effective_sha256": "1c3ba971493c5e06d3a4beba883d56be6435687a448ecc099875d4b1d3355221",
+    "file_sha256": "ba3f5369dbc7299478f74421d0ea92be5632a6f3be89e45b757ab13c0709aa0d",
+    "path": "/home/hugo_souto/Stuff/Research/Topological_Kinematics/configs/tk_pilot_study.yaml",
+    "source": "file"
+  },
+  "run_id": "exploratory-1c3ba971493c"
+}
