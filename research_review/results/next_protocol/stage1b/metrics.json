@@ -1,0 +1,2575 @@
+{
+  "budgets": [
+    0.5,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "cells": [
+    {
+      "budget": 0.5,
+      "cell_seconds": 30.453743637000116,
+      "family": "A",
+      "floor": 0.058465493396520955,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.875,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 4.1293778889998976,
+      "family": "A",
+      "floor": 0.055582708712991646,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.5,
+          "val_error": 0.5,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 102,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.3125,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 31.38800488600009,
+      "family": "A",
+      "floor": 0.08638079547716125,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.4375,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.4375,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.25,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.25,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 4.151207002999854,
+      "family": "A",
+      "floor": 0.09680763801760006,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.375,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 102,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.375,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.25,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 30.789340468999853,
+      "family": "A",
+      "floor": 0.058465493396520955,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.8125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.3125,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.01,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.5625,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 3.8367408879998948,
+      "family": "A",
+      "floor": 0.055582708712991646,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.375,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.5625,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 102,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.4375,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 31.552553738999904,
+      "family": "A",
+      "floor": 0.08638079547716125,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.5,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.3125,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.5,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 4.314118028999928,
+      "family": "A",
+      "floor": 0.09680763801760006,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.3125,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.3125,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 102,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.375,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 30.612336826000046,
+      "family": "A",
+      "floor": 0.058465493396520955,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.01,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.25,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.001968503937007874
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.001968503937007874
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.001968503937007874
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.001968503937007874
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.001968503937007874
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.001968503937007874
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 4.144323362999785,
+      "family": "A",
+      "floor": 0.055582708712991646,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0125
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.1875,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0125
+        },
+        {
+          "feature_dim": 102,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0125
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0125
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0125
+        },
+        {
+          "feature_dim": 56,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0125
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 31.442566108999927,
+      "family": "A",
+      "floor": 0.08638079547716125,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.5,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0625,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.01,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 4.071536242000093,
+      "family": "A",
+      "floor": 0.09680763801760006,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.1875,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 102,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.375,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 30.016559344000143,
+      "family": "A",
+      "floor": 0.058465493396520955,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 4.092303264999828,
+      "family": "A",
+      "floor": 0.055582708712991646,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.10416666666666667
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.10416666666666667
+        },
+        {
+          "feature_dim": 102,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.10416666666666667
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.10416666666666667
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.10416666666666667
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.10416666666666667
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 30.935068783000133,
+      "family": "A",
+      "floor": 0.08638079547716125,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.011811023622047244
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.011811023622047244
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.011811023622047244
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.011811023622047244
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.011811023622047244
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.011811023622047244
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 4.193159250000008,
+      "family": "A",
+      "floor": 0.09680763801760006,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.037500000000000006
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.037500000000000006
+        },
+        {
+          "feature_dim": 102,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.037500000000000006
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.037500000000000006
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.037500000000000006
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.037500000000000006
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 41.32012077199988,
+      "family": "B",
+      "floor": 0.05205538785457148,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 516,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 5.414249452000149,
+      "family": "B",
+      "floor": 0.05012038768138866,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 68,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 42.5758677230001,
+      "family": "B",
+      "floor": 0.10865772543173567,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.3125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 516,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.375,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 5.390403970000079,
+      "family": "B",
+      "floor": 0.11848550625149258,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.3125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=0.01,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.375,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 68,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.1875,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 41.71638753700017,
+      "family": "B",
+      "floor": 0.05205538785457148,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 516,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.1875,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.002952755905511811
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 5.472904061999998,
+      "family": "B",
+      "floor": 0.05012038768138866,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.025
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.025
+        },
+        {
+          "feature_dim": 68,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.025
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.025
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.025
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.025
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 44.33605380800009,
+      "family": "B",
+      "floor": 0.10865772543173567,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 516,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.3125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 5.996740745999887,
+      "family": "B",
+      "floor": 0.11848550625149258,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 68,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 8,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.375,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 40.06877845000008,
+      "family": "B",
+      "floor": 0.05205538785457148,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0034448818897637795
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0034448818897637795
+        },
+        {
+          "feature_dim": 516,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0034448818897637795
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0034448818897637795
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0034448818897637795
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0034448818897637795
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 5.260085110999626,
+      "family": "B",
+      "floor": 0.05012038768138866,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.1375
+        },
+        {
+          "feature_dim": 22,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.1375
+        },
+        {
+          "feature_dim": 68,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.1375
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.1375
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.1375
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.1375
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 41.29936898300002,
+      "family": "B",
+      "floor": 0.10865772543173567,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0004921259842519685
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.125,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0004921259842519685
+        },
+        {
+          "feature_dim": 516,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0004921259842519685
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.0004921259842519685
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0004921259842519685
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0004921259842519685
+        }
+      ]
+    },
+    {
+      "budget": 2.0,
+      "cell_seconds": 5.588303376000113,
+      "family": "B",
+      "floor": 0.11848550625149258,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 68,
+          "learner": "logistic(C=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.1875,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 38.874780396000006,
+      "family": "B",
+      "floor": 0.05205538785457148,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 516,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.006889763779527559
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 5.084139080000114,
+      "family": "B",
+      "floor": 0.05012038768138866,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.05,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.20416666666666666
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.20416666666666666
+        },
+        {
+          "feature_dim": 68,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.20416666666666666
+        },
+        {
+          "feature_dim": 8,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.125,
+          "val_error": 0.125,
+          "valid_fraction_mean": 0.20416666666666666
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.20416666666666666
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.20416666666666666
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 41.12884867899993,
+      "family": "B",
+      "floor": 0.10865772543173567,
+      "n_frames_mean": 129,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.125,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 516,
+          "learner": "logistic(C=0.01)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 8,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.25,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0625,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 3.0,
+      "cell_seconds": 5.496995070000139,
+      "family": "B",
+      "floor": 0.11848550625149258,
+      "n_frames_mean": 17,
+      "n_trajectories": 40,
+      "sigma": 0.1,
+      "stride": 8,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "compact",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 22,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "speed_history",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 68,
+          "learner": "logistic(C=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 8,
+          "learner": "logistic(C=0.1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.1875,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 16,
+          "n_train": 16,
+          "n_val": 8,
+          "representation": "moment_signature_time",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.004166666666666667
+        }
+      ]
+    }
+  ],
+  "families": [
+    "A",
+    "B"
+  ],
+  "floors": {
+    "A|s0.05|stride1": 0.058465493396520955,
+    "A|s0.05|stride8": 0.055582708712991646,
+    "A|s0.1|stride1": 0.08638079547716125,
+    "A|s0.1|stride8": 0.09680763801760006,
+    "B|s0.05|stride1": 0.05205538785457148,
+    "B|s0.05|stride8": 0.05012038768138866,
+    "B|s0.1|stride1": 0.10865772543173567,
+    "B|s0.1|stride8": 0.11848550625149258
+  },
+  "representations": [
+    "compact",
+    "speed_history",
+    "raw_geometry_flat",
+    "raw_geometry_summary",
+    "moments_summary",
+    "moment_signature_time"
+  ],
+  "sigmas": [
+    0.05,
+    0.1
+  ],
+  "splits": {
+    "test": [
+      4030,
+      4031,
+      4032,
+      4033,
+      4034,
+      4035,
+      4036,
+      4037
+    ],
+    "train": [
+      4000,
+      4001,
+      4002,
+      4003,
+      4004,
+      4005,
+      4006,
+      4007
+    ],
+    "validation": [
+      4020,
+      4021,
+      4022,
+      4023
+    ]
+  },
+  "static_seeds": [
+    4100,
+    4101,
+    4102,
+    4103,
+    4104,
+    4105,
+    4106,
+    4107
+  ],
+  "strides": [
+    1,
+    8
+  ],
+  "tag": "stage1b"
+}

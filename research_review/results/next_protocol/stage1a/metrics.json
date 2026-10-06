@@ -1,0 +1,1019 @@
+{
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "cells": [
+    {
+      "budget": 0.1,
+      "cell_seconds": 70.75247703000014,
+      "family": "A",
+      "floor": 0.058494870070412444,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.55,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.75,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.4,
+          "val_error": 0.41666666666666663,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.35,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        }
+      ]
+    },
+    {
+      "budget": 0.1,
+      "cell_seconds": 60.8261345410001,
+      "family": "A",
+      "floor": 0.08775911467080809,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.55,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=0.01)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.05,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.2,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.4,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.1,
+      "cell_seconds": 68.25596208899992,
+      "family": "A",
+      "floor": 0.22273977854354868,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.2,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.45,
+          "val_error": 0.5,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.39999999999999997,
+          "val_error": 0.41666666666666663,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.05,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.1,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.45,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 56,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.3,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0003937007874015748
+        }
+      ]
+    },
+    {
+      "budget": 0.25,
+      "cell_seconds": 63.89977167799998,
+      "family": "A",
+      "floor": 0.058494870070412444,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.44999999999999996,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.7,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.25,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.30000000000000004,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0003937007874015748
+        }
+      ]
+    },
+    {
+      "budget": 0.25,
+      "cell_seconds": 66.48768935099974,
+      "family": "A",
+      "floor": 0.08775911467080809,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.3,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=0.01,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.1,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.2,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.25,
+      "cell_seconds": 70.02427209300004,
+      "family": "A",
+      "floor": 0.22273977854354868,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.2,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.35,
+          "val_error": 0.5,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.5,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.1,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.30000000000000004,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 64.52647498900023,
+      "family": "A",
+      "floor": 0.058494870070412444,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.55,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.75,
+          "val_error": 0.41666666666666663,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=0.01)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.15,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.01,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.3,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 67.43310482100014,
+      "family": "A",
+      "floor": 0.08775911467080809,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.01,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.25,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.3,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.15000000000000002,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.15000000000000002,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 0.5,
+      "cell_seconds": 65.76638139099987,
+      "family": "A",
+      "floor": 0.22273977854354868,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.2,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.4,
+          "val_error": 0.41666666666666663,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=0.1,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.45,
+          "val_error": 0.3333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0003937007874015748
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.3,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0003937007874015748
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 64.68849240899999,
+      "family": "A",
+      "floor": 0.058494870070412444,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.05,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=1,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.6499999999999999,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.6,
+          "val_error": 0.4166666666666667,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=0.01)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.35,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.25,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 77.90575880900042,
+      "family": "A",
+      "floor": 0.08775911467080809,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.1,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.4,
+          "val_error": 0.16666666666666666,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 134,
+          "learner": "logistic(C=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.3,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=1,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.35,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=0.1,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.2,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0
+        }
+      ]
+    },
+    {
+      "budget": 1.0,
+      "cell_seconds": 62.5334426710001,
+      "family": "A",
+      "floor": 0.22273977854354868,
+      "n_frames_mean": 129,
+      "n_trajectories": 56,
+      "sigma": 0.2,
+      "stride": 1,
+      "summaries": [
+        {
+          "feature_dim": 13,
+          "learner": "svm_rbf(C=10,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "compact",
+          "test_error": 0.35,
+          "val_error": 0.25,
+          "valid_fraction_mean": 0.0007874015748031496
+        },
+        {
+          "feature_dim": 134,
+          "learner": "svm_rbf(C=0.1,gamma_scale=0.1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "speed_history",
+          "test_error": 0.5,
+          "val_error": 0.41666666666666663,
+          "valid_fraction_mean": 0.0007874015748031496
+        },
+        {
+          "feature_dim": 774,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_flat",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0007874015748031496
+        },
+        {
+          "feature_dim": 12,
+          "learner": "svm_rbf(C=10,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "raw_geometry_summary",
+          "test_error": 0.0,
+          "val_error": 0.0,
+          "valid_fraction_mean": 0.0007874015748031496
+        },
+        {
+          "feature_dim": 12,
+          "learner": "logistic(C=10)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moments_summary",
+          "test_error": 0.0,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0007874015748031496
+        },
+        {
+          "feature_dim": 56,
+          "learner": "svm_rbf(C=1,gamma_scale=1)",
+          "n_test": 20,
+          "n_train": 24,
+          "n_val": 12,
+          "representation": "moment_signature_time",
+          "test_error": 0.1,
+          "val_error": 0.08333333333333333,
+          "valid_fraction_mean": 0.0007874015748031496
+        }
+      ]
+    }
+  ],
+  "families": [
+    "A"
+  ],
+  "floors": {
+    "A|s0.05|stride1": 0.058494870070412444,
+    "A|s0.1|stride1": 0.08775911467080809,
+    "A|s0.2|stride1": 0.22273977854354868
+  },
+  "representations": [
+    "compact",
+    "speed_history",
+    "raw_geometry_flat",
+    "raw_geometry_summary",
+    "moments_summary",
+    "moment_signature_time"
+  ],
+  "sigmas": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "splits": {
+    "test": [
+      4030,
+      4031,
+      4032,
+      4033,
+      4034,
+      4035,
+      4036,
+      4037,
+      4038,
+      4039
+    ],
+    "train": [
+      4000,
+      4001,
+      4002,
+      4003,
+      4004,
+      4005,
+      4006,
+      4007,
+      4008,
+      4009,
+      4010,
+      4011
+    ],
+    "validation": [
+      4020,
+      4021,
+      4022,
+      4023,
+      4024,
+      4025
+    ]
+  },
+  "static_seeds": [
+    4100,
+    4101,
+    4102,
+    4103,
+    4104,
+    4105,
+    4106,
+    4107,
+    4108,
+    4109
+  ],
+  "strides": [
+    1
+  ],
+  "tag": "stage1a"
+}
